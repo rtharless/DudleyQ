@@ -51,8 +51,8 @@
           "static": true,
           "settings": {
             "hide_logo_on_home_page": false,
-            "padding-block-start": 0,
-            "padding-block-end": 0
+            "padding-block-start": 10,
+            "padding-block-end": 20
           },
           "blocks": {}
         },
@@ -82,9 +82,9 @@
         }
       },
       "settings": {
-        "logo_position": "left",
-        "menu_position": "left",
-        "menu_row": "top",
+        "logo_position": "center",
+        "menu_position": "center",
+        "menu_row": "bottom",
         "customer_account_menu": "customer-account-main-menu",
         "show_search": true,
         "search_position": "right",
@@ -110,8 +110,8 @@
         "actions_text_case": "none",
         "background_color_top": "#FDC39D",
         "text_color_top": "{{ settings.color_palette.background }}",
-        "background_color_bottom": "",
-        "text_color_bottom": "",
+        "background_color_bottom": "#FDC39D",
+        "text_color_bottom": "{{ settings.color_palette.background }}",
         "bubble_style": "default",
         "bubble_background_color": "",
         "bubble_text_color": "",
