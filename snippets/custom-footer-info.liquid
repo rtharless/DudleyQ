@@ -1,0 +1,118 @@
+<div class="footer-info-grid">
+
+  <!-- Product Guarantee -->
+  <div class="footer-column">
+    <h3>
+      {{ section.settings.guarantee_heading }}
+    </h3>
+
+    <div class="rte">
+      {{ section.settings.guarantee_text }}
+    </div>
+  </div>
+
+  <!-- Shipping -->
+  <div class="footer-column">
+    <h3>
+      {{ section.settings.shipping_heading }}
+    </h3>
+
+    <div class="rte">
+      {{ section.settings.shipping_text }}
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="footer-column">
+
+    <h3>
+      {{ section.settings.newsletter_heading }}
+    </h3>
+
+    {% form 'customer' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+
+      <div class="newsletter-box">
+
+        <input
+          type="email"
+          name="contact[email]"
+          placeholder="{{ section.settings.newsletter_placeholder }}"
+          class="email-signup__input"
+          required
+        >
+
+        <button type="submit">
+          {{ section.settings.newsletter_button }}
+        </button>
+
+      </div>
+
+    {% endform %}
+
+    <div class="footer-social">
+
+      {% assign social_links = 'facebook_url,instagram_url,youtube_url,tiktok_url,twitter_url,threads_url,linkedin_url,bluesky_url,snapchat_url,pinterest_url,tumblr_url,vimeo_url,custom_url' | split: ',' %}
+
+
+      {% for link_key in social_links %}
+
+        {% assign link_url = section.settings[link_key] %}
+
+        {% case link_key %}
+          {% when 'facebook_url' %}
+            {% assign platform = 'facebook' %}
+          {% when 'instagram_url' %}
+            {% assign platform = 'instagram' %}
+          {% when 'youtube_url' %}
+            {% assign platform = 'youtube' %}
+          {% when 'twitter_url' %}
+            {% assign platform = 'twitter' %}
+          {% when 'tiktok_url' %}
+            {% assign platform = 'tiktok' %}
+          {% when 'threads_url' %}
+            {% assign platform = 'threads' %}
+          {% when 'linkedin_url' %}
+            {% assign platform = 'linkedin' %}
+          {% when 'bluesky_url' %}
+            {% assign platform = 'bluesky' %}
+          {% when 'snapchat_url' %}
+            {% assign platform = 'snapchat' %}
+          {% when 'pinterest_url' %}
+            {% assign platform = 'pinterest' %}
+          {% when 'tumblr_url' %}
+            {% assign platform = 'tumblr' %}
+          {% when 'vimeo_url' %}
+            {% assign platform = 'vimeo' %}
+          {% when 'custom_url' %}
+            {% assign platform = 'link' %}
+        {% endcase %}
+
+        {% if link_url != blank %}
+          <a href="{{ link_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ platform }}">
+            <svg class="footer-social-icon" viewBox="0 0 20 20" aria-hidden="true">
+              {% render 'icon', icon: platform %}
+            </svg>
+          </a>
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+  <!-- Contact -->
+  <div class="footer-column">
+
+    <h3>
+      {{ section.settings.contact_heading }}
+    </h3>
+
+    <div class="rte">
+      {{ section.settings.contact_text }}
+    </div>
+
+  </div>
+
+</div>

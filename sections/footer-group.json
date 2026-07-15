@@ -157,6 +157,7 @@
     },
     "footer_utilities_jLGE8U": {
       "type": "footer-utilities",
+      "disabled": true,
       "blocks": {
         "footer_copyright_jweRK8": {
           "type": "footer-copyright",

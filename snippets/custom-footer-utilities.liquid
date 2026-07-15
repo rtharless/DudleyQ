@@ -1,0 +1,43 @@
+<div class="footer-payment-grid">
+    <div class="footer-text">
+        &copy; {{ 'now' | date: '%Y' }}
+        {{ shop.name | link_to: routes.root_url -}} | {{ powered_by_link }}
+    </div>
+    <div class="footer-payments">
+        {% assign payment_links = 'american_express,apple_pay,diners_club,discover,google_pay,jcb,maestro,master,paypal,shopify_pay,unionpay,venmo,visa' | split: ',' %}
+
+        {% for link_key in payment_links %}
+
+            {% case link_key %}
+            {% when 'american_express' %}
+                {% assign platform = 'american_express' %}
+            {% when 'apple_pay' %}
+                {% assign platform = 'apple_pay' %}
+            {% when 'diners_club' %}
+                {% assign platform = 'diners_club' %}
+            {% when 'discover' %}
+                {% assign platform = 'discover' %}
+            {% when 'google_pay' %}
+                {% assign platform = 'google_pay' %}
+            {% when 'jcb' %}
+                {% assign platform = 'jcb' %}
+            {% when 'maestro' %}
+                {% assign platform = 'maestro' %}
+            {% when 'master' %}
+                {% assign platform = 'master' %}
+            {% when 'paypal' %}
+                {% assign platform = 'paypal' %}
+            {% when 'shopify_pay' %}
+                {% assign platform = 'shopify_pay' %}
+            {% when 'unionpay' %}
+                {% assign platform = 'tumblr' %}
+            {% when 'venmo' %}
+                {% assign platform = 'venmo' %}
+            {% when 'visa' %}
+                {% assign platform = 'visa' %}
+            {% endcase %}
+            {% render 'payment-icon', icon: platform %}
+        {% endfor %}
+
+        </div>
+</div>

@@ -52,7 +52,21 @@
   >
     {% content_for 'blocks' %}
   </div>
+
 </div>
+
+{{ 'custom-footer-info.css' | asset_url | stylesheet_tag }}
+
+{% assign social_block = section.blocks | where: 'type', 'social-links' | first %}
+
+{% render 'custom-footer-info',
+  section: section,
+  social_block: social_block
+%}
+
+{% render 'custom-footer-utilities',
+  section: section
+%}
 
 {% stylesheet %}
   .footer-content {
@@ -151,6 +165,137 @@
     "groups": ["footer"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Footer Information"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_heading",
+      "label": "Guarantee Heading",
+      "default": "PRODUCT GUARANTEE"
+    },
+    {
+      "type": "richtext",
+      "id": "guarantee_text",
+      "label": "Guarantee Text",
+      "default": "<p>Dudley Beauty Corp, LLC stands behind our products.  We choose the finest raw materials that will perform as we promise. That is why we offer our customers a quality assurance money-back guarantee when our products are purchased from an authorized Dudley seller.</p>"
+    },
+    {
+      "type": "text",
+      "id": "shipping_heading",
+      "label": "Shipping Heading",
+      "default": "SHIPPING"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_text",
+      "label": "Shipping Text",
+      "default": "<p>Most orders are processed in 2-3 business days & shipped by USPS, UPS, or FedEx. Shipping time should be added to processing time. We also ship to Canada. Duties and taxes are calculated at checkout. Canadian customers can use their local currencies to pay for products.</p>"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading",
+      "default": "GET SOCIAL"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder",
+      "default": "Enter email address"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Newsletter Button",
+      "default": "JOIN"
+    },
+    {
+      "type": "header",
+      "content": "Social Links"
+    },
+    {
+      "type": "text",
+      "id": "facebook_url",
+      "label": "Facebook",
+      "default": "https://facebook.com/dudleyq"
+    },
+    {
+      "type": "text",
+      "id": "instagram_url",
+      "label": "Instagram",
+      "default": "https://instagram.com/dudleyqbeauty"
+    },
+    {
+      "type": "text",
+      "id": "youtube_url",
+      "label": "YouTube",
+      "default": "https://www.youtube.com/@dudleyqtv4423"
+    },
+    {
+      "type": "text",
+      "id": "tiktok_url",
+      "label": "TikTok"
+    },
+    {
+      "type": "text",
+      "id": "twitter_url",
+      "label": "X (Twitter)",
+      "default": "https://x.com/dudleyq"
+    },
+    {
+      "type": "text",
+      "id": "threads_url",
+      "label": "Threads"
+    },
+    {
+      "type": "text",
+      "id": "linkedin_url",
+      "label": "LinkedIn"
+    },
+    {
+      "type": "text",
+      "id": "bluesky_url",
+      "label": "Bluesky"
+    },
+    {
+      "type": "text",
+      "id": "snapchat_url",
+      "label": "Snapchat"
+    },
+    {
+      "type": "text",
+      "id": "pinterest_url",
+      "label": "Pinterest"
+    },
+    {
+      "type": "text",
+      "id": "tumblr_url",
+      "label": "Tumblr"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_url",
+      "label": "Vimeo"
+    },
+    {
+      "type": "text",
+      "id": "custom_url",
+      "label": "Custom URL"
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Contact Heading",
+      "default": "CONTACT US"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Contact Text",
+      "default": "<p>Dudley Beauty Corp, LLC<br>P.O. Box 168<br>High Point, NC 27261<br>888-573-8210<br>admin@dudleyq.com</p>"
+    },
     {
       "type": "select",
       "id": "section_width",
