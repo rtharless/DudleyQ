@@ -1,9 +1,18 @@
+{{ 'routine-page.css' | asset_url | stylesheet_tag }}
+
 <div class="routine-page">
 
     <div class="routine-page__image">
         {% if section.settings.image %}
-            {{ section.settings.image | image_url: width: 1200 | image_tag }}
-        {% endif %}
+            {{ section.settings.image | image_url: width: 600 | image_tag }}
+          {% else %}
+            <img
+                src="{{ 'routine-placeholder.webp' | asset_url }}"
+                alt="Routine placeholder"
+                loading="lazy"
+                width="600"
+                height="600">
+          {% endif %}
     </div>
 
     <div class="routine-page__content">
@@ -12,9 +21,9 @@
             {{ section.settings.eyebrow }}
         </p>
 
-        <h1>
+        <span class="routine__heading">
             {{ section.settings.heading }}
-        </h1>
+        </span>
 
         <div class="routine-page__description">
             {{ section.settings.description }}
@@ -27,39 +36,73 @@
         <div class="routine-buttons">
                 <button
                     class="routine-button uppercase">
-                    Classics
+                    <strong>Classics</strong>
                 </button>
                 <button
                     class="routine-button uppercase">
-                    Confident Curls
+                    <strong>Confident Curls</strong>
                 </button>
                 <button
                     class="routine-button uppercase">
-                    Healthy Tresses
+                    <strong>Healthy Tresses</strong>
                 </button>
                 <button
                     class="routine-button uppercase">
-                    Length & Strength
+                    <strong>Length & Strength</strong>
                 </button>
                 <button
                     class="routine-button uppercase">
-                    Moisture Matters
+                    <strong>Moisture Matters</strong>
                 </button>
                 <button
                     class="routine-button uppercase">
-                    Revival
+                    <strong>Revival</strong>
                 </button>
                 <button
                     class="routine-button uppercase">
-                    Soothe Calm
+                    <strong>Soothe Calm</strong>
                 </button>
         
         </div>
+        <div class="second-block">
+            <div class="routine-card">
 
-        <div id="routine-card">
-    
+                <div class="routine-card__image">
+                    {% if section.settings.card_image %}
+                        {{ section.settings.card_image | image_url: image_tag }}
+                    {% else %}
+                        <img
+                            src="{{ 'routine-placeholder.webp' | asset_url }}"
+                            alt="Routine placeholder"
+                            loading="lazy"
+                            width="600"
+                            height="600">
+                    {% endif %}
+                </div>
+            
+                <div class="routine-card__content">
+            
+                    <span id="routine-card-title" class="uppercase">
+                        {{ section.settings.routine_card_title }}
+                    </span>
+            
+                    <p id="routine-card-description">
+                        {{ section.settings.routine_card_desc }}
+                    </p>
+            
+                    <a
+                        id="routine-card-link"
+                        href="#"
+                        class="routine-card__button">
+                        Take Quiz
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+            <span class="routine-card__arrow">
+                &gt;
+            </span>
         </div>
-
     </div>
 
 </div>
@@ -96,7 +139,24 @@
       "id": "routine_heading",
       "label": "Routine Heading",
       "default": "Shop By Routine"
-    }
+    },
+    {
+        "type": "image_picker",
+        "id": "card_image",
+        "label": "Routine Card Image"
+    },
+    {
+        "type": "text",
+        "id": "routine_card_title",
+        "label": "Routine Card Title",
+        "default": "Hair Type"
+    },
+    {
+        "type": "text",
+        "id": "routine_card_desc",
+        "label": "Routine Card Description",
+        "default": "The best products and routine for your hair."
+    },
   ],
   "presets": [
     {
