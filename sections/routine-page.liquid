@@ -5,14 +5,7 @@
     <div class="routine-page__image">
         {% if section.settings.image %}
             {{ section.settings.image | image_url: width: 600 | image_tag }}
-          {% else %}
-            <img
-                src="{{ 'routine-placeholder.webp' | asset_url }}"
-                alt="Routine placeholder"
-                loading="lazy"
-                width="600"
-                height="600">
-          {% endif %}
+        {% endif %}
     </div>
 
     <div class="routine-page__content">
@@ -21,62 +14,37 @@
             {{ section.settings.eyebrow }}
         </p>
 
-        <span class="routine__heading">
-            {{ section.settings.heading }}
-        </span>
-
-        <div class="routine-page__description">
-            {{ section.settings.description }}
-        </div>
-
         <h2>
             {{ section.settings.routine_heading }}
         </h2>
 
         <div class="routine-buttons">
-                <button
-                    class="routine-button uppercase">
-                    <strong>Classics</strong>
-                </button>
-                <button
-                    class="routine-button uppercase">
-                    <strong>Confident Curls</strong>
-                </button>
-                <button
-                    class="routine-button uppercase">
-                    <strong>Healthy Tresses</strong>
-                </button>
-                <button
-                    class="routine-button uppercase">
-                    <strong>Length & Strength</strong>
-                </button>
-                <button
-                    class="routine-button uppercase">
-                    <strong>Moisture Matters</strong>
-                </button>
-                <button
-                    class="routine-button uppercase">
-                    <strong>Revival</strong>
-                </button>
-                <button
-                    class="routine-button uppercase">
-                    <strong>Soothe Calm</strong>
-                </button>
-        
+            {% for block in section.blocks %}
+                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}"
+                    class="routine-button"
+                    data-index="{{ forloop.index0 }}">
+                    {{ block.settings.title }}
+                </a>
+            {% endfor %}
         </div>
+
+        <span class="routine__heading">
+          {{ section.settings.heading }}
+        </span>
+
+        <div class="routine-page__description">
+            {{ section.settings.description }}
+        </div>
+        
         <div class="second-block">
             <div class="routine-card">
 
                 <div class="routine-card__image">
-                    {% if section.settings.card_image %}
-                        {{ section.settings.card_image | image_url: image_tag }}
-                    {% else %}
-                        <img
-                            src="{{ 'routine-placeholder.webp' | asset_url }}"
-                            alt="Routine placeholder"
-                            loading="lazy"
-                            width="600"
-                            height="600">
+                    {%  if section.settings.card_image %}
+                        {{ section.settings.card_image
+                            | image_url: width: 600
+                            | image_tag
+                        }}
                     {% endif %}
                 </div>
             
@@ -103,6 +71,7 @@
                 &gt;
             </span>
         </div>
+        
     </div>
 
 </div>
@@ -138,7 +107,7 @@
       "type": "text",
       "id": "routine_heading",
       "label": "Routine Heading",
-      "default": "Shop By Routine"
+      "default": "Shop by Routine"
     },
     {
         "type": "image_picker",
@@ -156,11 +125,81 @@
         "id": "routine_card_desc",
         "label": "Routine Card Description",
         "default": "The best products and routine for your hair."
-    },
+    }
   ],
+  "blocks": [
+    {
+      "type": "routine",
+      "name": "Routine",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "Filter Value"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
   "presets": [
     {
-      "name": "Routine Page"
+      "name": "Routine Page",
+      "blocks": [
+        {
+          "type": "routine",
+          "settings": {
+            "title": "Classics",
+            "filter_value":"Classics"
+          }
+        },
+        {
+          "type": "routine",
+          "settings": {
+            "title": "Confident Curls",
+            "filter_value":"Confident Curls"
+          }
+        },
+        {
+            "type": "routine",
+            "settings": {
+              "title": "Healthy Tresses",
+              "filter_value":"Healthy Tresses"
+            }
+        },
+        {
+            "type": "routine",
+            "settings": {
+                "title": "Length & Strength",
+                "filter_value":"Length & Strength"
+            }
+        },
+        {
+            "type": "routine",
+            "settings": {
+                "title": "Moisture Matters",
+                "filter_value":"Moisture Matters"
+            }
+        },
+        {
+            "type": "routine",
+            "settings": {
+            "title": "Revival",
+            "filter_value":"Revival"
+            }
+        },
+        {
+            "type": "routine",
+            "settings": {
+                "title": "Soothe Calm",
+                "filter_value":"Soothe Calm"
+            }
+        }
+      ]
     }
   ]
 }

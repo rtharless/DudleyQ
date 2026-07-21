@@ -2,10 +2,70 @@
     "sections": {
       "main": {
         "type": "routine-page",
+        "blocks": {
+          "block-1": {
+            "type": "routine",
+            "settings": {
+              "title": "Classics",
+              "filter_value": "Classics"
+            }
+          },
+          "block-2": {
+            "type": "routine",
+            "settings": {
+              "title": "Confident Curls",
+              "filter_value": "Confident Curls"
+            }
+          },
+          "block-3": {
+            "type": "routine",
+            "settings": {
+              "title": "Healthy Tresses",
+              "filter_value": "Healthy Tresses"
+            }
+          },
+          "block-4": {
+            "type": "routine",
+            "settings": {
+              "title": "Length & Strength",
+              "filter_value": "Length & Strength"
+            }
+          },
+          "block-5": {
+            "type": "routine",
+            "settings": {
+              "title": "Moisture Matters",
+              "filter_value": "Moisture Matters"
+            }
+          },
+          "block-6": {
+            "type": "routine",
+            "settings": {
+              "title": "Revival",
+              "filter_value": "Revival"
+            }
+          },
+          "block-7": {
+            "type": "routine",
+            "settings": {
+              "title": "Soothe Calm",
+              "filter_value": "Soothe Calm"
+            }
+          }
+        },
+        "block_order": [
+          "block-1",
+          "block-2",
+          "block-3",
+          "block-4",
+          "block-5",
+          "block-6",
+          "block-7"
+        ],
         "settings": {}
       }
     },
     "order": [
       "main"
     ]
-}
+  }

@@ -12,6 +12,7 @@
     font-size: 24px;
     color: #000000;
     margin-bottom: 1rem;
+    margin-top: 40px;
 }
 
 .routine-page__image {
@@ -30,6 +31,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.routine-page__content p{
+    margin-bottom: 0px;
 }
 
 .routine-page__eyebrow {
@@ -71,6 +76,7 @@
     height: 90px;
     width: 100%;
     border: 1px solid #000000;
+    border-radius: 0px;
     background: #fff;
     color: #000000;
     font-size: 12px;
@@ -146,7 +152,7 @@
 .second-block{
     width: 100%;
     display: flex;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 /* Tablet */
 
