@@ -1,0 +1,89 @@
+<div class="concern-page">
+
+    <div class="concern-page__image">
+        {% if section.settings.image %}
+            {{ section.settings.image | image_url: width: 600 | image_tag }}
+        {% endif %}
+    </div>
+
+    <div class="concern-page__content">
+
+        <p class="concern-page__eyebrow">
+            {{ section.settings.eyebrow }}
+        </p>
+
+        <h2>
+            {{ section.settings.concern_heading }}
+        </h2>
+
+        <div class="concern-buttons">
+            {% for block in section.blocks %}
+                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}"
+                    class="concern-button"
+                    data-index="{{ forloop.index0 }}">
+
+                      {% if block.settings.card_image %}
+                          {{ block.settings.card_image | image_url: width: 600 | image_tag }}
+                          <span>{{ block.settings.title }}</span>
+                      {% else %}
+                        {{ block.settings.title }}    
+                      {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+
+        
+        
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Concern Page",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "CONCERN PAGE"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "concern",
+      "name": "Concern",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "Filter Value"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Concern Page",
+      "blocks": [
+      ]
+    }
+  ]
+}
+{% endschema %}

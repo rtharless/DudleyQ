@@ -1,0 +1,11 @@
+{
+    "sections": {
+      "main": {
+        "type": "concern-page",
+        "settings": {}
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
