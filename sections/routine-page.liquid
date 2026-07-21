@@ -23,7 +23,13 @@
                 <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}"
                     class="routine-button"
                     data-index="{{ forloop.index0 }}">
-                    {{ block.settings.title }}
+
+                      {% if block.settings.card_image %}
+                          {{ block.settings.card_image | image_url: width: 600 | image_tag }}
+                          <span>{{ block.settings.title }}</span>
+                      {% else %}
+                        {{ block.settings.title }}    
+                      {% endif %}
                 </a>
             {% endfor %}
         </div>
@@ -40,8 +46,8 @@
             <div class="routine-card">
 
                 <div class="routine-card__image">
-                    {%  if section.settings.card_image %}
-                        {{ section.settings.card_image
+                    {%  if section.settings.quiz_image %}
+                        {{ section.settings.quiz_image
                             | image_url: width: 600
                             | image_tag
                         }}
@@ -111,8 +117,8 @@
     },
     {
         "type": "image_picker",
-        "id": "card_image",
-        "label": "Routine Card Image"
+        "id": "quiz_image",
+        "label": "Quiz Card Image"
     },
     {
         "type": "text",
@@ -141,6 +147,11 @@
           "type": "text",
           "id": "filter_value",
           "label": "Filter Value"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
         }
       ]
     }

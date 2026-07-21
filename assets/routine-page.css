@@ -71,6 +71,14 @@
     gap: 16px;
 }
 
+.routine-button img{
+    width: 50%;
+    height: 85%;
+}
+.routine-button span{
+    width: 50%;
+}
+
 .routine-button {
     aspect-ratio: 1 / 1;
     height: 90px;
