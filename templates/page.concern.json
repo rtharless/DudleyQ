@@ -1,11 +1,95 @@
 {
-    "sections": {
-      "main": {
-        "type": "concern-page",
-        "settings": {}
-      }
-    },
-    "order": [
-      "main"
-    ]
-  }
+  "sections": {
+    "main": {
+      "type": "concern-page",
+      "blocks": {
+        "block-1": {
+          "type": "concern",
+          "settings": {
+            "title": "Breakage",
+            "filter_value": "Breakage"
+          }
+        },
+        "block-2": {
+          "type": "concern",
+          "settings": {
+            "title": "Curl Definition",
+            "filter_value": "Curl Definition"
+          }
+        },
+        "block-3": {
+          "type": "concern",
+          "settings": {
+            "title": "Damage Repair",
+            "filter_value": "Damage Repair"
+          }
+        },
+        "block-4": {
+          "type": "concern",
+          "settings": {
+            "title": "Dryness",
+            "filter_value": "Dryness"
+          }
+        },
+        "block-5": {
+          "type": "concern",
+          "settings": {
+            "title": "Frizz",
+            "filter_value": "Frizz"
+          }
+        },
+        "block-6": {
+          "type": "concern",
+          "settings": {
+            "title": "Growth",
+            "filter_value": "Growth"
+          }
+        },
+        "block-7": {
+          "type": "concern",
+          "settings": {
+            "title": "Irritation",
+            "filter_value": "Irritation"
+          }
+        },
+        "block-8": {
+          "type": "concern",
+          "settings": {
+            "title": "Oiliness",
+            "filter_value": "Oiliness"
+          }
+        },
+        "block-9": {
+          "type": "concern",
+          "settings": {
+            "title": "Scalp Health",
+            "filter_value": "Scalp Health"
+          }
+        },
+        "block-10": {
+          "type": "concern",
+          "settings": {
+            "title": "Thinning",
+            "filter_value": "Thinning"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6",
+        "block-7",
+        "block-8",
+        "block-9",
+        "block-10"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

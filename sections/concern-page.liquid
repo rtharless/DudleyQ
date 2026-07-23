@@ -1,3 +1,5 @@
+{{ 'concern-page.css' | asset_url | stylesheet_tag }}
+
 <div class="concern-page">
 
     <div class="concern-page__image">
@@ -32,7 +34,49 @@
             {% endfor %}
         </div>
 
+        <span class="concern__heading">
+          {{ section.settings.heading }}
+        </span>
+
+        <div class="concern-page__description">
+            {{ section.settings.description }}
+        </div>
         
+        <div class="second-block">
+            <div class="concern-card">
+
+                <div class="concern-card__image">
+                    {%  if section.settings.quiz_image %}
+                        {{ section.settings.quiz_image
+                            | image_url: width: 600
+                            | image_tag
+                        }}
+                    {% endif %}
+                </div>
+            
+                <div class="concern-card__content">
+            
+                    <span id="concern-card-title" class="uppercase">
+                        {{ section.settings.concern_card_title }}
+                    </span>
+            
+                    <p id="concern-card-description">
+                        {{ section.settings.concern_card_desc }}
+                    </p>
+            
+                    <a
+                        id="concern-card-link"
+                        href="#"
+                        class="concern-card__button">
+                        Take Quiz
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+            <span class="concern-card__arrow">
+                &gt;
+            </span>
+        </div>
         
     </div>
 
@@ -52,6 +96,41 @@
       "id": "eyebrow",
       "label": "Eyebrow",
       "default": "CONCERN PAGE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find Your Perfect Match"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Not sure where to start? Answer a few questions and we'll match you to the right products."
+    },
+    {
+      "type": "text",
+      "id": "concern_heading",
+      "label": "Concern Heading",
+      "default": "Shop by Concern"
+    },
+    {
+        "type": "image_picker",
+        "id": "quiz_image",
+        "label": "Quiz Card Image"
+    },
+    {
+        "type": "text",
+        "id": "concern_card_title",
+        "label": "Concern Card Title",
+        "default": "Skin Type"
+    },
+    {
+        "type": "text",
+        "id": "concern_card_desc",
+        "label": "Concern Card Description",
+        "default": "Our #1 bestseller. Find your perfect match in minutes."
     }
   ],
   "blocks": [
@@ -82,6 +161,76 @@
     {
       "name": "Concern Page",
       "blocks": [
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Breakage",
+            "filter_value":"Breakage"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Curl Definition",
+            "filter_value":"Curl Definition"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Damage Repair",
+            "filter_value":"Damage Repair"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Dryness",
+            "filter_value":"Dryness"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Frizz",
+            "filter_value":"Frizz"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Growth",
+            "filter_value":"Growth"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+            "title": "Irritation",
+            "filter_value":"Irritation"
+          }
+        },
+        {
+            "type": "concern",
+            "settings": {
+                "title": "Oiliness",
+                "filter_value":"Oiliness"
+            }
+        },
+        {
+          "type": "concern",
+          "settings": {
+              "title": "Scalp Health",
+              "filter_value":"Scalp Health"
+          }
+        },
+        {
+          "type": "concern",
+          "settings": {
+              "title": "Thinning",
+              "filter_value":"Thinning"
+          }
+        }
       ]
     }
   ]
