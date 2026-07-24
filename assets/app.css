@@ -1,14 +1,14 @@
 .resp-tabs-list li {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 13px;
     display: inline-block;
-    padding: 13px 15px;
+    padding: 13px 11px !important;
     margin: 0 4px 4px 0;
     list-style: none;
     cursor: pointer;
     float: left;
 }
-.product-item-caption-desc .resp-tabs-list li{
+.resp-tabs-list li{
     padding: 13px 15px;
 }
 .resp-tabs-list li i, .resp-tabs-container i {
@@ -137,7 +137,7 @@ h2.resp-tab-active span.resp-arrow {
 
 /*-----------Accordion styles-----------*/
 h2.resp-tab-active {
-    background: #DBDBDB;/* !important;*/
+    background: #DBDBDB;
 }
 
 .resp-easy-accordion h2.resp-accordion {
@@ -149,7 +149,7 @@ h2.resp-tab-active {
 }
 
 .resp-easy-accordion .resp-tab-content:last-child {
-    border-bottom: 1px solid #c1c1c1;/* !important;*/
+    border-bottom: 1px solid #c1c1c1;
 }
 
 .resp-jfit {
@@ -162,4 +162,21 @@ h2.resp-tab-active {
 }
 
 h2.resp-accordion:first-child {
-    border-top: 1px solid #c1c1c1;/* !important;*/
+    border-top: 1px solid #c1c1c1;
+}
+.resp-tab-active {
+    border-top-color: #ffb687 !important;
+    background-color: white !important;
+}
+.resp-tab-item{
+    background-color: rgb(245, 245, 245);
+}
+.resp-tabs-list {
+    padding-left: 0;
+}
+.group-block-content{
+    height: auto !important;
+}
+.additional-padding{
+    padding: 30px 30px 30px 45px;
+}

@@ -77,6 +77,13 @@
   >
     {{- children -}}
   </div>
+
+  {% if block_id contains '_product-details' %}
+    {%  render 'product-tabs',
+      product: closest.product
+    %}
+  {% endif %}  
+  
 </div>
 
 {% stylesheet %}

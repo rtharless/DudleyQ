@@ -1,0 +1,71 @@
+{% liquid
+    assign tabs = ''
+  
+    if product.metafields.custom.benefit_outcome != blank
+      assign tabs = tabs | append: 'Key Benefits|custom.benefit_outcome,'
+    endif
+  
+    if product.metafields.custom.how_to_use != blank
+      assign tabs = tabs | append: 'How To Use|custom.how_to_use,'
+    endif
+  
+    if product.metafields.custom.key_ingredients != blank
+      assign tabs = tabs | append: 'Key Ingredients|custom.key_ingredients,'
+    endif
+  
+    assign tabs = tabs | split: ','
+  %}
+  
+  {% if tabs.size > 0 %}
+  <div class="product-description-tabs">
+  
+      <ul class="resp-tabs-list">
+  
+          {% for tab in tabs %}
+              {% unless tab == blank %}
+                  {% assign item = tab | split: "|" %}
+                  <li
+                      class="resp-tab-item{% if forloop.first %} resp-tab-active{% endif %}"
+                      data-tab="{{ forloop.index0 }}"
+                  >
+                      {{ item[0] }}
+                  </li>
+              {% endunless %}
+          {% endfor %}
+  
+      </ul>
+  
+      <div class="resp-tabs-container">
+  
+          {% for tab in tabs %}
+              {% unless tab == blank %}
+                  {% assign item = tab | split: "|" %}
+  
+                  <div
+                      class="resp-tab-content{% if forloop.first %} resp-tab-content-active{% endif %}{% if item[1] == 'custom.how_to_use' or item[1] == 'custom.benefit_outcome' %} additional-padding{% endif %}"
+                      data-tab="{{ forloop.index0 }}"
+                  >
+  
+                      {% case item[1] %}
+  
+                          {% when 'custom.benefit_outcome' %}
+                              {{ product.metafields.custom.benefit_outcome | metafield_tag }}
+  
+                          {% when 'custom.how_to_use' %}
+                              {{ product.metafields.custom.how_to_use | metafield_tag }}
+  
+                          {% when 'custom.key_ingredients' %}
+                              {{ product.metafields.custom.key_ingredients | metafield_tag }}
+  
+                      {% endcase %}
+  
+                  </div>
+  
+              {% endunless %}
+          {% endfor %}
+  
+      </div>
+  
+  </div>
+  {% endif %}
+  
