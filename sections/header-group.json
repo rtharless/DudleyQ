@@ -23,7 +23,7 @@
             "font_size": "1.125rem",
             "weight": "",
             "letter_spacing": "normal",
-            "case": "none",
+            "case": "uppercase",
             "text_color": ""
           },
           "blocks": {}
@@ -36,7 +36,7 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "background_color": "#c23d3d",
+        "background_color": "#1B4438",
         "divider_width": 1,
         "divider_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 12,
