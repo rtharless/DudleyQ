@@ -1,3 +1,48 @@
+:root{
+    --menu-font-weight: 600;
+    --menu-font-size-desktop: 11.5px;
+    --menu-font-size: 11.5px;
+    --font-family-mulish: "Mulish", sans-serif;
+    --font-family-eb-garamond: "EB Garamond", serif;
+}
+
+.announcement-bar__slides{
+    padding: 9px 20px;
+}
+p.announcement-bar__text{
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    font-family: var(--font-family-mulish);
+}
+.header__row--bottom .header__columns{
+    border-top: 1px solid #ECE7DC;
+    border-bottom: 1px solid #ECE7DC;
+}
+.header__row--bottom .spacing-style{
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.header__row--top{
+    padding: 20px 44px 0;
+}
+.header__columns{
+    --padding-block-start: 0px !important;
+}
+.menu-list__list-item a:hover{
+    color:#B38646 !important;
+}
+.menu-list__link {
+    letter-spacing: 2px;
+}
+.menu-list li:not(:last-child) {
+    margin-right: 38px;
+}
+.menu-list__link-title{
+    padding-inline:0px !important;
+    font-family: var(--font-family-mulish);
+}
+
 .resp-tabs-list li {
     font-weight: 600;
     font-size: 13px;

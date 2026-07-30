@@ -383,7 +383,7 @@ p:empty {
 .page-width-content {
   /* NOTE: This results in a page width of 1400px because of how we set up margins with grid */
   --page-content-width: var(--narrow-page-width);
-  --page-width: calc(var(--page-content-width) + (var(--page-margin) * 2));
+  --page-width: var(--narrow-content-width);
 }
 
 .page-width-content {
