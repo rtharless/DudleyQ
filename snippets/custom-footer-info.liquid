@@ -4,7 +4,7 @@
     {% if section.settings.footer_logo != blank %}
       {{
         section.settings.footer_logo
-        | image_url: width: 300
+        | image_url: width: 103
         | image_tag: alt: 'Footer Logo'
       }}
     {% endif %}
@@ -71,19 +71,4 @@
       <span><a href="{{ section.settings.tiktok_url }}">TikTok</a></span>
     </div>
   </div>
-
-  
-  <!-- Contact -->
-  <div class="footer-column">
-
-    <h3>
-      {{ section.settings.contact_heading }}
-    </h3>
-
-    <div class="rte">
-      {{ section.settings.contact_text }}
-    </div>
-
-  </div>
-
 </div>
