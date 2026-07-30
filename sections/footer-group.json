@@ -148,6 +148,31 @@
       ],
       "name": "t:names.footer",
       "settings": {
+        "footer_logo": "shopify://shop_images/Dudley_Logo_Dark_Blue.avif",
+        "guarantee_text": "<p>Professional hair care, crafted to strengthen, nourish, and revive every strand.</p>",
+        "heading1": "Shop",
+        "shop_link_1_text": "Shampoo",
+        "shop_link_1_url": "",
+        "shop_link_2_text": "Conditioner",
+        "shop_link_2_url": "",
+        "shop_link_3_text": "Styling",
+        "shop_link_3_url": "",
+        "shop_link_4_text": "Treatments",
+        "shop_link_4_url": "",
+        "heading2": "Help",
+        "help_link_1_text": "Shipping",
+        "help_link_1_url": "",
+        "help_link_2_text": "Returns",
+        "help_link_2_url": "",
+        "help_link_3_text": "Product guarantee",
+        "help_link_3_url": "",
+        "help_link_4_text": "Contact us",
+        "help_link_4_url": "",
+        "heading3": "Follow",
+        "instagram_url": "https://instagram.com/dudleyqbeauty",
+        "facebook_url": "https://facebook.com/dudleyq",
+        "youtube_url": "https://www.youtube.com/@dudleyqtv4423",
+        "tiktok_url": "",
         "section_width": "page-width",
         "gap": 20,
         "background_color": "{{ settings.color_palette.background }}",
@@ -157,7 +182,6 @@
     },
     "footer_utilities_jLGE8U": {
       "type": "footer-utilities",
-      "disabled": true,
       "blocks": {
         "footer_copyright_jweRK8": {
           "type": "footer-copyright",
@@ -204,6 +228,7 @@
         "footer_policy_list_VCdnpa",
         "social_links_Ew63Kq"
       ],
+      "disabled": true,
       "name": "t:names.utilities",
       "settings": {
         "section_width": "page-width",
