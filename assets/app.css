@@ -86,6 +86,7 @@ p.announcement-bar__text{
 .menu-list__link-title{
     padding-inline:0px !important;
     font-family: var(--font-family-mulish);
+    color: var(--color-green);
 }
 
 .resp-tabs-list li {
