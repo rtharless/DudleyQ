@@ -102,7 +102,7 @@
 }
 .newsletter-block .email-signup__button{
     background: var(--color-green);
-    color: var(--color-offwhite);
+    color: var(--color-offwhite) !important;
     border-width: medium;
     border-style: none;
     border-color: currentcolor;
@@ -194,27 +194,7 @@
         align-items: center;
         justify-content: center;
     }
-    .newsletter-box {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: stretch;
-    }
-
-    .newsletter-box input[type="email"] {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .newsletter-box button {
-        width: auto;
-        flex-shrink: 0;
-    }
-
-    .footer-payment-grid{
-        text-align: center;
-    }
-    .footer-payments{
-        flex-wrap: wrap;
+    .newsletter-block .email-signup__button{
+        width: 25%;
     }
 }
