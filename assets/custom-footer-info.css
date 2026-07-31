@@ -1,5 +1,5 @@
 .footer-info-grid{
-    background:#F6F6F3;
+    background:var(--color-offwhite);
     color:#938682;
     font-family: var(--font-family-mulish);
 }
@@ -18,15 +18,15 @@
 
 .footer-column .footer-column-heading{
     font-size:10.5px;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
     text-transform:uppercase;
     margin-bottom: 14px;
     letter-spacing: 1.8px;
-    color: #1B4438;
+    color: var(--color-green);
 }
 .footer-column .footer-column-content{
     font-size:13px;
-    font-weight: 400;
+    font-weight: var(--weight-regular);
     color: #5C5147;
     display: grid;
     gap: 9px;
@@ -34,7 +34,7 @@
 .footer-column .footer-column-logo-content{
     font-size:12.5px;
     line-height: 1.7;
-    font-weight: 400;
+    font-weight: var(--weight-regular);
     color: #938682;
     max-width:30ch;
     margin: 0px;
@@ -52,40 +52,77 @@
     line-height: 2;
 } */
 
-.newsletter-box{
-    display:flex;
-    overflow:hidden;
-    border-radius:40px;
-    margin-bottom:30px;
+.newsletter-block{
+    background: var(--color-peach) !important;
+    padding: 44px;
+    text-align: center;
+}
+.newsletter-block h2{
+    font-family: var(--font-family-eb-garamond) !important;
+    font-size: 28px !important;
+    color: var(--color-green) !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 8px;
+    font-weight: var(--weight-regular) !important;
 }
 
-.newsletter-box input{
-    flex:1;
-    border:none;
-    padding: 16px 0px 16px 26px;
-    font-size: 16px;
-    width: 175px;
-    color: #4a4031;
+.newsletter-block .text-block p{
+    font-family: var(--font-family-mulish);
+    font-size: 13px;
+    color: #7A6A52;
+    letter-spacing: 0.3px;
+    font-weight: var(--weight-regular);
+    margin-bottom: 20px;
 }
-
-.newsletter-box button{
-    background:#ffb687;
-    border:none;
-    padding:0 28px;
-    font-weight:700;
-    cursor:pointer;
-    color: white;
-    font-size: 14px;
+.newsletter-block .email-signup__input{
+    flex: 1 1 0%;
+    border: 1px solid #E2CBB2;
+    background: var(--color-page-background);
+    border-radius: 2px;
+    padding: 12px 14px;
+    font-size: 13px !important;
+    font-family: var(--font-family-mulish);
+    color: #2C2A28;
 }
-
-.footer-social{
-    display:flex;
-    gap:20px;
+.newsletter-block .email-signup__input:focus-visible{
+    border: 1px solid var(--color-green);
 }
-
-.footer-social svg{
-    width:22px;
-    height:22px;
+.newsletter-block .email-signup__input::placeholder{
+    color: #938682;
+}
+.email-signup__input-group{
+    border: none !important;
+    display: flex;
+    gap: 10px;
+    background: none;
+    height: 42px;
+}
+.email-signup__input.paragraph{
+    outline: none !important;
+}
+.newsletter-block .email-signup__button{
+    background: var(--color-green);
+    color: var(--color-offwhite);
+    border-width: medium;
+    border-style: none;
+    border-color: currentcolor;
+    border-image: initial;
+    border-radius: 2px;
+    padding: 0px 24px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+}
+.newsletter-block .text-block{
+    --max-width:100% !important;
+    --text-align: center !important;
+}
+.newsletter-block .email-signup-block{
+    max-width: 420px;
+    margin: 0px auto;
+    height: 42px;
 }
 
 .footer-bottom{
@@ -101,7 +138,7 @@
 
 .footer-payment-grid{
     font-family: var(--font-family-mulish);
-    background:#1B4438;
+    background:var(--color-green);
     color:#CBD8D0;
     display: flex;
     padding: 13px 44px;
@@ -109,7 +146,7 @@
     align-items: center;
     text-transform: uppercase;
     font-size: 10.5px;
-    font-weight: 400;
+    font-weight: var(--weight-regular);
     letter-spacing: 1px;
 }
 .footer-payment-grid .footer-text-right{
@@ -175,8 +212,6 @@
     }
 
     .footer-payment-grid{
-        display: grid;
-        padding: 70px 3.5rem;
         text-align: center;
     }
     .footer-payments{

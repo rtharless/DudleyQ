@@ -44,11 +44,11 @@
 
     <div
       class="{{ input_group_classes }}"
-      style="
+      {% comment %} style="
         --border-width: {% if is_custom_input %}{{ block_settings.border_width }}px{% else %}var(--style-border-width-inputs){% endif %};
         --border-radius: {% if is_custom_input %}{{ block_settings.border_radius }}px{% else %}var(--style-border-radius-inputs){% endif %};
         {% if is_custom_input %}{% render 'input-custom-styles', block_settings: block_settings %}{% endif %}
-      "
+      " {% endcomment %}
     >
       <label
         for="EmailInput-{{ block.id }}"
@@ -75,7 +75,7 @@
         {% endif %}
       >
       <button
-        class="email-signup__button {% if block_settings.integrated_button or block_settings.border_style == 'underline' %}email-signup__button--integrated{% endif %} email-signup__button--{{ block_settings.display_type }} {{ block_settings.button_type_preset }} {{ block_settings.style_class }} {{ block_settings.style_class }}--{{ block.id }}"
+        class="email-signup__button {{ block_settings.button_type_preset }} {{ block_settings.style_class }} {{ block_settings.style_class }}--{{ block.id }}"
         {% if block_settings.display_type != 'text' %}
           aria-label="{{ 'actions.sign_up' | t }}"
         {% endif %}

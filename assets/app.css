@@ -2,17 +2,43 @@
     --menu-font-weight: 600;
     --menu-font-size-desktop: 11.5px;
     --menu-font-size: 11.5px;
-    --font-family-mulish: "Mulish", sans-serif;
-    --font-family-eb-garamond: "EB Garamond", serif;
+    --font-family-mulish: "Mulish", system-ui, sans-serif;
+    --font-family-eb-garamond: "EB Garamond", Georgia, serif;
+    --color-green: #1B4438;
+    --color-gold: #B38646;
+    --color-peach: #F5E0CF;
+    --color-mint: #EAF4E6;
+    --color-offwhite: #F6F6F3;
+    --color-warmgray: #938682;
+    --color-page-background: #FFFFFF;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
 }
-
+body{
+    font-family: var(--font-family-mulish) !important; 
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-family-eb-garamond) !important;
+    color: var(--color-green) !important;
+}
+.price{
+    font-family: var(--font-family-eb-garamond) !important;
+    color: #938682;
+}
+a p{
+    color: var(--color-green) !important;
+}
 .announcement-bar__slides{
     padding: 9px 20px;
 }
 p.announcement-bar__text{
     font-size: 10.5px;
-    font-weight: 500;
+    font-weight: var(--weight-medium);
     letter-spacing: 2.2px;
+    color: var(--color-offwhite);
     font-family: var(--font-family-mulish);
 }
 .header__row{
@@ -49,7 +75,7 @@ p.announcement-bar__text{
     text-transform: uppercase;
 }
 .menu-list__list-item a:hover{
-    color:#B38646 !important;
+    color:var(--color-gold) !important;
 }
 .menu-list__link {
     letter-spacing: 2px;
@@ -63,7 +89,7 @@ p.announcement-bar__text{
 }
 
 .resp-tabs-list li {
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     font-size: 13px;
     display: inline-block;
     padding: 13px 11px !important;
@@ -126,7 +152,7 @@ h2.resp-accordion {
     border-top: 0px solid #c1c1c1;
     margin: 0px;
     padding: 10px 15px;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
 }
 
 h2.resp-tab-active {
@@ -251,8 +277,8 @@ h2.resp-accordion:first-child {
     margin-right: 4px;
 }
 .cart-bubble__background{
-    background: #B38646 !important;
-    color: #FFFFFF;
+    background: var(--color-gold) !important;
+    color: var(--color-page-background);
     font-size: 9px;
     width: 14px;
     height: 14px;
