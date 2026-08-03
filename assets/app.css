@@ -10,6 +10,7 @@
     --color-mint: #EAF4E6;
     --color-offwhite: #F6F6F3;
     --color-warmgray: #938682;
+    --color-pdp-price: #2C2A28;
     --color-page-background: #FFFFFF;
     --weight-light: 300;
     --weight-regular: 400;
@@ -24,9 +25,16 @@ h1,h2,h3,h4,h5,h6{
     font-family: var(--font-family-eb-garamond) !important;
     color: var(--color-green) !important;
 }
-.price{
+p, input, .button, .cart-secondary-typography, .cart-primary-typography{
+    font-family: var(--font-family-mulish) !important;
+}
+.product-card__content .price{
+    font-family: var(--font-family-mulish) !important;
+    color: var(--color-warmgray);
+}
+.group-block-content .price{
     font-family: var(--font-family-eb-garamond) !important;
-    color: #938682;
+    color: var(--color-pdp-price);
 }
 a p{
     color: var(--color-green) !important;
