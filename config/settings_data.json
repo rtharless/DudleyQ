@@ -10,8 +10,8 @@
 {
   "current": {
     "logo": "shopify://shop_images/Dudley_Logo_New_Brown_Trans_500_x_320_px.png",
-    "logo_height": 38,
-    "logo_height_mobile": 28,
+    "logo_height": 50,
+    "logo_height_mobile": 40,
     "page_text_color": "#63584C",
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
