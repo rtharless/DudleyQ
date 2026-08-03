@@ -1212,7 +1212,7 @@ results-list[initialized] {
 /* Dialog */
 .dialog-modal {
   border: none;
-  box-shadow: var(--shadow-popover);
+  box-shadow: none;
 
   @media screen and (min-width: 750px) {
     border-radius: var(--style-border-radius-popover);
@@ -1320,7 +1320,7 @@ button.shopify-payment-button__button--unbranded {
     background-color var(--animation-speed) var(--animation-easing);
   cursor: pointer;
   width: fit-content;
-  box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color);
+  box-shadow: none;
   padding-block: var(--button-padding-block);
   padding-inline: var(--button-padding-inline);
 }
@@ -3542,12 +3542,12 @@ fly-to-cart.fly-to-cart--sticky {
 @keyframes thumbnail-selected {
   0%,
   100% {
-    box-shadow: 0 0 0 2px transparent;
+    box-shadow: none;
     scale: 0.9;
   }
 
   50% {
-    box-shadow: 0 0 0 2px #000;
+    box-shadow: none;
     scale: 1;
   }
 }
@@ -3626,7 +3626,7 @@ fly-to-cart.fly-to-cart--sticky {
 
 .top-shadow::before {
   content: '';
-  box-shadow: 0 0 10px var(--color-shadow);
+  box-shadow: none;
   position: absolute;
   z-index: var(--layer-lowest);
   inset: 0;
@@ -3641,7 +3641,7 @@ fly-to-cart.fly-to-cart--sticky {
 
 .bottom-shadow::before {
   content: '';
-  box-shadow: 0 0 10px var(--color-shadow);
+  box-shadow: none;
   position: absolute;
   z-index: var(--layer-lowest);
   inset: 0;
@@ -3887,12 +3887,8 @@ text-component {
     opacity: 0;
     transition: opacity var(--animation-speed-slow) var(--animation-easing);
     pointer-events: none;
-    background-image: linear-gradient(
-      -85deg,
-      var(--shimmer-text-color) 10%,
-      var(--shimmer-color-light) 50%,
-      var(--shimmer-text-color) 90%
-    );
+    background-image: none;
+    background-color: var(--shimmer-text-color);
     background-clip: text;
     background-size: 200% 100%;
     background-position: 100% 0;
