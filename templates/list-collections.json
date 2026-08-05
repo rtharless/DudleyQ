@@ -176,33 +176,6 @@
     },
     "collection_type_list": {
       "type": "collection-type-list",
-      "blocks": {
-        "hair": {
-          "type": "collection_type",
-          "settings": {
-            "heading": "Hair Care",
-            "collections": [
-              "shampoos",
-              "conditioners",
-              "hair-oils"
-            ]
-          }
-        },
-        "skin": {
-          "type": "collection_type",
-          "settings": {
-            "heading": "Skin Care",
-            "collections": [
-              "cleansers",
-              "serums"
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "hair",
-        "skin"
-      ],
       "settings": {}
     }
   },
