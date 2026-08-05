@@ -163,11 +163,13 @@
     </div>
     <div class="curated-edits-cols">
       <div class="curated-card">
-          <img
-            src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
-            alt="Category"
-            width="400"
+        {% assign collection1 = collections['camilles-choice'] %}
+        <img
+            src="{{ collection1.featured_image | image_url: width: 300 }}"
+            alt="{{ collection1.title }}"
+            width="300"
             height="300"
+            loading="lazy"
           >
           <div class="curated-card-info">
             <h3><a href="{{ routes.collections_url }}/camilles-choice">Camille's Choice</a></h3>
@@ -175,12 +177,14 @@
           </div>  
       </div>
       <div class="curated-card">
+        {% assign collection2 = collections['confident-coils'] %}
         <img
-          src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
-          alt="Category"
-          width="400"
-          height="300"
-        >
+            src="{{ collection2.featured_image | image_url: width: 300 }}"
+            alt="{{ collection2.title }}"
+            width="300"
+            height="300"
+            loading="lazy"
+          >
         <div class="curated-card-info">
           <h3><a href="{{ routes.collections_url }}/confident-coils">Confident Curls</a></h3>
           <p>A full routine for coils, curls and waves.</p>
