@@ -618,4 +618,7 @@ h2.resp-accordion:first-child {
     .collection-card-group, .curated-edits-cols {
         display: block !important;
     }
+    .curated-card-3{
+        margin-top: 20px;
+    }
 }
