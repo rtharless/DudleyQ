@@ -82,71 +82,6 @@
           "block_order": [
             "text_fRMQMR"
           ]
-        },
-        "static-collection-card": {
-          "type": "_collection-card",
-          "name": "t:names.collection_card",
-          "static": true,
-          "settings": {
-            "placement": "below_image",
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
-            "collection_card_gap": 8,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0
-          },
-          "blocks": {
-            "collection_title_7YgBPU": {
-              "type": "collection-title",
-              "name": "t:names.collection_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "text_color": "{{ settings.color_palette.foreground }}",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "name": "t:names.collection_card_image",
-              "static": true,
-              "settings": {
-                "image_ratio": "portrait",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_title_7YgBPU"
-          ]
         }
       },
       "block_order": [
@@ -157,6 +92,7 @@
       ],
       "name": "Collection list",
       "settings": {
+        "collection_desc": "<p>Four decades of professional formulas — hair, skin and colour — organised the way you actually shop.</p>",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -176,6 +112,28 @@
     },
     "collection_type_list": {
       "type": "collection-type-list",
+      "blocks": {
+        "collection_tiles_VaCfQq": {
+          "type": "collection_tiles",
+          "settings": {
+            "heading": "Most Shopped",
+            "collection": "repair-restore",
+            "description": "<p>The keratin system that built the brand — cleanse, condition, rebuild.</p>"
+          }
+        },
+        "collection_tiles_3YgBcT": {
+          "type": "collection_tiles",
+          "settings": {
+            "heading": "BEST VALUE",
+            "collection": "sets",
+            "description": "<p>Complete regimens paired at a saving — the easiest place to start.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tiles_VaCfQq",
+        "collection_tiles_3YgBcT"
+      ],
       "settings": {}
     }
   },
