@@ -1,0 +1,281 @@
+<div
+    class="
+      section
+      section-collection-list
+      section--{{ section.settings.section_width }}
+      {% if section.settings.background_color != blank %}color-custom-{{ section.id }}{% endif %}
+      section-resource-list
+      spacing-style
+      gap-style
+    "
+  >
+<div class="collection-name-list">
+    <div class="title">
+      {% assign categories = "All,Hair Care,Cosmetics,Skin & Body,Sets & Gifts, Our Story" | split: "," %}
+      
+      {% for title in categories %}
+          <a href="#">
+            {{ title }}
+          </a>
+      {% endfor %}
+    </div>
+    <div class="sort">
+      <span>Sort: Featured</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+  
+    </div>
+</div>
+  
+  <div class="header-card">
+    <div class="left">
+      <div class="col-1">
+        <span>Most Shopped</span>
+        <h2>Protein Power</h2>
+        <p>The keratin system that built the brand — cleanse, condition, rebuild.</p>
+        <div class="product-count">
+          <span>6 products</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 12H18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M13 7L18 12L13 17"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="col-2">
+        <img
+          src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
+          alt="Category"
+          width="400"
+          height="300"
+        >
+      </div>
+    </div>
+    <div class="right">
+      <div class="col-1">
+        <span>Best Value</span>
+        <h2>Sets & Duos</h2>
+        <p>Complete regimens paired at a saving — the easiest place to start.</p>
+        <div class="product-count">
+          <span>6 products</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 12H18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M13 7L18 12L13 17"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="col-2">
+        <img
+          src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
+          alt="Category"
+          width="400"
+          height="300"
+        >
+      </div>
+    </div>
+  
+  </div>
+  
+  {% assign hair_items = "
+    shampoos|Shampoos|Cleansers for every hair type, including sulfate-free.#
+    conditioners|Conditioners|Rinse-out and leave-in, to detangle and seal.#
+    hair-treatments|Treatments & Masques|Deep repair for stressed, over-processed hair.#
+    styling-products|Styling Products|Creme press, curl activators, sprays and gels.#
+    hair-scalp-dressings|Scalp Care|Soothe, balance and clarify at the root.#
+    repair-restore|Revival · Protein Power|Cleansers for every hair type, including sulfate-free.
+    " | strip | split: "#" %}
+  
+  <div class="collection-group">
+    <div class="collection-group-heading">
+      <h2>Hair Care</h2><span>6 Collections</span>
+    </div>
+    {% render 'collection-card-group', 
+        items: hair_items  %}
+  </div>
+
+  {% assign cosmetics_items = "
+    lips|Lip Color|Lipstick, gloss, lip candy, liner and Painted Velvet.#
+    eyes|Eyes|Shadows, shimmers, liners and brow.#
+    blushers|Blushers|Buildable powder colour in four shades.#
+    foundations|Complexion|Translucent powders, concealer and vanishing creme.#
+    cosmetic-accessories|Brushes & Cases|Brush sets, sacs and the signature compact.
+    " | strip | split: "#" %}
+  
+  <div class="collection-group">
+    <div class="collection-group-heading">
+      <h2>Cosmetics</h2><span>5 Collections</span>
+    </div>
+    {% render 'collection-card-group', 
+        items: cosmetics_items  %}
+  </div>
+
+  {% assign skin_items = "
+    cleansers|Facial Cleansers|Gels, clays, lotions and the deep pore scrub.#
+    moisturizers|Serums & Moisturisers|Radiance serum, toning mist and oil control.#
+    hand-sanitizer|Body & Bath|Cocoa butter, bubble bath and hand care.#
+    skin-care|Dancing Feet|Soaks, salves and sprays for tired feet.#
+    skin-care|Fragrance|Angel Breeze and DQ Sport.
+    " | strip | split: "#" %}
+  
+  <div class="collection-group">
+    <div class="collection-group-heading">
+      <h2>Skin & Body</h2><span>5 Collections</span>
+    </div>
+    {% render 'collection-card-group', 
+        items: skin_items  %}
+  </div>
+
+  {% assign sets_items = "
+    sets|Sets & Duos|Complete regimens paired at a saving.#
+    dudley-swag|Dudley Swag|Bucket hats, fans and the style magazine.#
+    dudley-history|Dudley History|Fifty years of the brand, in print and on film.
+    " | strip | split: "#" %}
+  
+  <div class="collection-group">
+    <div class="collection-group-heading">
+      <h2>Sets, Gifts & Our Story</h2><span>3 Collections</span>
+    </div>
+    {% render 'collection-card-group', 
+        items: sets_items  %}
+  </div>
+
+  <div class="curated-edits">
+    <div class="curated-edits-heading">
+      <h2>Curated Edits</h2>
+    </div>
+    <div class="curated-edits-cols">
+      <div class="curated-card">
+          <img
+            src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
+            alt="Category"
+            width="400"
+            height="300"
+          >
+          <div class="curated-card-info">
+            <h3>Camille's Choice</h3>
+            <p>Hand-picked by our lead educator.</p>
+          </div>  
+      </div>
+      <div class="curated-card">
+        <img
+          src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
+          alt="Category"
+          width="400"
+          height="300"
+        >
+        <div class="curated-card-info">
+          <h3>Confident Curls</h3>
+          <p>A full routine for coils, curls and waves.</p>
+        </div>  
+      </div>
+      <div class="curated-card-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M8 5L9.5 3H14.5L16 5H19C20.1 5 21 5.9 21 7V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V7C3 5.9 3.9 5 5 5H8Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle
+            cx="12"
+            cy="12.5"
+            r="3.5"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+        </svg>
+        <h3>These two need people, not packshots</h3>
+        <p>Camille's Choice should carry a real portrait of Camille; Confident Curls wants a model shot. Everything above works with the packshots you already have.</p>
+      </div>
+    </div>
+  </div>
+</div>  
+{% comment %} {% schema %}
+{
+  "name": "Collection Type List",
+  "tag": "section",
+  "class": "section-collection-type-list",
+  "max_blocks": 20,
+  "blocks": [
+    {
+      "type": "collection_type",
+      "name": "Collection Type",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Hair Care"
+        },
+        {
+          "type": "collection_list",
+          "id": "collections",
+          "label": "Collections"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Type List"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}

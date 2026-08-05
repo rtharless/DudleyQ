@@ -1,0 +1,58 @@
+<div class="collection-card-group">
+    <!-- Colleciton Loop-->
+    {% for item in items %}
+        {% assign parts = item | split: "|" %}
+        {% assign handle = parts[0] | strip %}
+        {% assign title = parts[1] | strip %}
+        {% assign desc = parts[2] | strip %}
+        {% assign collection = collections[handle] %}
+    
+        {% if collection %}    
+        <div class="collection-card">
+        <div class="img-section">
+            {% if collection.featured_image %}
+            <img
+                src="{{ collection.featured_image | image_url: width: 300 }}"
+                alt="{{ title }}"
+                width="300"
+                height="300"
+                loading="lazy"
+              >
+            {% endif %}
+        </div>
+        <div class="collection-info">
+            <div class="collection-info-details">
+            <h3>{{title}}</h3>
+            <p>{{desc}}</p>
+            <span>{{ collection.products_count }} Products</span>
+            </div>
+            <div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                d="M5 12H18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                />
+                <path
+                d="M13 7L18 12L13 17"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                />
+            </svg>
+            </div>
+        </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+  </div>
