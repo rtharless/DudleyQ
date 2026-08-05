@@ -117,14 +117,16 @@
           "type": "collection_tiles",
           "settings": {
             "heading": "Most Shopped",
+            "title": "Protein Power",
             "collection": "repair-restore",
-            "description": "<p>The keratin system that built the brand — cleanse, condition, rebuild.</p>"
+            "description": "<p>Products for breakage and to restore and revive hair back to health.</p>"
           }
         },
         "collection_tiles_3YgBcT": {
           "type": "collection_tiles",
           "settings": {
             "heading": "BEST VALUE",
+            "title": "Sets & Duos",
             "collection": "sets",
             "description": "<p>Complete regimens paired at a saving — the easiest place to start.</p>"
           }

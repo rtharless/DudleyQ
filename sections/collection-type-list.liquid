@@ -14,7 +14,7 @@
       {% assign categories = "All,Hair Care,Cosmetics,Skin & Body,Sets & Gifts, Our Story" | split: "," %}
       
       {% for title in categories %}
-          <a href="#">
+          <a href="#" class="collection-tab collection-tab_{{ forloop.index }} {% if forloop.first %} active{% endif %}">
             {{ title }}
           </a>
       {% endfor %}
@@ -49,10 +49,11 @@
         <div class="left">
         <div class="col-1">
             <span>{{ block.settings.heading }}</span>
-            <h2>{{ collection.title }}</h2>
+            <h2><a href="{{ collection.url }}">{{ block.settings.title }}</a></h2>
             {{ block.settings.description }}
-            <div class="product-count">
-            <span>6 products</span>
+            <div class="">
+            <a href="{{ collection.url }}" class="product-count">    
+            <span>{{ collection.products_count }} products</span>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -75,15 +76,19 @@
                 stroke-linejoin="round"
                 />
             </svg>
+            </a>
             </div>
         </div>
         <div class="col-2">
-            <img
-            src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
-            alt="Category"
-            width="400"
-            height="300"
-            >
+            {% if collection.featured_image %}
+                <img
+                    src="{{ collection.featured_image | image_url: width: 300 }}"
+                    alt="{{ collection.title }}"
+                    width="300"
+                    height="300"
+                    loading="lazy"
+                  >
+                {% endif %}
         </div>
         </div>
     {% endfor %}
@@ -98,7 +103,7 @@
     repair-restore|Revival · Protein Power|Cleansers for every hair type, including sulfate-free.
     " | strip | split: "#" %}
   
-  <div class="collection-group">
+  <div class="collection-group active collection-panel_2">
     <div class="collection-group-heading">
       <h2>Hair Care</h2><span>6 Collections</span>
     </div>
@@ -114,7 +119,7 @@
     cosmetic-accessories|Brushes & Cases|Brush sets, sacs and the signature compact.
     " | strip | split: "#" %}
   
-  <div class="collection-group">
+  <div class="collection-group active collection-panel_3">
     <div class="collection-group-heading">
       <h2>Cosmetics</h2><span>5 Collections</span>
     </div>
@@ -125,12 +130,12 @@
   {% assign skin_items = "
     cleansers|Facial Cleansers|Gels, clays, lotions and the deep pore scrub.#
     moisturizers|Serums & Moisturisers|Radiance serum, toning mist and oil control.#
-    hand-sanitizer|Body & Bath|Cocoa butter, bubble bath and hand care.#
-    skin-care|Dancing Feet|Soaks, salves and sprays for tired feet.#
-    skin-care|Fragrance|Angel Breeze and DQ Sport.
+    |Body & Bath|Cocoa butter, bubble bath and hand care.#
+    |Dancing Feet|Soaks, salves and sprays for tired feet.#
+    |Fragrance|Angel Breeze and DQ Sport.
     " | strip | split: "#" %}
   
-  <div class="collection-group">
+  <div class="collection-group active collection-panel_4">
     <div class="collection-group-heading">
       <h2>Skin & Body</h2><span>5 Collections</span>
     </div>
@@ -144,7 +149,7 @@
     dudley-history|Dudley History|Fifty years of the brand, in print and on film.
     " | strip | split: "#" %}
   
-  <div class="collection-group">
+  <div class="collection-group active collection-panel_5">
     <div class="collection-group-heading">
       <h2>Sets, Gifts & Our Story</h2><span>3 Collections</span>
     </div>
@@ -165,7 +170,7 @@
             height="300"
           >
           <div class="curated-card-info">
-            <h3>Camille's Choice</h3>
+            <h3><a href="{{ routes.collections_url }}/camilles-choice">Camille's Choice</a></h3>
             <p>Hand-picked by our lead educator.</p>
           </div>  
       </div>
@@ -177,7 +182,7 @@
           height="300"
         >
         <div class="curated-card-info">
-          <h3>Confident Curls</h3>
+          <h3><a href="{{ routes.collections_url }}/confident-coils">Confident Curls</a></h3>
           <p>A full routine for coils, curls and waves.</p>
         </div>  
       </div>
@@ -211,6 +216,42 @@
     </div>
   </div>
 </div>  
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.collection-tab');
+        const panels = document.querySelectorAll('.collection-group');
+      
+        // Show all panels initially (All tab)
+        panels.forEach(panel => panel.classList.add('active'));
+      
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function (e) {
+            e.preventDefault();
+      
+            // Active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+      
+            // Extract tab number (e.g. collection-tab_3 -> 3)
+            const tabNo = this.className.match(/collection-tab_(\d+)/)[1];
+      
+            if (tabNo === '1') {
+              // "All" - show every panel
+              panels.forEach(panel => panel.classList.add('active'));
+            } else {
+              // Hide all panels
+              panels.forEach(panel => panel.classList.remove('active'));
+      
+              // Show matching panel
+              const panel = document.querySelector('.collection-panel_' + tabNo);
+              if (panel) {
+                panel.classList.add('active');
+              }
+            }
+          });
+        });
+      });
+</script>
 {% schema %}
 {
   "name": "Collection Featured Tiles",
@@ -228,6 +269,12 @@
           "label": "Heading",
           "default": "Most Shopped"
         },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Protein Power"
+          },
         {
             "type": "collection",
             "id": "collection",

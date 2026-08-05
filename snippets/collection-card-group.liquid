@@ -10,7 +10,7 @@
         {% if collection %}    
         <div class="collection-card">
         <div class="img-section">
-            {% if collection.featured_image %}
+            {% if collection.featured_image != blank %}
             <img
                 src="{{ collection.featured_image | image_url: width: 300 }}"
                 alt="{{ title }}"
@@ -18,15 +18,23 @@
                 height="300"
                 loading="lazy"
               >
+            {% else %}
+                <img
+                    src="{{ 'ProductPhotos006MangoParfait.avif' | asset_url }}"
+                    alt="Category"
+                    width="400"
+                    height="300"
+                  >
             {% endif %}
         </div>
         <div class="collection-info">
             <div class="collection-info-details">
-            <h3>{{title}}</h3>
+            <h3><a href="{{ collection.url }}">{{title}}</a></h3>
             <p>{{desc}}</p>
             <span>{{ collection.products_count }} Products</span>
             </div>
             <div>
+            <a href="{{ collection.url }}">    
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -49,6 +57,7 @@
                 stroke-linejoin="round"
                 />
             </svg>
+            </a>
             </div>
         </div>
         </div>

@@ -384,6 +384,25 @@ h2.resp-accordion:first-child {
     border-radius: 2px;
     cursor: pointer;
 }
+.collection-name-list .title .active{
+    color: var(--color-offwhite);
+    background: var(--color-green);
+    border: 1px solid var(--color-green);   
+    font-weight: var(--weight-bold); 
+}
+.collection-name-list .title a:hover{
+    border: 1px solid var(--color-green);
+}
+.collection-group {
+    display: none;
+}
+
+.collection-group.active {
+    display: block;
+}
+.header-card .left:hover h2{
+    color: var(--color-gold) !important;
+}
 .header-card{
     padding: 30px 44px 0px;
     display: grid;
@@ -544,6 +563,17 @@ h2.resp-accordion:first-child {
     margin-top: 8px;
     display: block;
 }
+.collection-info svg{
+    display: none;
+    height: 16px;
+    width: 16px;
+}
+.collection-card:hover svg{
+    display: block;
+}
+.collection-card:hover h3, .collection-card:hover svg{
+    color: var(--color-gold) !important;
+}
 .curated-edits{
     padding: 44px 44px 0px;
 }
@@ -568,6 +598,9 @@ h2.resp-accordion:first-child {
 }
 .curated-edits-cols .curated-card{
     cursor: pointer;
+}
+.curated-edits-cols .curated-card:hover h3{
+    color: var(--color-gold) !important;
 }
 .curated-edits-cols .curated-card img{
     box-sizing: border-box;
