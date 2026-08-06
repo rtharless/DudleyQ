@@ -31,7 +31,13 @@
             <div class="collection-info-details">
             <h3><a href="{{ collection.url }}">{{title}}</a></h3>
             <p>{{desc}}</p>
-            <span>{{ collection.products_count }} Products</span>
+            <span>{{ collection.products_count }} 
+                {% if collection.products_count == 1 %}
+                    Product
+                  {% else %}
+                    Products
+                  {% endif %}
+            </span>
             </div>
             <div>
             <a href="{{ collection.url }}">    

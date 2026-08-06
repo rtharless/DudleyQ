@@ -92,7 +92,7 @@
       ],
       "name": "Collection list",
       "settings": {
-        "collection_desc": "<p>Four decades of professional formulas — hair, skin and colour — organised the way you actually shop.</p>",
+        "collection_desc": "<p>Four decades of professional formulas, hair, skin and color, organized the way you actually shop.</p>",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -128,7 +128,7 @@
             "heading": "BEST VALUE",
             "title": "Sets & Duos",
             "collection": "sets",
-            "description": "<p>Complete regimens paired at a saving — the easiest place to start.</p>"
+            "description": "<p>Complete regimens paired at a saving, the easiest place to start.</p>"
           }
         }
       },
