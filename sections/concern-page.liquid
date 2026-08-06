@@ -34,9 +34,9 @@
             {% endfor %}
         </div>
 
-        <span class="concern__heading">
+        <h3 class="concern__heading">
           {{ section.settings.heading }}
-        </span>
+        </h3>
 
         <div class="concern-page__description">
             {{ section.settings.description }}
@@ -69,7 +69,10 @@
                         href="#"
                         class="concern-card__button">
                         Take Quiz
-                        <span aria-hidden="true">→</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M5 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          <path d="M13 7L18 12L13 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
                     </a>
                 </div>
             </div>
