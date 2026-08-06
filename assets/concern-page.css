@@ -198,6 +198,7 @@
 
     .concern-page__image {
         height: 350px;
+        display: none;
     }
 
     .concern-page__content {
