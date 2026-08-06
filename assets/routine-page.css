@@ -203,6 +203,7 @@
 
     .routine-page__content {
         padding: 35px 20px;
+        justify-content: normal !important;
     }
 
     .routine-page__content h1 {
