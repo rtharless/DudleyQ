@@ -118,6 +118,7 @@
           "settings": {
             "heading": "Most Shopped",
             "title": "Protein Power",
+            "tile_image": "shopify://shop_images/IMG_7505.webp",
             "collection": "repair-restore",
             "description": "<p>Products for breakage and to restore and revive hair back to health.</p>"
           }
@@ -127,6 +128,7 @@
           "settings": {
             "heading": "BEST VALUE",
             "title": "Sets & Duos",
+            "tile_image": "shopify://shop_images/IMG_2441MoisturizingShampoo_Conditioner8oz.png",
             "collection": "sets",
             "description": "<p>Complete regimens paired at a saving, the easiest place to start.</p>"
           }
