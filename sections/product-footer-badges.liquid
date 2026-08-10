@@ -1,3 +1,4 @@
+<div class="section section--page-width">
     <div class="product-footer-badges">
         <div class="badge-col">
             {%  if section.settings.image1 %}
@@ -9,28 +10,34 @@
             <span>{{ section.settings.trust-title1}}</span>
         </div>
         <div class="badge-col">
-            {{ section.settings.image2
-                | image_url: width: 24
-                | image_tag
-            }}
+            {%  if section.settings.image2 %}
+                {{ section.settings.image2
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}    
             <span>{{ section.settings.trust-title2}}</span>
         </div>
         <div class="badge-col">
-            {{ section.settings.image3
-                | image_url: width: 24
-                | image_tag
-            }}
+            {%  if section.settings.image3 %}
+                {{ section.settings.image3
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}
             <span>{{ section.settings.trust-title3}}</span>
         </div>
         <div class="badge-col">
-            {{ section.settings.image4
-                | image_url: width: 24
-                | image_tag
-            }}
+            {%  if section.settings.image3 %}
+                {{ section.settings.image4
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}
             <span>{{ section.settings.trust-title4}}</span>
         </div>
     </div>
-
+</div>
 {% schema %}
 {
     "name": "Product Trust Row",

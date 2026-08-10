@@ -134,6 +134,10 @@
                   },
                   "blocks": {}
                 },
+                "product-reviews":{
+                  "type": "product-reviews",
+                  "settings":{}
+                },
                 "price_tVjtKg": {
                   "type": "price",
                   "settings": {
@@ -159,6 +163,7 @@
               },
               "block_order": [
                 "text_xrnftG",
+                "product-reviews",
                 "price_tVjtKg"
               ]
             },
@@ -334,7 +339,7 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h2>RELATED PRODUCTS</h2>",
+            "text": "<h2>You may also like</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -458,10 +463,10 @@
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "max_products": 4,
-        "columns": 4,
-        "mobile_columns": "2",
-        "columns_gap": 12,
+        "max_products": 3,
+        "columns": 3,
+        "mobile_columns": "1",
+        "columns_gap": 24,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",

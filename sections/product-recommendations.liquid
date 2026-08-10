@@ -58,6 +58,7 @@
       section-resource-list
       spacing-style
       gap-style
+      {% if section.id contains 'product_recommendations' %} recomended-section {% endif %}
     "
     style="
       {%  render 'spacing-style', settings: section.settings %}
@@ -65,7 +66,10 @@
       {{ styles }}
     "
   >
-    <div class="section-resource-list__content">
+    <div class="section-resource-list__content {% if section.id contains 'product_recommendations' %} recomended-section-list-content {% endif %}">
+      {% if section.id contains 'product_recommendations' %}
+      <span class="recomended-eyebrow">Complete the ritual</span>
+      {% endif %}
       {% content_for 'blocks' %}
     </div>
 
