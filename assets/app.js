@@ -1,52 +1,47 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-  document.querySelectorAll('.product-description-tabs').forEach(function (tabsWrapper) {
-
-      const tabs = tabsWrapper.querySelectorAll('.resp-tab-item');
-      const contents = tabsWrapper.querySelectorAll('.resp-tab-content');
-
-      // Initial state
-      contents.forEach(function (content, index) {
-          if (!content.classList.contains('resp-tab-content-active')) {
-              content.style.display = 'none';
-          } else {
-              content.style.display = 'block';
-          }
-      });
-
-      tabs.forEach(function (tab) {
-
-          tab.addEventListener('click', function () {
-
-              const tabIndex = this.dataset.tab;
-
-              // Remove active class from tabs
-              tabs.forEach(function (item) {
-                  item.classList.remove('resp-tab-active');
-              });
-
-              // Hide all content
-              contents.forEach(function (content) {
-                  content.classList.remove('resp-tab-content-active');
-                  content.style.display = 'none';
-              });
-
-              // Activate current tab
-              this.classList.add('resp-tab-active');
-
-              const activeContent = tabsWrapper.querySelector(
-                  '.resp-tab-content[data-tab="' + tabIndex + '"]'
-              );
-
-              if (activeContent) {
-                  activeContent.classList.add('resp-tab-content-active');
-                  activeContent.style.display = 'block';
-              }
-
-          });
-
-      });
-
-  });
-
+document.addEventListener('DOMContentLoaded', function () {    
+    const btn1 = document.querySelector('.benefit_outcome');
+    btn1.addEventListener('click', function () {
+        const plusIcon = document.querySelector('.tab-benefits-plus-icon');
+        const minusIcon = document.querySelector('.tab-benefits-minus-icon');
+        const tabDetails = document.querySelector('.tab-benefits-detail');
+        if (plusIcon.style.display === 'none') {
+            plusIcon.style.display = 'block';
+            minusIcon.style.display = 'none';
+            tabDetails.style.display = 'none';
+        }else{
+            plusIcon.style.display = 'none';
+            minusIcon.style.display = 'block';
+            tabDetails.style.display = 'block';
+        }
+    });
+    const btn2 = document.querySelector('.how_to_use');
+    btn2.addEventListener('click', function () {
+        const plusIcon = document.querySelector('.tab-howtouse-plus-icon');
+        const minusIcon = document.querySelector('.tab-howtouse-minus-icon');
+        const tabDetails = document.querySelector('.tab-howtouse-detail');
+        if (plusIcon.style.display === 'none') {
+            plusIcon.style.display = 'block';
+            minusIcon.style.display = 'none';
+            tabDetails.style.display = 'none';
+        }else{
+            plusIcon.style.display = 'none';
+            minusIcon.style.display = 'block';
+            tabDetails.style.display = 'block';
+        }
+    });
+    const btn3 = document.querySelector('.key_ingredients');
+    btn3.addEventListener('click', function () {
+        const plusIcon = document.querySelector('.tab-keying-plus-icon');
+        const minusIcon = document.querySelector('.tab-keying-minus-icon');
+        const tabDetails = document.querySelector('.tab-keying-detail');
+        if (plusIcon.style.display === 'none') {
+            plusIcon.style.display = 'block';
+            minusIcon.style.display = 'none';
+            tabDetails.style.display = 'none';
+        }else{
+            plusIcon.style.display = 'none';
+            minusIcon.style.display = 'block';
+            tabDetails.style.display = 'block';
+        }
+    });
 });

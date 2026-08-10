@@ -19,43 +19,68 @@
   {% if tabs.size > 0 %}
   <div class="product-description-tabs">
   
-      <ul class="resp-tabs-list">
-  
-          {% for tab in tabs %}
-              {% unless tab == blank %}
-                  {% assign item = tab | split: "|" %}
-                  <li
-                      class="resp-tab-item{% if forloop.first %} resp-tab-active{% endif %}"
-                      data-tab="{{ forloop.index0 }}"
-                  >
-                      {{ item[0] }}
-                  </li>
-              {% endunless %}
-          {% endfor %}
-  
-      </ul>
-  
-      <div class="resp-tabs-container">
-  
           {% for tab in tabs %}
               {% unless tab == blank %}
                   {% assign item = tab | split: "|" %}
   
-                  <div
-                      class="resp-tab-content{% if forloop.first %} resp-tab-content-active{% endif %}{% if item[1] == 'custom.how_to_use' or item[1] == 'custom.benefit_outcome' %} additional-padding{% endif %}"
-                      data-tab="{{ forloop.index0 }}"
-                  >
+                  <div class="resp-tab-content">
   
                       {% case item[1] %}
   
                           {% when 'custom.benefit_outcome' %}
-                              {{ product.metafields.custom.benefit_outcome | metafield_tag }}
-  
+                                <button class="benefit_outcome">
+                                <span>Key benefits</span>
+                                <span class="tab-benefits-plus-icon">
+                                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="vertical" d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                    <path class="horizontal" d="M7 2.75L7 11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>
+                                <span class="tab-benefits-minus-icon tab-minus-icon">
+                                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>  
+                            </button>
+                            <span class="tab-benefits-detail tab-info"> 
+                                {{ product.metafields.custom.benefit_outcome | metafield_tag }}
+                            </span>
                           {% when 'custom.how_to_use' %}
-                              {{ product.metafields.custom.how_to_use | metafield_tag }}
-  
+                                <button class="how_to_use">
+                                <span>How to use</span>
+                                <span class="tab-howtouse-plus-icon">
+                                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="vertical" d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                    <path class="horizontal" d="M7 2.75L7 11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>
+                                <span class="tab-howtouse-minus-icon tab-minus-icon">
+                                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>  
+                            </button>
+                            <span class="tab-howtouse-detail tab-info">
+                                {{ product.metafields.custom.how_to_use | metafield_tag }}
+                            </span>    
                           {% when 'custom.key_ingredients' %}
-                              {{ product.metafields.custom.key_ingredients | metafield_tag }}
+                                <button class="key_ingredients">
+                                    <span>Key ingredients</span>
+                                    <span class="tab-keying-plus-icon">
+                                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="vertical" d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                        <path class="horizontal" d="M7 2.75L7 11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="tab-keying-minus-icon tab-minus-icon">
+                                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>  
+                                </button>
+                                <span class="tab-keying-detail tab-info">
+                                {{ product.metafields.custom.key_ingredients | metafield_tag }}
+                                </span>
   
                       {% endcase %}
   
@@ -64,8 +89,20 @@
               {% endunless %}
           {% endfor %}
   
-      </div>
-  
+      
   </div>
   {% endif %}
-  
+<div class="instock-tab">
+    <span><svg xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+     <path d="M5 12l5 5L20 7" />
+   </svg></span>
+    <span>In stock — usually ships within 24 hours.</span>
+</div>

@@ -162,6 +162,10 @@
                 "price_tVjtKg"
               ]
             },
+            "product_badges":{
+              "type": "product-badges",
+              "settings":{}
+            },
             "divider_VJhene": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -286,10 +290,11 @@
           },
           "block_order": [
             "group_icgrde",
-            "divider_VJhene",
+            "text_aEtTtq",
             "variant_picker_R3rGDr",
+            "product_badges",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq"
+            "divider_VJhene"
           ]
         }
       },
@@ -307,6 +312,10 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "product_footer_badges":{
+      "type":"product-footer-badges",
+      "settings":{}
     },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
@@ -456,6 +465,7 @@
   },
   "order": [
     "main",
+    "product_footer_badges",
     "product_recommendations_qggXJq"
   ]
 }

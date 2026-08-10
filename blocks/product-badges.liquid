@@ -1,0 +1,16 @@
+{% assign items = product.metafields.custom.product_badges.value %}
+
+{% if items %}
+    <div class="product-custom-badges">
+        {% for item in items %}
+        <span>{{ item }}</span>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Product Badges",
+    "settings": []
+}
+{% endschema %}

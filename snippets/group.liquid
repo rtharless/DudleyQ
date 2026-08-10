@@ -51,6 +51,14 @@
     ></a>
   {%- endif -%}
 
+  {% if block_id contains '_product-details' %}
+    {% if product.metafields.custom.routine %}
+      <div class="product-eyebrow">
+        <span>{{ product.metafields.custom.routine }} Collection</span>
+      </div>
+    {% endif %}
+  {% endif %}
+
   <div class="group-block__media-wrapper">
     {% render 'background-media',
       background_media: settings.background_media,

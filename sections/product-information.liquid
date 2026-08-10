@@ -3,7 +3,11 @@
 <script type="application/ld+json">
   {{ closest.product | structured_data }}
 </script>
-
+<div class="breadcrumb">
+  <span><a href="{{ routes.root_url }}">Home</a></span><span class="breadcrumb-devider">/</span>
+  <span><a href="{{ product.collections.first.url }}">{{  product.collections.first.title}}</a></span><span class="breadcrumb-devider">/</span>
+  <span class="breadcrumb-title">{{ product.title }}</span>
+</div>
 {% capture media_gallery %}
   {%- content_for 'block',
     type: '_product-media-gallery',
