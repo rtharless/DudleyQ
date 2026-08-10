@@ -804,6 +804,9 @@ summary:hover{
     .badge-col:nth-child(3) {
         border-left: none;
     }
+    .product-description-tabs{
+        margin-top: 20px;
+    }
 }
 @media (max-width: 429px) {
     .product-details .button[id^='BuyButtons-ProductSubmitButton-']{
