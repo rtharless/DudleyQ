@@ -612,7 +612,6 @@ summary:hover{
     color: var(--color-warmgray);
     letter-spacing: 0.4px;
     margin-bottom: 22px;
-    display: none;
 }
 .product-details .divider{
     display: none;
