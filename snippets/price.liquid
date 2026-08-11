@@ -95,7 +95,12 @@
         {% endif %}
       "
     >
-      <span class="price">{{ price | default: '&nbsp;' }}</span>
+      <span class="price">{{ price | default: '&nbsp;' }}</span> 
+       {% if selected_variant.title != 'Default Title' %}
+        <span class="price-secondary" style="display:none">{{ selected_variant.title }}</span>
+      {% elsif product.metafields.custom.size.value %}  
+          <span class="price-secondary" style="display:none">{{ product.metafields.custom.size.value }}</span>
+      {% endif %}
     </div>
     <div
       class="

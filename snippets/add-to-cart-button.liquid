@@ -55,7 +55,7 @@
           <span>
             {{ add_to_cart_text | default: default_add_to_cart_text }} 
             <span>.</span> 
-            {{ product.price | money }}
+            {{ product.selected_or_first_available_variant.price | money }}
           </span>
         </span>
       </span>

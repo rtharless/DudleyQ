@@ -73,19 +73,6 @@
     </div>
   {% endif %}
 
-  {%- if selected_variant != blank and block_settings.show_installments -%}
-    <div class="installments">
-      {%- assign product_form_installment_id = 'product-form-installment-' | append: block.id -%}
-      {%- form 'product', product_resource, id: product_form_installment_id, class: 'payment-terms' -%}
-        <input
-          type="hidden"
-          name="id"
-          value="{{ selected_variant.id }}"
-        >
-        {{ form | payment_terms }}
-      {%- endform -%}
-    </div>
-  {%- endif -%}
 </product-price>
 
 {% schema %}
