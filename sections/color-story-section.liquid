@@ -1,0 +1,101 @@
+<section class="color-story section">
+    <div class="color-story-detail">
+        <div class="color-story-image">
+            {% if section.settings.image %}
+                {{ section.settings.image | image_url: width: 600 | image_tag }}
+            {% endif %}
+        </div>
+        <div class="color-story-info">
+            <span class="eyebrow-text">{{ section.settings.eyebrow-heading }}</span>
+            <h2>{{ section.settings.title }}</h2>
+            {{ section.settings.description }}
+            {% for block in section.blocks %}
+                {% assign collection = block.settings.collection %}
+                {{ collection.title }}
+            {% endfor %}    
+        </div>
+        <a class="" href="">{{ section.settings.button_label }}</a>
+    </div>
+</section>
+  
+  {% schema %}
+  {
+    "name": "Color Story Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "eyebrow-heading",
+        "label": "Eyebrow Heading",
+        "default": "Cosmetics"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The color story"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default":"<p>Seventy-five products across lips, eyes, blushers and foundations, matched to deep and rich skin tones rather than filtered down from someone else's palette.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "Shop Cosmetics"
+      },
+    ],
+    "blocks": [
+        {
+            "type": "color-story",
+            "name": "Color Story",
+            "settings":[
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 4,
+    "presets": [
+        {
+        "name": "Color Story Section",
+        "blocks": [
+            {
+                "type": "color-story",
+                "settings": {
+                    "collection": "lips"
+                }
+            },
+            {
+                "type": "color-story",
+                "settings": {
+                    "collection": "eyes"
+                }
+            },
+            {
+                "type": "color-story",
+                "settings": {
+                    "collection": "blushers"
+                }
+            },
+            {
+                "type": "color-story",
+                "settings": {
+                    "collection": "foundations"
+                }
+            }
+        ]
+        }
+    ]
+  }
+  {% endschema %}

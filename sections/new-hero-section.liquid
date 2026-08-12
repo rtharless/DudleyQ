@@ -1,0 +1,78 @@
+<section class="custom-home-hero section">
+    <div class="custom-home-hero__content">
+        <div class="custom-hero-image">
+            {% if section.settings.image %}
+                {{ section.settings.image | image_url: width: 600 | image_tag }}
+            {% endif %}
+        </div>
+        <div class="custom-hero-right">
+          <span class="eyebrow-text">{{ section.settings.eyebrow-heading }}</span>
+            <h1>{{ section.settings.title }}</h1>
+            {{ section.settings.description }}
+          <div class="custom-hero-buttons">    
+                <a class="button concern" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_text }}
+                </a>
+            {% if section.settings.button_all_link != blank %}
+                <a class="button shop-all" href="{{ section.settings.button_all_link }}">
+                {{ section.settings.button_all }}
+                </a>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+</section>
+  
+  {% schema %}
+  {
+    "name": "Custom Home Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "eyebrow-heading",
+        "label": "Eyebrow Heading",
+        "default": "Professional hair care since 1967"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Made for your hair, from the start."
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default":"<p>Salon formulas for hair, skin and color, developed for Black beauty and never adapted to it.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text",
+        "default": "Shop by Concern"
+      },
+      {
+        "type": "url",
+        "id": "button_text_link",
+        "label": "Shop by Concern Link"
+      },
+      {
+        "type": "text",
+        "id": "button_all",
+        "label": "Button All",
+        "default": "Shop All"
+      },
+      {
+        "type": "url",
+        "id": "button_all_link",
+        "label": "Shop All Link",
+        "default": "/collections/all"
+      }
+    ]
+  }
+  {% endschema %}

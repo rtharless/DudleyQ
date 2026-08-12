@@ -1,0 +1,191 @@
+<section class="start-here section">
+    <div class="start-here__content">
+        <div class="eyebrow-text">{{ section.settings.eyebrow-heading }}</div>
+        <h2>{{ section.settings.title }}</h2>
+        {{ section.settings.description }}
+    </div>
+    <div class="hair-type-grid">
+        {% for block in section.blocks %}
+            {% if block.type == 'hair-type' %}
+                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}">
+                    <div class="hair-type-img">  
+                    {% if block.settings.image %}
+                        {{ block.settings.image | image_url: width: 600 | image_tag }}
+                    {% endif %}
+                    </div>
+                    <div class="hair-type-info">
+                        <h3>{{ block.settings.title }}</h3>
+                        <div class="title-hr"></div>
+                        <div class="desc">{{ block.settings.description }}</div>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}    
+    </div>
+    <div class="treating-cards">
+        <span>{{ section.settings.treating }}</span>
+        {% for block in section.blocks %}
+            {% if block.type == 'treating' %}
+                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}">{{ block.settings.title }}</a>
+            {% endif %}
+        {% endfor %}    
+    </div>
+</section>
+  
+  {% schema %}
+  {
+    "name": "Start Here Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow-heading",
+        "label": "Eyebrow Heading",
+        "default": "Start Here"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "What is your hair telling you?"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default":"<p>Tell us the problem and we will show you the products built to solve it.</p>"
+      },
+      {
+        "type": "text",
+        "id": "treating",
+        "label": "Treating",
+        "default": "Also Treating"
+      },
+    ],
+    "blocks": [
+        {
+            "type": "hair-type",
+            "name": "Hair Type",
+            "settings":[
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "filter_value",
+                    "label": "Filter Value"
+                },
+                {
+                    "type": "textarea",
+                    "id": "description",
+                    "label": "Description"
+                }
+            ]
+        },
+        {
+            "type": "treating",
+            "name": "Treating",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "filter_value",
+                    "label": "Filter Value"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 11,
+    "presets": [
+        {
+        "name": "Start Here Section",
+        "blocks": [
+            {
+                "type": "hair-type",
+                "settings": {
+                    "title": "Dryness",
+                    "filter_value":"Dryness",
+                    "description":"<p>Thirsty, brittle hair that drinks up moisture and still feels rough.</p>"
+                }
+            },
+            {
+                "type": "hair-type",
+                "settings": {
+                    "title": "Curl Definition",
+                    "filter_value":"Curl Definition",
+                    "description":"<p>Coils and curls that need shape and hold without the crunch.</p>"
+                }
+            },
+            {
+                "type": "hair-type",
+                "settings": {
+                    "title": "Damage Repair",
+                    "filter_value":"Damage Repair",
+                    "description":"<p>Rebuild strength after color, heat or a chemical service.</p>"
+                }
+            },
+            {
+                "type": "hair-type",
+                "settings": {
+                    "title": "Scalp Health",
+                    "filter_value":"Scalp Health",
+                    "description":"<p>Care that starts at the root, for a scalp that stays balanced.</p>"
+                }
+            },
+            {
+                "type": "treating",
+                "settings": {
+                    "title": "Breakage",
+                    "filter_value":"Breakage"
+                }
+            },
+            {
+                "type": "treating",
+                "settings": {
+                    "title": "Frizz",
+                    "filter_value":"Frizz"
+                }
+            },
+            {
+                "type": "treating",
+                "settings": {
+                    "title": "Growth",
+                    "filter_value":"Growth"
+                }
+            },
+            {
+                "type": "treating",
+                "settings": {
+                    "title": "Irritation",
+                    "filter_value":"Irritation"
+                }
+            },
+            {
+                "type": "treating",
+                "settings": {
+                    "title": "Oiliness",
+                    "filter_value":"Oiliness"
+                }
+            },
+            {
+                "type": "treating",
+                "settings": {
+                    "title": "Thinning",
+                    "filter_value":"Thinning"
+                }
+            }
+        ]
+        }
+    ]
+  }
+  {% endschema %}
