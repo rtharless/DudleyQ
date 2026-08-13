@@ -1014,6 +1014,270 @@ legend{
     max-width: 42ch;
     text-wrap: pretty;
 }
+.color-story-collection-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.color-story-collection-grid a{
+    min-width: 0px;
+    display: block;
+    text-decoration: none;
+}
+.collection-image{
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+}
+.collection-image img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.color-story-collection-grid .collection-title{
+    font-size: 11px;
+    color: var(--color-green);
+    font-weight: var(--weight-semibold);
+    margin-top: 9px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    transition: color 160ms;
+}
+.color-story-collection-grid .product-count{
+    font-size: 10.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #8A7A66;
+    margin-top: 3px;
+    line-height: 1.35;
+}
+.shop-cosmetic{
+    background: var(--color-green);
+    color: var(--color-offwhite);
+    border-width: medium;
+    border-style: none;
+    border-color: currentcolor;
+    border-image: initial;
+    height: 52px;
+    padding: 0px 28px;
+    border-radius: 2px;
+    font-size: 11.5px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+}
+.full-routine{
+    padding: 56px 44px 0px;
+}
+.full-routine .heading{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-bottom: 1px solid #ECE7DC;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.full-routine h2{
+    font-size: 24px;
+    letter-spacing: 0.4px;
+    font-weight: var(--weight-regular) !important;
+}
+.full-routine .count{
+    font-size: 10.5px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--color-warmgray);
+}
+.routine-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.routine-cards a{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #DED9CF;
+    padding: 12px 18px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 160ms;
+}
+.routine-cards a .title{
+    font-family: var(--font-family-eb-garamond);
+    font-size: 16px;
+    color: var(--color-green);
+    line-height: 1;
+    transition: color 160ms;
+}
+.routine-cards a:hover{
+    border: 1px solid var(--color-green);
+    cursor: pointer;   
+}
+.routine-cards a:hover .title{
+    color: var(--color-gold) !important;   
+}
+.our-story_content{
+    margin-top: 70px;
+    background: var(--color-offwhite) !important;
+    display: grid !important;
+    grid-template-columns: minmax(0px, 1.05fr) minmax(0px, 1fr) !important;
+    align-items: center;
+}
+.our-story_content{
+    min-width: 0px;
+    padding: 46px 44px;
+}
+.our-story-info h2{
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: 0.4px;
+    margin-bottom: 16px;
+    text-wrap: pretty;
+    font-weight: var(--weight-regular);
+    margin-top: 0;
+}
+.our-story-info p{
+    font-size: 15px;
+    line-height: 1.72;
+    color: #4A4642;
+    margin: 0px 0px 12px;
+    max-width: 46ch;
+    text-wrap: pretty;
+    font-family: var(--font-family-eb-garamond) !important;
+}
+.our-story-info .button-block{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+.our-story-info .button-block a{
+    background: var(--color-green);
+    color: var(--color-offwhite);
+    border-width: medium;
+    border-style: none;
+    border-color: currentcolor;
+    border-image: initial;
+    height: 52px;
+    padding: 0px 28px;
+    border-radius: 2px;
+    font-size: 11.5px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+.our-story-info .profile-info{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.our-story-info .profile-img{
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: 0 0 auto;
+    border: 1px solid #E4DED2;
+}
+.our-story-info .owner-name{
+    font-size: 13px;
+    color: var(--color-green);
+    font-weight: var(--weight-bold);
+    white-space: nowrap;
+    font-family: var(--font-family-eb-garamond) !important;
+}
+.our-story-info .designation{
+    font-size: 11.5px;
+    color: var(--color-warmgray);
+    letter-spacing: 0.4px;
+    font-family: var(--font-family-eb-garamond) !important;
+}
+.our-story-video{
+    min-width: 0px;
+    align-self: stretch;
+    overflow: hidden;
+    min-height: 340px;
+}
+.our-story-video .video-inner{
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 38px 0px;
+}
+.youtube-facade{
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-green);
+    background-size: cover;
+    background-position: center;
+}
+.youtube-facade__play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 62px;
+    height: 62px;
+    margin: -31px 0px 0px -31px;
+    border-radius: 50%;
+    background: var(--color-offwhite);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 180ms;
+}
+.youtube-facade__button{
+    width: 0px;
+    height: 0px;
+    border-left: 17px solid var(--color-green);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    margin-left: 5px;
+}
+.youtube-facade iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+.youtube-text{
+    margin-top: 16px;
+    font-size: 10.5px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: var(--color-green);
+    font-weight: var(--weight-bold);
+    white-space: nowrap;
+    transition: color 160ms;
+    cursor: pointer;
+}
+.youtube-text span{
+    color: var(--color-gold);
+}
+.youtube-text:hover{
+    color: var(--color-gold) !important;
+}
 @media (max-width: 749px) {
     .header-card{
         display: block !important;

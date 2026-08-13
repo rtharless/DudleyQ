@@ -278,6 +278,7 @@
         ".product-media-container.media-fit img {object-fit: contain !important;}"
       ],
       "name": "Featured collection",
+      "disabled": true,
       "settings": {
         "collection": "new-products",
         "layout_type": "grid",
@@ -708,6 +709,7 @@
           ]
         }
       },
+      "disabled": true,
       "block_order": [
         "slide_daY9Y3",
         "slide_XXzcTk",
@@ -853,6 +855,7 @@
           "blocks": {}
         }
       },
+      "disabled": true,
       "block_order": [
         "group_dg4Y9i",
         "video_aLpJD6"
@@ -965,6 +968,7 @@
           "blocks": {}
         }
       },
+      "disabled": true,
       "block_order": [
         "text_LDex7d",
         "text_79aNa9",
@@ -1002,13 +1006,207 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
-    }
+    },
+    "custom_hero_section":{
+      "type": "new-hero-section",
+      "settings":{}
+    },
+    "start_here_section":{
+      "type": "start-here-section",
+      "blocks":{
+        "dryness": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Dryness",
+            "filter_value":"Dryness",
+            "description": "<p>Thirsty, brittle hair that drinks up moisture and still feels rough.</p>"
+          }
+        },
+        "curldef": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Curl Definition",
+            "filter_value":"Curl Definition",
+            "description": "<p>Coils and curls that need shape and hold without the crunch.</p>"
+          }
+        },
+        "damagerep": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Damage Repair",
+            "filter_value":"Damage Repair",
+            "description": "<p>Rebuild strength after color, heat or a chemical service.</p>"
+          }
+        },
+        "scaplhealth": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Scalp Health",
+            "filter_value":"Scalp Health",
+            "description": "<p>Care that starts at the root, for a scalp that stays balanced.</p>"
+          }
+        },
+        "breakage": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Breakage",
+            "filter_value":"Breakage"
+          }
+        },
+        "frizz": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Frizz",
+            "filter_value":"Frizz"
+          }
+        },
+        "growth": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Growth",
+            "filter_value":"Growth"
+          }
+        },
+        "irritation": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Irritation",
+            "filter_value":"Irritation"
+          }
+        },
+        "oiliness": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Oiliness",
+            "filter_value":"Oiliness"
+          }
+        },
+        "thinning": {
+          "type": "hair-type",
+          "settings": {
+            "title": "Thinning",
+            "filter_value":"Thinning"
+          }
+        }
+      },
+      "block_order": [
+        "dryness",
+        "curldef",
+        "damagerep",
+        "scaplhealth",
+        "breakage",
+        "frizz",
+        "growth",
+        "irritation",
+        "oiliness",
+        "thinning"
+      ]
+    },
+    "color_story_section":{
+      "type": "color-story-section",
+      "blocks":{
+        "lips":{
+          "type":"color-story",
+          "settings":{
+            "collection": "lips",
+          }
+        },
+        "eyes":{
+          "type":"color-story",
+          "settings":{
+            "collection": "eyes",
+          }
+        },
+        "blushers":{
+          "type":"color-story",
+          "settings":{
+            "collection": "blushers",
+          }
+        },
+        "foundations":{
+          "type":"color-story",
+          "settings":{
+            "collection": "foundations",
+          }
+        },
+        "block-1": {
+          "type": "routine",
+          "settings": {
+            "title": "Classics",
+            "filter_value": "Classics"
+          }
+        },
+        "block-2": {
+          "type": "routine",
+          "settings": {
+            "title": "Confident Curls",
+            "filter_value": "Confident Curls"
+          }
+        },
+        "block-3": {
+          "type": "routine",
+          "settings": {
+            "title": "Healthy Tresses",
+            "filter_value": "Healthy Tresses"
+          }
+        },
+        "block-4": {
+          "type": "routine",
+          "settings": {
+            "title": "Length & Strength",
+            "filter_value": "Length & Strength"
+          }
+        },
+        "block-5": {
+          "type": "routine",
+          "settings": {
+            "title": "Moisture Matters",
+            "filter_value": "Moisture Matters"
+          }
+        },
+        "block-6": {
+          "type": "routine",
+          "settings": {
+            "title": "Revival",
+            "filter_value": "Revival"
+          }
+        },
+        "block-7": {
+          "type": "routine",
+          "settings": {
+            "title": "Soothe Calm",
+            "filter_value": "Soothe Calm"
+          }
+        }
+      },
+      "block_order": [
+        "lips",
+        "eyes",
+        "blushers",
+        "foundations",
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6",
+        "block-7"
+      ]
+    },
+    "our_story_section":{
+      "type": "our-story-section",
+      "settings":{}
+    },
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
     "slideshow_EYEym6",
     "section_EKK8pr",
-    "hero_6JYXAx"
+    "hero_6JYXAx",
+    "custom_hero_section",
+    "start_here_section",
+    "color_story_section",
+    "our_story_section"
   ]
 }

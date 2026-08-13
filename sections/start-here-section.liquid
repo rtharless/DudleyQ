@@ -5,29 +5,25 @@
         {{ section.settings.description }}
     </div>
     <div class="hair-type-grid">
-        {% for block in section.blocks %}
-            {% if block.type == 'hair-type' %}
+        {% for block in section.blocks limit:4 %}
                 <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}">
-                    <div class="hair-type-img">  
                     {% if block.settings.image %}
+                        <div class="hair-type-img">  
                         {{ block.settings.image | image_url: width: 600 | image_tag }}
+                        </div>
                     {% endif %}
-                    </div>
                     <div class="hair-type-info">
                         <h3>{{ block.settings.title }}</h3>
                         <div class="title-hr"></div>
                         <div class="desc">{{ block.settings.description }}</div>
                     </div>
                 </a>
-            {% endif %}
         {% endfor %}    
     </div>
     <div class="treating-cards">
         <span>{{ section.settings.treating }}</span>
-        {% for block in section.blocks %}
-            {% if block.type == 'treating' %}
+        {% for block in section.blocks offset: 4 %}
                 <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}">{{ block.settings.title }}</a>
-            {% endif %}
         {% endfor %}    
     </div>
 </section>
@@ -87,25 +83,9 @@
                     "label": "Description"
                 }
             ]
-        },
-        {
-            "type": "treating",
-            "name": "Treating",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Title"
-                },
-                {
-                    "type": "text",
-                    "id": "filter_value",
-                    "label": "Filter Value"
-                }
-            ]
         }
     ],
-    "max_blocks": 11,
+    "max_blocks": 20,
     "presets": [
         {
         "name": "Start Here Section",
@@ -143,42 +123,42 @@
                 }
             },
             {
-                "type": "treating",
+                "type": "hair-type",
                 "settings": {
                     "title": "Breakage",
                     "filter_value":"Breakage"
                 }
             },
             {
-                "type": "treating",
+                "type": "hair-type",
                 "settings": {
                     "title": "Frizz",
                     "filter_value":"Frizz"
                 }
             },
             {
-                "type": "treating",
+                "type": "hair-type",
                 "settings": {
                     "title": "Growth",
                     "filter_value":"Growth"
                 }
             },
             {
-                "type": "treating",
+                "type": "hair-type",
                 "settings": {
                     "title": "Irritation",
                     "filter_value":"Irritation"
                 }
             },
             {
-                "type": "treating",
+                "type": "hair-type",
                 "settings": {
                     "title": "Oiliness",
                     "filter_value":"Oiliness"
                 }
             },
             {
-                "type": "treating",
+                "type": "hair-type",
                 "settings": {
                     "title": "Thinning",
                     "filter_value":"Thinning"

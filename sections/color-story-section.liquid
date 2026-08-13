@@ -9,12 +9,46 @@
             <span class="eyebrow-text">{{ section.settings.eyebrow-heading }}</span>
             <h2>{{ section.settings.title }}</h2>
             {{ section.settings.description }}
-            {% for block in section.blocks %}
-                {% assign collection = block.settings.collection %}
-                {{ collection.title }}
-            {% endfor %}    
+            <div class="color-story-collection-grid">
+                {% for block in section.blocks %}
+                    {% if block.type == 'color-story' %}
+                    {% assign collection = block.settings.collection %}
+                    <a>
+                    {% if block.settings.image %}
+                        <div class="collection-image">
+                        {{ block.settings.image | image_url: width: 600 | image_tag }}
+                        </div>
+                    {% endif %}
+                    <div class="collection-title">
+                        {{ collection.title }}
+                    </div>
+                    <div class="product-count">
+                        {{ collection.products_count }}
+                        {% if collection.products_count == 1 %}
+                            Product
+                        {% else %}
+                            Products
+                        {% endif %}
+                    </div>
+                    </a>
+                    {% endif %}
+                {% endfor %}    
+            </div>
+            <a class="shop-cosmetic" href="">{{ section.settings.button_label }}</a>
         </div>
-        <a class="" href="">{{ section.settings.button_label }}</a>
+    </div>
+    <div class="full-routine">
+        <div class="heading">
+            <h2>{{ section.settings.full-routine }}</h2>
+            <span class="count">{{ section.settings.routine-count }}</span>
+        </div>
+        <div class="routine-cards">
+            {% for block in section.blocks %}
+                {% if block.type == 'routine' %}
+                    <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}"><span class="title">{{ block.settings.title }}</span></a>
+                {% endif %}
+            {% endfor %} 
+        </div>
     </div>
 </section>
   
@@ -51,6 +85,18 @@
         "label": "Button Label",
         "default": "Shop Cosmetics"
       },
+      {
+        "type": "text",
+        "id": "full-routine",
+        "label": "Full Routine Heading",
+        "default": "Or build a full routine"
+      },
+      {
+        "type": "text",
+        "id": "routine-count",
+        "label": "Routine Count",
+        "default": "Seven routines"
+      },
     ],
     "blocks": [
         {
@@ -61,11 +107,32 @@
                     "type": "collection",
                     "id": "collection",
                     "label": "Collection"
-                }
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+            ]
+        },
+        {
+            "type": "routine",
+            "name": "Routines",
+            "settings":[
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "filter_value",
+                    "label": "Filter Value"
+                },
             ]
         }
     ],
-    "max_blocks": 4,
+    "max_blocks": 20,
     "presets": [
         {
         "name": "Color Story Section",
@@ -92,6 +159,55 @@
                 "type": "color-story",
                 "settings": {
                     "collection": "foundations"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                    "title": "Classics",
+                    "filter_value":"Classics"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                    "title": "Confident Curls",
+                    "filter_value":"Confident Curls"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                "title": "Healthy Tresses",
+                "filter_value":"Healthy Tresses"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                    "title": "Length & Strength",
+                    "filter_value":"Length & Strength"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                    "title": "Moisture Matters",
+                    "filter_value":"Moisture Matters"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                "title": "Revival",
+                "filter_value":"Revival"
+                }
+            },
+            {
+                "type": "routine",
+                "settings": {
+                    "title": "Soothe Calm",
+                    "filter_value":"Soothe Calm"
                 }
             }
         ]

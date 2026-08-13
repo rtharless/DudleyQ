@@ -1,0 +1,154 @@
+<section class="our-story section">
+    <div class="our-story_content">
+        <div class="our-story-info">
+                <div class="eyebrow-text">{{ section.settings.eyebrow-heading }}</div>
+                <h2>{{ section.settings.title }}</h2>
+                {{ section.settings.description1 }}
+                {{ section.settings.description2 }}
+                <div class="button-block">
+                    <a>{{ section.settings.button_label }}</a>
+                    <div class="profile-info">
+                        <div class="profile-img">
+                            {% if section.settings.image %}
+                                {{ section.settings.image | image_url: width: 600 | image_tag }}
+                            {% endif %}
+                        </div>
+                        <div>
+                            <div class="owner-name">{{ section.settings.owner-name }}</div>
+                            <div class="designation">{{ section.settings.designation }}</div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="our-story-video">
+            <div class="video-inner">
+                <div
+                class="youtube-facade"
+                data-youtube-id="{{ section.settings.youtube-id }}"
+                style="background-image: url('https://i.ytimg.com/vi/{{  section.settings.youtube-id }}/hqdefault.jpg');"
+                >
+                <button
+                    type="button"
+                    class="youtube-facade__play"
+                    aria-label="Play video"
+                >
+                    <span class="youtube-facade__button">
+                    </span>
+                </button>
+                </div>
+                <div class="youtube-text" data-youtube-id="{{ section.settings.youtube-id }}">
+                    {{ section.settings.youtube-text }}
+                    <span>▸</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('click', function (event) {
+
+        const playButton = event.target.closest('.youtube-facade__play');
+        const youtubeText = event.target.closest('.youtube-text');
+    
+        if (!playButton && !youtubeText) return;
+    
+        const button = playButton || youtubeText;
+    
+        const videoInner = button.closest('.video-inner');
+    
+        if (!videoInner) return;
+    
+        const facade = videoInner.querySelector('.youtube-facade');
+    
+        if (!facade) return;
+    
+        const videoId = facade.dataset.youtubeId;
+    
+        if (!videoId) return;
+    
+        const iframe = document.createElement('iframe');
+    
+        iframe.src =
+            'https://www.youtube-nocookie.com/embed/' +
+            encodeURIComponent(videoId) +
+            '?autoplay=1&rel=0';
+    
+        iframe.title = 'YouTube video';
+        iframe.loading = 'lazy';
+    
+        iframe.allow =
+            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    
+        iframe.allowFullscreen = true;
+    
+        facade.innerHTML = '';
+        facade.appendChild(iframe);
+    });
+</script>
+  {% schema %}
+  {
+    "name": "Our Story Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow-heading",
+        "label": "Eyebrow Heading",
+        "default": "Our Story"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Family-owned since 1967."
+      },
+      {
+        "type": "textarea",
+        "id": "description1",
+        "label": "Description 1",
+        "default":"<p>Dudley's was built on a simple idea: that professional-grade care should be made for Black hair from the start, not adapted to it afterwards.</p>"
+      },
+      {
+        "type": "textarea",
+        "id": "description2",
+        "label": "Description 2",
+        "default":"<p>More than 50 years on, every purchase still supports our company and Black entrepreneurs worldwide.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "Read Our Story"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "owner-name",
+        "label": "Name",
+        "default": "Ursula Dudley Oglesby"
+      },
+      {
+        "type": "text",
+        "id": "designation",
+        "label": "Designation",
+        "default": "President & CEO"
+      },
+      {
+        "type": "text",
+        "id": "youtube-id",
+        "label": "YouTube Id",
+        "default": "A9Ceyr73fVo"
+      },
+      {
+        "type": "text",
+        "id": "youtube-text",
+        "label": "YouTube Text",
+        "default": "Hear from our CEO & President"
+      },
+    ]
+  }
+  {% endschema %}
