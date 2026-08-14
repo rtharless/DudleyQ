@@ -1019,7 +1019,7 @@ legend{
     font-weight: var(--weight-regular);
 }
 .color-story-detail p{
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.7;
     color: #5C4A38;
     margin: 0px 0px 26px;
@@ -1030,7 +1030,7 @@ legend{
     display: grid;
     grid-template-columns: repeat(4, minmax(0px, 1fr));
     gap: 14px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 .color-story-collection-grid a{
     min-width: 0px;

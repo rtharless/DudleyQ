@@ -1228,7 +1228,8 @@
         "button_label": "Shop Cosmetics",
         "button_link": "/collections/all",
         "full-routine": "Or build a full routine",
-        "routine-count": "Seven routines"
+        "routine-count": "Seven routines",
+        "image": "shopify://shop_images/02-color-story.jpg"
       }
     },
     "our_story_section": {
