@@ -147,7 +147,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "#63584C",
+                "text_color": "#63584c",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -232,7 +232,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "#63584C",
+                "text_color": "#63584c",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -258,7 +258,7 @@
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
-                "text_color": "#63584C",
+                "text_color": "#63584c",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -274,11 +274,11 @@
           ]
         }
       },
+      "disabled": true,
       "custom_css": [
         ".product-media-container.media-fit img {object-fit: contain !important;}"
       ],
       "name": "Featured collection",
-      "disabled": true,
       "settings": {
         "collection": "new-products",
         "layout_type": "grid",
@@ -709,13 +709,13 @@
           ]
         }
       },
-      "disabled": true,
       "block_order": [
         "slide_daY9Y3",
         "slide_XXzcTk",
         "slide_dkfJNL",
         "slide_NKbhaf"
       ],
+      "disabled": true,
       "custom_css": [],
       "name": "t:names.slideshow_full_frame",
       "settings": {
@@ -758,7 +758,7 @@
             "height": "fill",
             "custom_height": 40,
             "background_media": "none",
-            "background_color": "#FFB687",
+            "background_color": "#ffb687",
             "video_position": "cover",
             "background_image_position": "cover",
             "toggle_overlay": false,
@@ -813,7 +813,7 @@
                 "link": "shopify://collections",
                 "open_in_new_tab": false,
                 "style_class": "button-custom",
-                "custom_button_background": "#FFB687",
+                "custom_button_background": "#ffb687",
                 "custom_button_text": "{{ settings.color_palette.background }}",
                 "custom_button_border": "{{ settings.color_palette.background }}",
                 "link_text_color": "",
@@ -855,11 +855,11 @@
           "blocks": {}
         }
       },
-      "disabled": true,
       "block_order": [
         "group_dg4Y9i",
         "video_aLpJD6"
       ],
+      "disabled": true,
       "custom_css": [
         ".spacing-style.layout-panel-flex.layout-panel-flex--column.section-content-wrapper.mobile-column {--flex-direction: none !important;}",
         ".group-block-content.layout-panel-flex.layout-panel-flex--row.mobile-column {--flex-direction: column !important;}",
@@ -968,12 +968,12 @@
           "blocks": {}
         }
       },
-      "disabled": true,
       "block_order": [
         "text_LDex7d",
         "text_79aNa9",
         "button_TkyeDC"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -1007,44 +1007,55 @@
         "padding-block-end": 40
       }
     },
-    "custom_hero_section":{
+    "custom_hero_section": {
       "type": "new-hero-section",
-      "settings":{
-        "button_text_link":"/collections/all"
+      "settings": {
+        "image": "shopify://shop_images/01-hero-square.jpg",
+        "eyebrow-heading": "Professional hair care since 1967",
+        "title": "Made for your hair, from the start.",
+        "description": "<p>Salon formulas for hair, skin and color, developed for Black beauty and never adapted to it.</p>",
+        "button_text": "Shop by Concern",
+        "button_text_link": "/collections/all",
+        "button_all": "Shop All",
+        "button_all_link": "shopify://collections/all"
       }
     },
-    "start_here_section":{
+    "start_here_section": {
       "type": "start-here-section",
-      "blocks":{
+      "blocks": {
         "dryness": {
           "type": "hair-type",
           "settings": {
+            "image": "shopify://shop_images/03-concern-dryness.jpg",
             "title": "Dryness",
-            "filter_value":"Dryness",
+            "filter_value": "Dryness",
             "description": "<p>Thirsty, brittle hair that drinks up moisture and still feels rough.</p>"
           }
         },
         "curldef": {
           "type": "hair-type",
           "settings": {
+            "image": "shopify://shop_images/04-concern-curl-definition.png",
             "title": "Curl Definition",
-            "filter_value":"Curl Definition",
+            "filter_value": "Curl Definition",
             "description": "<p>Coils and curls that need shape and hold without the crunch.</p>"
           }
         },
         "damagerep": {
           "type": "hair-type",
           "settings": {
+            "image": "shopify://shop_images/05-concern-damage-repair.jpg",
             "title": "Damage Repair",
-            "filter_value":"Damage Repair",
+            "filter_value": "Damage Repair",
             "description": "<p>Rebuild strength after color, heat or a chemical service.</p>"
           }
         },
         "scaplhealth": {
           "type": "hair-type",
           "settings": {
+            "image": "shopify://shop_images/06-concern-scalp-health.jpg",
             "title": "Scalp Health",
-            "filter_value":"Scalp Health",
+            "filter_value": "Scalp Health",
             "description": "<p>Care that starts at the root, for a scalp that stays balanced.</p>"
           }
         },
@@ -1052,42 +1063,48 @@
           "type": "hair-type",
           "settings": {
             "title": "Breakage",
-            "filter_value":"Breakage"
+            "filter_value": "Breakage",
+            "description": ""
           }
         },
         "frizz": {
           "type": "hair-type",
           "settings": {
             "title": "Frizz",
-            "filter_value":"Frizz"
+            "filter_value": "Frizz",
+            "description": ""
           }
         },
         "growth": {
           "type": "hair-type",
           "settings": {
             "title": "Growth",
-            "filter_value":"Growth"
+            "filter_value": "Growth",
+            "description": ""
           }
         },
         "irritation": {
           "type": "hair-type",
           "settings": {
             "title": "Irritation",
-            "filter_value":"Irritation"
+            "filter_value": "Irritation",
+            "description": ""
           }
         },
         "oiliness": {
           "type": "hair-type",
           "settings": {
             "title": "Oiliness",
-            "filter_value":"Oiliness"
+            "filter_value": "Oiliness",
+            "description": ""
           }
         },
         "thinning": {
           "type": "hair-type",
           "settings": {
             "title": "Thinning",
-            "filter_value":"Thinning"
+            "filter_value": "Thinning",
+            "description": ""
           }
         }
       },
@@ -1102,38 +1119,41 @@
         "irritation",
         "oiliness",
         "thinning"
-      ]
+      ],
+      "settings": {
+        "eyebrow-heading": "Start Here",
+        "title": "What is your hair telling you?",
+        "description": "<p>Tell us the problem and we will show you the products built to solve it.</p>",
+        "treating": "Also Treating"
+      }
     },
-    "color_story_section":{
+    "color_story_section": {
       "type": "color-story-section",
-      "settings":{
-        "button_link":"/collections/all"
-      },
-      "blocks":{
-        "lips":{
-          "type":"color-story",
-          "settings":{
+      "blocks": {
+        "lips": {
+          "type": "color-story",
+          "settings": {
             "collection": "lips",
             "image": "shopify://shop_images/Berry-Sexy-web.jpg"
           }
         },
-        "eyes":{
-          "type":"color-story",
-          "settings":{
+        "eyes": {
+          "type": "color-story",
+          "settings": {
             "collection": "eyes",
             "image": "shopify://shop_images/SIGNATUREEYESHADOWCOMPACT.jpg"
           }
         },
-        "blushers":{
-          "type":"color-story",
-          "settings":{
+        "blushers": {
+          "type": "color-story",
+          "settings": {
             "collection": "blushers",
             "image": "shopify://shop_images/GINGERBROWNBlusher.jpg"
           }
         },
-        "foundations":{
-          "type":"color-story",
-          "settings":{
+        "foundations": {
+          "type": "color-story",
+          "settings": {
             "collection": "foundations",
             "image": "shopify://shop_images/CremedeHoneyCremedePowderFoundation_b1509856-01ff-4352-9858-c7fe514cb175.jpg"
           }
@@ -1200,12 +1220,31 @@
         "block-5",
         "block-6",
         "block-7"
-      ]
+      ],
+      "settings": {
+        "eyebrow-heading": "Cosmetics",
+        "title": "The color story",
+        "description": "<p>Seventy-five products across lips, eyes, blushers and foundations, matched to deep and rich skin tones rather than filtered down from someone else's palette.</p>",
+        "button_label": "Shop Cosmetics",
+        "button_link": "/collections/all",
+        "full-routine": "Or build a full routine",
+        "routine-count": "Seven routines"
+      }
     },
-    "our_story_section":{
+    "our_story_section": {
       "type": "our-story-section",
-      "settings":{
-        "image": "shopify://shop_images/bfe69e13-5b22-468d-be28-6ae21d715868.jpg",
+      "settings": {
+        "eyebrow-heading": "Our Story",
+        "title": "Family-owned since 1967.",
+        "description1": "<p>Dudley's was built on a simple idea: that professional-grade care should be made for Black hair from the start, not adapted to it afterwards.</p>",
+        "description2": "<p>More than 50 years on, every purchase still supports our company and Black entrepreneurs worldwide.</p>",
+        "button_label": "Read Our Story",
+        "button_link": "",
+        "image": "shopify://shop_images/07-ursula-portrait.jpg",
+        "owner-name": "Ursula Dudley Oglesby",
+        "designation": "President & CEO",
+        "youtube-id": "A9Ceyr73fVo",
+        "youtube-text": "Hear from our CEO & President"
       }
     },
     "home_trust_bar": {
@@ -1220,7 +1259,7 @@
         "image4": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-24.png",
         "trust-title4": "Ships in 24 hrs"
       }
-    },
+    }
   },
   "order": [
     "hero_jVaWmY",
