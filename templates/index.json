@@ -1009,7 +1009,9 @@
     },
     "custom_hero_section":{
       "type": "new-hero-section",
-      "settings":{}
+      "settings":{
+        "button_text_link":"/collections/all"
+      }
     },
     "start_here_section":{
       "type": "start-here-section",
@@ -1104,6 +1106,9 @@
     },
     "color_story_section":{
       "type": "color-story-section",
+      "settings":{
+        "button_link":"/collections/all"
+      },
       "blocks":{
         "lips":{
           "type":"color-story",

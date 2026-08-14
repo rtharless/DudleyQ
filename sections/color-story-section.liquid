@@ -13,7 +13,7 @@
                 {% for block in section.blocks %}
                     {% if block.type == 'color-story' %}
                     {% assign collection = block.settings.collection %}
-                    <a>
+                    <a href="{{ collection.url }}">
                     {% if block.settings.image %}
                         <div class="collection-image">
                         {{ block.settings.image | image_url: width: 600 | image_tag }}
@@ -34,7 +34,7 @@
                     {% endif %}
                 {% endfor %}    
             </div>
-            <a class="shop-cosmetic" href="">{{ section.settings.button_label }}</a>
+            <a class="shop-cosmetic" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
         </div>
     </div>
     <div class="full-routine">
@@ -84,6 +84,11 @@
         "id": "button_label",
         "label": "Button Label",
         "default": "Shop Cosmetics"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
       },
       {
         "type": "text",

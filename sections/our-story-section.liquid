@@ -6,7 +6,7 @@
                 {{ section.settings.description1 }}
                 {{ section.settings.description2 }}
                 <div class="button-block">
-                    <a>{{ section.settings.button_label }}</a>
+                    <a href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
                     <div class="profile-info">
                         <div class="profile-img">
                             {% if section.settings.image %}
@@ -119,6 +119,11 @@
         "id": "button_label",
         "label": "Button Label",
         "default": "Read Our Story"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
       },
       {
         "type": "image_picker",
