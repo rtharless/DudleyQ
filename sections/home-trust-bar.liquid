@@ -1,0 +1,91 @@
+<div class="section section--page-width">
+    <div class="home-trust-bar">
+        <div class="badge-col">
+            {%  if section.settings.image1 %}
+                {{ section.settings.image1
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}
+            <span>{{ section.settings.trust-title1}}</span>
+        </div>
+        <div class="badge-col">
+            {%  if section.settings.image2 %}
+                {{ section.settings.image2
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}    
+            <span>{{ section.settings.trust-title2}}</span>
+        </div>
+        <div class="badge-col">
+            {%  if section.settings.image3 %}
+                {{ section.settings.image3
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}
+            <span>{{ section.settings.trust-title3}}</span>
+        </div>
+        <div class="badge-col">
+            {%  if section.settings.image3 %}
+                {{ section.settings.image4
+                    | image_url: width: 24
+                    | image_tag
+                }}
+            {% endif %}
+            <span>{{ section.settings.trust-title4}}</span>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "How Trust Bar",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "First Block"
+        },
+        {
+            "type": "text",
+            "id": "trust-title1",
+            "label": "trust Title 1",
+            "default": "Salon formulated"
+        },
+        {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Second Block"
+        },
+        {
+            "type": "text",
+            "id": "trust-title2",
+            "label": "trust Title 2",
+            "default": "Cruelty-free"
+        },
+        {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Third Block"
+        },
+        {
+            "type": "text",
+            "id": "trust-title3",
+            "label": "trust Title 3",
+            "default": "Sulfate-free options"
+        },
+        {
+            "type": "image_picker",
+            "id": "image4",
+            "label": "Fourth Block"
+        },
+        {
+            "type": "text",
+            "id": "trust-title4",
+            "label": "trust Title 4",
+            "default": "Ships in 24 hrs"
+        },
+    ]
+}
+{% endschema %}

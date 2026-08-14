@@ -1,7 +1,7 @@
 :root{
     --menu-font-weight: 600;
-    --menu-font-size-desktop: 11.5px;
-    --menu-font-size: 11.5px;
+    --menu-font-size-desktop: 12.5px;
+    --menu-font-size: 12.5px;
     --font-family-mulish: "Mulish", system-ui, sans-serif;
     --font-family-eb-garamond: "EB Garamond", Georgia, serif;
     --color-green: #1B4438;
@@ -32,6 +32,9 @@ input[type='radio']{
     border-radius: 2px !important;
     border: 1px solid #DED9CF !important;
 }
+.mega-menu__grid{
+    padding: 0 44px;
+}
 .variant-option__button-label, .gift-card-form-option__button-label{
     border-radius: 2px !important;
     border: 1px solid #DED9CF !important; 
@@ -49,6 +52,9 @@ input[type='radio']{
 }
 a p{
     color: var(--color-green) !important;
+}
+.announcement-bar__slider{
+    background: var(--color-green) !important;
 }
 .announcement-bar__slides{
     padding: 9px 20px;
@@ -73,7 +79,10 @@ p.announcement-bar__text{
     border-bottom: 1px solid #ECE7DC;
 }
 .header__row--top{
-    padding: 20px 44px 0;
+    padding: 10px 44px 0;
+}
+.header__row--top .header__columns{
+    height: 90px !important;
 }
 .header__columns{
     --padding-block-start: 0px !important;
@@ -987,6 +996,9 @@ legend{
     overflow: hidden;
     min-height: 430px;
 }
+.color-story-image img{
+    height: 100% !important;
+}
 .color-story-info{
     min-width: 0px;
     padding: 52px 44px;
@@ -1278,7 +1290,20 @@ legend{
 .youtube-text:hover{
     color: var(--color-gold) !important;
 }
+.home-trust-bar{
+    margin: 0px 44px;
+    background: var(--color-mint);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0px, 1fr));
+    padding: 22px 20px;
+}
+.home-trust-bar .badge-col span{
+    margin-top: 7px !important;
+}
 @media (max-width: 749px) {
+    .header__row--top .header__columns{
+        height: auto !important;
+    }
     .header-card{
         display: block !important;
     }
@@ -1297,7 +1322,7 @@ legend{
     .product-form-buttons{
         flex-wrap: nowrap !important;
     }
-    .product-footer-badges{
+    .product-footer-badges, .home-trust-bar{
         grid-template-columns: repeat(2, 1fr);
     }
     .badge-col{
@@ -1308,6 +1333,15 @@ legend{
     }
     .product-description-tabs{
         margin-top: 20px;
+    }
+    .custom-home-hero__content, .hair-type-grid, .color-story-detail, .our-story_content{
+        grid-template-columns: 1fr !important; 
+    }
+    .custom-hero-right{
+        margin-top: 20px;
+    }
+    .our-story-video{
+        min-height: 240px !important;
     }
 }
 @media (max-width: 429px) {

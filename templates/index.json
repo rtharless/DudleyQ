@@ -1109,24 +1109,28 @@
           "type":"color-story",
           "settings":{
             "collection": "lips",
+            "image": "shopify://shop_images/Berry-Sexy-web.jpg"
           }
         },
         "eyes":{
           "type":"color-story",
           "settings":{
             "collection": "eyes",
+            "image": "shopify://shop_images/SIGNATUREEYESHADOWCOMPACT.jpg"
           }
         },
         "blushers":{
           "type":"color-story",
           "settings":{
             "collection": "blushers",
+            "image": "shopify://shop_images/GINGERBROWNBlusher.jpg"
           }
         },
         "foundations":{
           "type":"color-story",
           "settings":{
             "collection": "foundations",
+            "image": "shopify://shop_images/CremedeHoneyCremedePowderFoundation_b1509856-01ff-4352-9858-c7fe514cb175.jpg"
           }
         },
         "block-1": {
@@ -1195,7 +1199,22 @@
     },
     "our_story_section":{
       "type": "our-story-section",
-      "settings":{}
+      "settings":{
+        "image": "shopify://shop_images/bfe69e13-5b22-468d-be28-6ae21d715868.jpg",
+      }
+    },
+    "home_trust_bar": {
+      "type": "home-trust-bar",
+      "settings": {
+        "image1": "shopify://shop_images/Screenshot_from_2026-08-14_10-53-30.png",
+        "trust-title1": "Salon formulated",
+        "image2": "shopify://shop_images/Screenshot_from_2026-08-10_12-42-57.png",
+        "trust-title2": "Cruelty-free",
+        "image3": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-12.png",
+        "trust-title3": "Sulfate-free Options",
+        "image4": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-24.png",
+        "trust-title4": "Ships in 24 hrs"
+      }
     },
   },
   "order": [
@@ -1207,6 +1226,7 @@
     "custom_hero_section",
     "start_here_section",
     "color_story_section",
-    "our_story_section"
+    "our_story_section",
+    "home_trust_bar"
   ]
 }
