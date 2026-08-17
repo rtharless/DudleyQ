@@ -1233,7 +1233,7 @@ legend{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 38px 0px;
+    padding: 38px 0px 0px 0px;
 }
 .youtube-facade{
     position: relative;
@@ -1300,6 +1300,19 @@ legend{
 .home-trust-bar .badge-col span{
     margin-top: 7px !important;
 }
+.menu-drawer__menu-item--mainlist{
+    font-size: 15px !important;
+}
+.menu-drawer__menu a, .menu-drawer__menu-item-text{
+    color: var(--color-green);
+    font-size: 15px !important;
+}
+li .resource-card__wrapper .resource-card__content p{
+    color: var(--color-green);
+}
+.menu-drawer__close-button.menu-drawer__close-button{
+    color: var(--color-warmgray);
+}
 @media (max-width: 749px) {
     .header__row--top .header__columns{
         height: auto !important;
@@ -1342,6 +1355,12 @@ legend{
     }
     .our-story-video{
         min-height: 240px !important;
+    }
+    .start-here__content {
+        text-align: left !important;
+    }
+    .treating-cards span{
+        width: 100% !important;
     }
 }
 @media (max-width: 429px) {
