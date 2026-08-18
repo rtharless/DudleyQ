@@ -10,7 +10,7 @@
             <h1>{{ section.settings.title }}</h1>
             {{ section.settings.description }}
           <div class="custom-hero-buttons">    
-                <a class="button concern" href="{{ section.settings.button_link }}">
+                <a class="button concern scroll-link" href="#start-here">
                 {{ section.settings.button_text }}
                 </a>
             {% if section.settings.button_all_link != blank %}
@@ -22,7 +22,16 @@
         </div>
     </div>
 </section>
-  
+<script>
+  document.querySelector('.scroll-link').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector('.start-here').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+</script>  
   {% schema %}
   {
     "name": "Custom Home Hero",

@@ -26,7 +26,7 @@
                 <div
                 class="youtube-facade"
                 data-youtube-id="{{ section.settings.youtube-id }}"
-                style="background-image: url('https://i.ytimg.com/vi/{{  section.settings.youtube-id }}/hqdefault.jpg');"
+                style="background-image: url('{{ section.settings.background_image | image_url: width: 600 }}');"
                 >
                 <button
                     type="button"
@@ -153,6 +153,11 @@
         "id": "youtube-text",
         "label": "YouTube Text",
         "default": "Hear from our CEO & President"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
       },
     ]
   }
