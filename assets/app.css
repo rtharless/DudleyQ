@@ -1415,6 +1415,9 @@ li .resource-card__wrapper .resource-card__content p{
     line-height: 1.2 !important;
     --text-align: left !important;
 }
+.main-collection-grid .product-card a:hover p{
+    color: var(--color-gold) !important;
+}
 .product-card__content a p{
     font-family: var(--font-family-eb-garamond) !important;
 }
@@ -1464,6 +1467,19 @@ li .resource-card__wrapper .resource-card__content p{
     color: #5C5147 !important;
     font-size: 16px;
     cursor: pointer;
+}
+.cart-items__unit-price-wrapper, .cart-items__price, .cart-totals__total-value{
+    color: var(--color-warmgray);
+    font-weight: var(--weight-medium) !important;
+}
+.cart-discount__summary, .cart-totals__container{
+    color: #4A4642 !important;
+}
+.cart-items__remove{
+    color: #5C5147 !important;   
+}
+cart-quantity-selector-component{
+    color: #63584C !important;
 }
 @media (max-width: 749px) {
     .header__row--top .header__columns{
