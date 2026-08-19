@@ -1537,6 +1537,12 @@ cart-quantity-selector-component{
     .treating-cards span{
         width: 100% !important;
     }
+    .hair-type-img{
+        aspect-ratio: 1 !important;
+    }
+    .hair-type-img img{
+        object-fit: fill !important;
+    }
 }
 @media (max-width: 429px) {
     .product-details .button[id^='BuyButtons-ProductSubmitButton-']{
