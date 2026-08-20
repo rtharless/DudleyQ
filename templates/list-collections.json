@@ -139,10 +139,24 @@
         "collection_tiles_3YgBcT"
       ],
       "settings": {}
+    },
+    "home_trust_bar": {
+      "type": "home-trust-bar",
+      "settings": {
+        "image1": "shopify://shop_images/Screenshot_from_2026-08-14_10-53-30.png",
+        "trust-title1": "Salon formulated",
+        "image2": "shopify://shop_images/Screenshot_from_2026-08-10_12-42-57.png",
+        "trust-title2": "Cruelty-free",
+        "image3": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-12.png",
+        "trust-title3": "Sulfate-free Options",
+        "image4": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-24.png",
+        "trust-title4": "BLACK OWNED"
+      }
     }
   },
   "order": [
     "collection_list_Wfgh3m",
-    "collection_type_list"
+    "collection_type_list",
+    "home_trust_bar"
   ]
 }
