@@ -196,6 +196,9 @@
 
 @media (max-width: 767px) {
 
+    .routine-page{
+        min-height: 88vh !important;
+    }
     .routine-page__image {
         height: 350px;
         display: none;
