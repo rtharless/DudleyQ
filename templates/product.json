@@ -490,7 +490,7 @@
         "judge_me_reviews_review_widget_MGNcM9": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "review_data": "real_data",
+            "review_data": "no_reviews",
             "max_width": 1150,
             "show_shop_reviews": false,
             "empty_state": "empty_widget"
