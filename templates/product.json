@@ -134,9 +134,15 @@
                   },
                   "blocks": {}
                 },
-                "product-reviews":{
+                "judge_me_reviews_preview_badge_yhJCtd": {
+                  "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+                  "settings": {}
+                },
+                "product-reviews": {
                   "type": "product-reviews",
-                  "settings":{}
+                  "disabled": true,
+                  "settings": {},
+                  "blocks": {}
                 },
                 "price_tVjtKg": {
                   "type": "price",
@@ -163,6 +169,7 @@
               },
               "block_order": [
                 "text_xrnftG",
+                "judge_me_reviews_preview_badge_yhJCtd",
                 "product-reviews",
                 "price_tVjtKg"
               ]
@@ -476,11 +483,57 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "17875544041c303e0e": {
+      "type": "_blocks",
+      "blocks": {
+        "judge_me_reviews_review_widget_pBFih3": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1150,
+            "show_shop_reviews": false,
+            "empty_state": "hide_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_pBFih3"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "main",
     "product_footer_badges",
-    "product_recommendations_qggXJq"
+    "product_recommendations_qggXJq",
+    "17875544041c303e0e"
   ]
 }
