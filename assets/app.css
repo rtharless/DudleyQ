@@ -1463,7 +1463,7 @@ cart-quantity-selector-component{
     color: #63584C !important;
 }
 /* REVIEW APP JUDGE.ME */
-.jdgm-horizon-widget{
+.product-details .jdgm-horizon-widget{
     font-size: 15px;
     font-family: var(--font-family-mulish);
     gap: 12px;
