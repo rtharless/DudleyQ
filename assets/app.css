@@ -779,25 +779,6 @@ summary:hover{
 .recomended-section img{
     height: 80% !important;
 }
-.product-reviews{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-    display: none;
-}
-.review-stars{
-    display: flex;
-    gap: 1px;
-    color: var(--color-gold);
-    font-size: 15px;
-    line-height: 1;
-}
-.product-ratings{
-    font-size: 12.5px;
-    color: var(--color-warmgray);
-    letter-spacing: 0.4px;
-}
 .product-details .price-secondary{
     display: block !important;
     font-size: 13px;
@@ -1480,6 +1461,64 @@ li .resource-card__wrapper .resource-card__content p{
 }
 cart-quantity-selector-component{
     color: #63584C !important;
+}
+/* REVIEW APP JUDGE.ME */
+.jdgm-horizon-widget{
+    font-size: 15px;
+    font-family: var(--font-family-mulish);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.jdgm-prev-badge__stars{
+    gap: 1px;
+    line-height: 1;
+}
+.jdgm-prev-badge__text{
+    font-size: 12.5px;
+    color: var(--color-warmgray);
+    letter-spacing: 0.4px;
+}
+.jm-review-widget{
+    font-family: var(--font-family-mulish);
+}
+.jm-text, .jdgm-write-review-modal__intro{
+    color: #4A4642 !important;   
+}
+.jm-button--primary{
+    border-radius: 2px !important;
+    background: var(--color-green) !important;
+    border: 1px solid #DED9CF !important;
+    color: var(--color-offwhite) !important;
+    font-size: 11.5px !important;
+    font-weight: var(--weight-bold) !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    height: 34px;
+}
+.jm-button--secondary, .jm-sort-filter__select{
+    border-radius: 2px !important;
+    border-color: var(--color-green) !important;
+}
+.jdgm-write-review-modal .jdgm-write-review-modal__title, .jdgm-write-review-modal__product-title{
+    font-family: var(--font-family-eb-garamond) !important;
+    color: var(--color-green) !important;
+}
+.jdgm-write-review-modal__form{
+    color: #4A4642;      
+}
+.jdgm-write-review-modal__nav-btn-next{
+    background-color: var(--color-green) !important;
+    border: 1px solid #DED9CF !important;
+    color: var(--color-offwhite) !important;
+    font-size: 11.5px !important;
+    font-weight: var(--weight-bold) !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+}
+.jm-pagination-controls__button{
+    background-color: white !important;   
 }
 @media (max-width: 749px) {
     .header__row--top .header__columns{
