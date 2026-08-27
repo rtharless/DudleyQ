@@ -1469,15 +1469,6 @@ cart-quantity-selector-component{
     gap: 12px;
     margin-bottom: 18px;
 }
-.jdgm-prev-badge__stars{
-    gap: 1px;
-    line-height: 1;
-}
-.jdgm-prev-badge__text{
-    font-size: 12.5px;
-    color: var(--color-warmgray);
-    letter-spacing: 0.4px;
-}
 .jm-review-widget{
     font-family: var(--font-family-mulish);
 }
@@ -1504,7 +1495,7 @@ cart-quantity-selector-component{
     font-family: var(--font-family-eb-garamond) !important;
     color: var(--color-green) !important;
 }
-.jdgm-write-review-modal__form{
+.jdgm-write-review-modal__form, .jm-no-reviews-state__text{
     color: #4A4642;      
 }
 .jdgm-write-review-modal__nav-btn-next{
@@ -1519,6 +1510,45 @@ cart-quantity-selector-component{
 }
 .jm-pagination-controls__button{
     background-color: white !important;   
+}
+.jm-review-widget-minimal-header__title{
+    font-family: var(--font-family-eb-garamond) !important;
+    color: var(--color-green) !important;
+}
+.jm-average-rating-display .jm-cluster p:first-of-type{
+    font-family: var(--font-family-eb-garamond) !important;
+    color: var(--color-green) !important;
+}
+.jm-carousel .jm-navigation__next, .jm-carousel .jm-navigation__previous{
+    color: #5C5147 !important;
+    background-color: white !important;
+}
+.jm-indicator__close, .jdgm-write-review-modal__close-btn{
+    color: #5C5147 !important;
+    background-color: var(--color-page-background) !important;
+    border-radius: 2px !important;
+}
+.jm-indicator{
+    top: 0 !important;
+    right: 0 !important;
+    border: none !important;
+}
+.jm-slide{
+    border-radius: 2px !important;
+}
+.jdgm-write-review-modal .jdgm-write-review-modal__content{
+    border-radius: 2px !important;
+}
+.jm-sort-filter__icon, .jm-custom-answer-filter__icon{
+    color: var(--color-green) !important;
+}
+.jm-sort-filter--compact .jm-sort-filter__select option{
+    color: #5c5147 !important;
+    font-family: var(--font-family-mulish) !important;
+    font-size: 12px !important;
+}
+.jm-sort-filter__select:hover, .jm-button--secondary{
+    background-color: inherit !important;
 }
 @media (max-width: 749px) {
     .header__row--top .header__columns{
