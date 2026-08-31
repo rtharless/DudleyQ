@@ -1790,6 +1790,16 @@ cart-quantity-selector-component{
         object-fit: fill !important;
     }
 }
+@media (min-width: 375px) and (max-width: 415px) {
+    .quick-view-product-info .quantity-selector-wrapper{
+        width: 62% !important;
+    }
+}
+@media (min-width: 416px) and (max-width: 429px) {
+    .quick-view-product-info .quantity-selector-wrapper{
+        width: 52% !important;
+    }
+}
 @media (max-width: 429px) {
     .product-details .button[id^='BuyButtons-ProductSubmitButton-']{
         width: 170px !important;
@@ -1797,9 +1807,6 @@ cart-quantity-selector-component{
     .quick-view-product-info .product-form-buttons{
         display: grid !important;
     
-    }
-    .quick-view-product-info .quantity-selector-wrapper{
-        width: 52% !important;
     }
 }
 @media (min-width: 750px) and (max-width: 1024px) {
