@@ -82,6 +82,19 @@
   data-image-ratio="{{ block_settings.image_ratio }}"
   {{ block.shopify_attributes }}
 >
+
+  {% if request.page_type == 'collection' %}
+  <div class="quick-view-btn">
+    <button type="button"
+      class="quick-view-trigger"
+      data-product-handle="{{ product.handle }}"
+      data-product-available="{{ product.available }}"
+    >
+      Quick View
+    </button>
+  </div>
+  {% endif %}
+  
   {%- if product.media.size > 0 -%}
     {% liquid
       # Check if there are generic media that are not variant images
