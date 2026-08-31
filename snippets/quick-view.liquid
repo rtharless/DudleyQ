@@ -1,0 +1,793 @@
+<div
+    id="quick-view-modal"
+    class="quick-view-modal"
+    aria-hidden="true"
+  >
+    <div class="quick-view-overlay"></div>
+  
+    <div class="quick-view-content">
+  
+      <button
+        type="button"
+        class="quick-view-close"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+  
+      <div id="quick-view-body">
+        <!-- Product information will be loaded here -->
+      </div>
+  
+    </div>
+  </div>
+<script>
+    let currentProduct = null;
+    document.addEventListener('click', async function (event) {
+
+        const button = event.target.closest('.quick-view-trigger');
+      
+        if (!button) {
+          return;
+        }
+      
+        event.preventDefault();
+        event.stopPropagation();
+      
+        const handle = button.dataset.productHandle;
+      
+        if (!handle) {
+          return;
+        }
+      
+        const modal = document.getElementById('quick-view-modal');
+        const body = document.getElementById('quick-view-body');
+      
+        if (!modal || !body) {
+          return;
+        }
+      
+        // Open popup
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+      
+        document.body.style.overflow = 'hidden';
+      
+        // Loading
+        body.innerHTML = `
+          <div class="quick-view-loading">
+            Loading...
+          </div>
+        `;
+      
+        try {
+      
+          const response = await fetch(
+            `/products/${handle}.js`
+          );
+      
+          if (!response.ok) {
+            throw new Error('Product not found');
+          }
+      
+          const product = await response.json();
+      
+          renderQuickView(product);
+      
+        } catch (error) {
+      
+          console.error(error);
+      
+          body.innerHTML = `
+            <div class="quick-view-error">
+              Unable to load product.
+            </div>
+          `;
+      
+        }
+      
+    });
+    function formatMoney(cents) {
+        return new Intl.NumberFormat(
+          document.documentElement.lang || 'en',
+          {
+            style: 'currency',
+            currency: "{{shop.currency}}"
+          }
+        ).format(cents / 100);
+    }
+    function renderQuickView(product) {
+
+        currentProduct = product;
+        window.quickViewProduct = product;
+
+        const body = document.getElementById('quick-view-body');
+      
+        /*
+        * Find first available variant
+        */
+        const selectedVariant =
+        product.variants.find(
+          variant => variant.available
+        ) || product.variants[0];
+
+        
+        const image = product.featured_image
+          ? product.featured_image
+          : '';
+      
+        const price = formatMoney(selectedVariant.price);
+      
+        body.innerHTML = `
+          <div class="quick-view-product">
+      
+            <div class="quick-view-product-image">
+              <img
+                src="${image}"
+                alt="${escapeHtml(product.title)}"
+              >
+            </div>
+      
+            <div class="quick-view-product-info">
+      
+              <h2>
+                ${escapeHtml(product.title)}
+              </h2>
+      
+              <div class="quick-view-price">
+              <div class="
+                    price__regular
+                    
+                ">
+                <div class="quick-view-price">
+                  <div class="price__regular">
+                    <span class="price" data-price>${price}</span>
+                  </div>
+                </div>
+                
+                </div>
+              </div>
+      
+              <div class="quick-view-description">
+                ${product.description}
+              </div>
+      
+              <div class="quick-view-variants">
+                ${renderVariants(product)}
+              </div>
+      
+              <div class="product-form-buttons">
+                {% render 'quantity-selector', product: product %}
+              
+      
+                <button
+                    type="button"
+                    class="quick-view-add"
+                    data-variant-id="${selectedVariant.id}"
+                    ${selectedVariant.available ? '' : 'disabled'}
+                >
+                    ${selectedVariant.available ? 'Add to cart' : 'Sold out'} . ${price}
+                </button>
+              </div>
+              <div class="interest-free-payments">
+              
+                {%- if product.selected_or_first_available_variant != blank -%}
+                    {%- assign product_form_installment_id = 'product-form-installment-' | append: product.id -%}
+                    {%- form 'product', product, id: product_form_installment_id, class: 'payment-terms' -%}
+                        <input
+                        type="hidden"
+                        name="id"
+                        value="${product.selected_or_first_available_variant.id }"
+                        >
+                        {{ form | payment_terms }}
+                    {%- endform -%}
+                {%- endif -%}
+                </div>
+              <a
+                href="/products/${product.handle}"
+                class="quick-view-view-product"
+              >
+                Full Product Details
+              </a>
+      
+            </div>
+      
+          </div>
+        `;
+    }
+    function renderVariants(product) {
+
+      if (
+        !product.variants ||
+        product.variants.length <= 1
+      ) {
+        return '';
+      }
+    
+      if (
+        !product.options ||
+        !product.options.length
+      ) {
+        return '';
+      }
+    
+      return `
+        <div class="quick-view-options">
+    
+          ${
+            product.options.map(function (
+              optionName,
+              optionIndex
+            ) {
+    
+              const values = [
+                ...new Set(
+                  product.variants.map(
+                    variant =>
+                      variant.options[optionIndex]
+                  )
+                )
+              ];
+    
+              return `
+                <div class="quick-view-option">
+    
+                  <div class="quick-view-option-label">
+                    ${escapeHtml(optionName.name)}
+                  </div>
+    
+                  <div class="quick-view-radio-group">
+    
+                    ${
+                      values.map(function (value, valueIndex) {
+    
+                        const radioId =
+                          `quick-view-${optionIndex}-${valueIndex}`;
+    
+                        return `
+                          <div class="quick-view-radio">
+                            <label class="variant-option__button-label">  
+                            <input
+                              type="radio"
+                              id="${radioId}"
+                              name="quick-view-option-${optionIndex}"
+                              value="${escapeHtml(value)}"
+                              data-option-index="${optionIndex}"
+                              ${valueIndex === 0 ? 'checked' : ''}
+                            >
+
+                            <span>  ${escapeHtml(value)}</span>
+                            </label>
+    
+                          </div>
+                        `;
+    
+                      }).join('')
+                    }
+    
+                  </div>
+    
+                </div>
+              `;
+    
+            }).join('')
+          }
+    
+        </div>
+      `;
+    }
+    function getSelectedVariant() {
+
+      if (!currentProduct) {
+        return null;
+      }
+    
+      const modal =
+        document.getElementById('quick-view-modal');
+    
+      if (!modal) {
+        return null;
+      }
+    
+      const selectedOptions = [];
+    
+      currentProduct.options.forEach(
+        function (optionName, optionIndex) {
+    
+          const selected =
+            modal.querySelector(
+              `input[name="quick-view-option-${optionIndex}"]:checked`
+            );
+    
+          selectedOptions.push(
+            selected ? selected.value : null
+          );
+    
+        }
+      );
+    
+      return currentProduct.variants.find(
+        function (variant) {
+    
+          return variant.options.every(
+            function (option, index) {
+    
+              return option === selectedOptions[index];
+    
+            }
+          );
+    
+        }
+      ) || null;
+    }
+
+    function escapeHtml(value) {
+
+        const div = document.createElement('div');
+      
+        div.textContent = value || '';
+      
+        return div.innerHTML;
+    }
+    document.addEventListener('click', function (event) {
+
+        const modal = document.getElementById('quick-view-modal');
+      
+        if (!modal) {
+          return;
+        }
+      
+        if (
+          event.target.closest('.quick-view-close') ||
+          event.target.classList.contains('quick-view-overlay')
+        ) {
+      
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+      
+          document.body.style.overflow = '';
+        }
+      
+    });
+
+    document.addEventListener('click', async function (event) {
+
+      const addButton = event.target.closest('.quick-view-add');
+    
+      if (!addButton) {
+        return;
+      }
+    
+      event.preventDefault();
+      event.stopPropagation();
+    
+      const modal = document.getElementById('quick-view-modal');
+    
+      const variantId = addButton.dataset.variantId;
+    
+      const quantityInput = modal.querySelector('[name="quantity"]');
+    
+      const quantity = quantityInput
+        ? parseInt(quantityInput.value, 10) || 1
+        : 1;
+    
+      addButton.disabled = true;
+      addButton.textContent = 'Adding...';
+    
+      try {
+    
+        const response = await fetch(
+          window.Shopify.routes.root + 'cart/add.js',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              items: [
+                {
+                  id: Number(variantId),
+                  quantity: quantity
+                }
+              ]
+            })
+          }
+        );
+    
+        if (!response.ok) {
+          throw new Error('Unable to add product');
+        }
+    
+        const data = await response.json();
+
+        /*
+        * Get freshly rendered Horizon cart drawer
+        */
+        const sectionResponse = await fetch(
+          window.Shopify.routes.root +
+          '?section_id=cart-drawer-section'
+        );
+
+        if (!sectionResponse.ok) {
+          throw new Error('Unable to refresh cart drawer');
+        }
+
+        const sectionHtml = await sectionResponse.text();
+
+        const parser = new DOMParser();
+
+        const newDocument = parser.parseFromString(
+          sectionHtml,
+          'text/html'
+        );
+
+
+        /*
+        * Horizon cart drawer section
+        */
+        const newSection = newDocument.querySelector(
+          '#shopify-section-cart-drawer-section'
+        );
+
+        const currentSection = document.querySelector(
+          '#shopify-section-cart-drawer-section'
+        );
+
+        /*
+        * Replace the section
+        */
+        if (newSection && currentSection) {
+
+          currentSection.replaceWith(newSection);
+
+        }
+
+
+        const cartResponse = await fetch(
+          window.Shopify.routes.root + 'cart.js',
+          {
+            headers: {
+              'Accept': 'application/json'
+            }
+          }
+        );
+      
+        const cart = await cartResponse.json();
+
+        updateCartIconCount(cart.item_count);
+
+        const cartBubble = document.querySelector(
+          '[data-testid="cart-bubble"]'
+        );
+
+        if (cartBubble) {
+          cartBubble.textContent = cart.item_count;
+        }
+
+        document.dispatchEvent(
+          new CustomEvent('shopify:cart:lines-update', {
+            bubbles: true,
+            detail: {
+              resource: cart
+            }
+          })
+        );
+
+    
+        addButton.textContent = 'Added ✓';
+    
+        setTimeout(function () {
+    
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+    
+          document.body.style.overflow = '';
+    
+          addButton.disabled = false;
+          addButton.textContent = 'Add to cart';
+    
+        }, 700);
+    
+      } catch (error) {
+    
+        console.error(error);
+    
+        addButton.disabled = false;
+        addButton.textContent = 'Add to cart';
+    
+      }
+    
+    });
+
+    document.addEventListener('change', function (event) {
+      console.log(event.target);
+      if (
+        !event.target.matches(
+          '.quick-view-radio-group input[type="radio"]'
+        )
+      ) {
+        return;
+      }
+    
+      updateSelectedVariant();
+    
+    });
+    /*
+   * Update selected variant
+   */
+  function updateSelectedVariant() {
+
+    const modal =
+      document.getElementById(
+        'quick-view-modal'
+      );
+
+
+    if (!modal) {
+      return;
+    }
+
+
+    const variant =
+      getSelectedVariant();
+
+
+    const addButton =
+      modal.querySelector(
+        '.quick-view-add'
+      );
+
+
+    const priceElement =
+      modal.querySelector(
+        '[data-price]'
+      );
+
+
+    if (!variant) {
+
+      if (addButton) {
+
+        addButton.disabled = true;
+
+        addButton.textContent =
+          'Unavailable';
+
+      }
+
+      return;
+
+    }
+
+
+    /*
+     * Update variant ID
+     */
+    if (addButton) {
+
+      addButton.dataset.variantId =
+        variant.id;
+
+
+      if (variant.available) {
+
+        addButton.disabled = false;
+
+        addButton.textContent =
+          'Add to cart . '+ formatMoney(variant.price);
+
+      } else {
+
+        addButton.disabled = true;
+
+        addButton.textContent =
+          'Sold out . '+ formatMoney(variant.price);
+
+      }
+
+    }
+
+
+    /*
+     * Update price
+     */
+    if (priceElement) {
+
+      let html =
+        formatMoney(
+          variant.price
+        );
+
+
+      if (
+        variant.compare_at_price &&
+        Number(
+          variant.compare_at_price
+        ) >
+        Number(
+          variant.price
+        )
+      ) {
+
+        html += `
+          <span
+            class="quick-view-compare-price"
+          >
+            ${formatMoney(
+              variant.compare_at_price
+            )}
+          </span>
+        `;
+
+      }
+
+
+      priceElement.innerHTML = html;
+
+    }
+
+  }
+
+  async function refreshHorizonCart() {
+
+    try {
+  
+      /*
+       * Get the latest cart state
+       */
+      const cartResponse = await fetch(
+        window.Shopify.routes.root + 'cart.js',
+        {
+          headers: {
+            'Accept': 'application/json'
+          }
+        }
+      );
+  
+      if (!cartResponse.ok) {
+        throw new Error('Unable to fetch cart');
+      }
+  
+      const cart = await cartResponse.json();
+  
+      console.log('Updated cart:', cart);
+  
+  
+      /*
+       * Ask Shopify to render the cart drawer
+       * and cart icon using the NEW cart state.
+       */
+      const sectionsUrl =
+        window.Shopify.routes.root +
+        '?sections=cart-drawer,header';
+  
+  
+      const sectionsResponse =
+        await fetch(sectionsUrl);
+  
+      if (!sectionsResponse.ok) {
+        throw new Error(
+          'Unable to fetch cart sections'
+        );
+      }
+  
+  
+      const sections =
+        await sectionsResponse.json();
+  
+  
+      /*
+       * Replace cart drawer
+       */
+      if (sections['cart-drawer']) {
+  
+        const parser =
+          new DOMParser();
+  
+        const drawerDocument =
+          parser.parseFromString(
+            sections['cart-drawer'],
+            'text/html'
+          );
+  
+  
+        const newDrawer =
+          drawerDocument.querySelector(
+            '#cart-drawer'
+          );
+  
+  
+        const currentDrawer =
+          document.querySelector(
+            '#cart-drawer'
+          );
+  
+  
+        if (
+          newDrawer &&
+          currentDrawer
+        ) {
+  
+          currentDrawer.replaceWith(
+            newDrawer
+          );
+  
+        }
+  
+      }
+  
+  
+      /*
+       * Refresh cart icon/count
+       */
+      if (sections.header) {
+  
+        const parser =
+          new DOMParser();
+  
+        const headerDocument =
+          parser.parseFromString(
+            sections.header,
+            'text/html'
+          );
+  
+  
+        const newCartIcon =
+          headerDocument.querySelector(
+            'cart-icon[data-testid="cart-icon"]'
+          );
+  
+  
+        const currentCartIcon =
+          document.querySelector(
+            'cart-icon[data-testid="cart-icon"]'
+          );
+  
+  
+        if (
+          newCartIcon &&
+          currentCartIcon
+        ) {
+  
+          currentCartIcon.replaceWith(
+            newCartIcon
+          );
+  
+        }
+  
+      }
+  
+    } catch (error) {
+  
+      console.error(
+        'Horizon cart refresh failed:',
+        error
+      );
+  
+    }
+  
+  }
+  function updateCartIconCount(count) {
+    const cartCount = document.querySelector(
+      '[data-testid="cart-bubble"]'
+    );
+    const cartBubble = document.querySelector('.cart-bubble');
+
+    if (cartBubble) {
+      cartBubble.classList.remove('visually-hidden');
+    }
+
+    if (!cartCount) {
+      return;
+    }
+  
+    cartCount.textContent = count;
+  
+    if (count > 0) {
+      cartCount.classList.remove('hidden');
+    } else {
+      cartCount.classList.add('hidden');
+    }
+  }
+</script>
