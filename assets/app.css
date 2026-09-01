@@ -1720,6 +1720,9 @@ cart-quantity-selector-component{
     display: block;
     margin-bottom: 12px;
 }
+.tab-keying-detail ul.metafield-single_line_text_field-array{
+    margin: 0px !important;
+}
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;
