@@ -104,5 +104,16 @@
         stroke-linejoin="round">
      <path d="M5 12l5 5L20 7" />
    </svg></span>
-    <span>In stock — usually ships within 24 hours.</span>
+    <span>In stock — usually ships within 48 hours.</span>
 </div>
+<script>
+    document.querySelectorAll('.metafield-multi_line_text_field').forEach(el => {
+        let html = el.innerHTML;
+        const hadMultipleBr = /(<br>\s*){2,}/i.test(html);
+        html = html.replace(/(<br>\s*){2,}/gi, '<br>');
+        if (hadMultipleBr) {
+            html = html.replace('<br>', '<span class="intro-break"></span>');
+        }
+        el.innerHTML = html;
+    });
+</script>

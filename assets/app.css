@@ -1716,6 +1716,10 @@ cart-quantity-selector-component{
     color: white !important;
     background-color:  var(--color-green) !important;
 }
+.metafield-multi_line_text_field .intro-break {
+    display: block;
+    margin-bottom: 12px;
+}
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;
