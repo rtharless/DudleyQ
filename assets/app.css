@@ -1723,6 +1723,9 @@ cart-quantity-selector-component{
 .tab-keying-detail ul.metafield-single_line_text_field-array{
     margin: 0px !important;
 }
+.variant-picker__form .variant-option--buttons{
+    padding-bottom: 10px;
+}
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;
