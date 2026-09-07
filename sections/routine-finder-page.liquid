@@ -1,0 +1,372 @@
+{{ 'concern-page.css' | asset_url | stylesheet_tag }}
+
+<div class="routine-concern-page">
+
+    <div class="routine-concern-page__content">
+      <div class="step1" id="step1">
+        <h1>
+            {{ section.settings.title }}
+        </h1>
+
+        <div class="routine-concern-buttons">
+          {% for block in section.blocks %}
+            {% if block.type == 'routine_finder' %}
+              <a data-value="{{ block.settings.filter_value }}" href="javascript:void(0);"
+                  class="routine-concern-button"
+                  data-index="{{ forloop.index0 }}">
+
+                    {% if block.settings.card_image %}
+                        {{ block.settings.card_image | image_url: width: 600 | image_tag }}
+                        <span>{{ block.settings.title }}</span>
+                    {% else %}
+                      {{ block.settings.title }}    
+                    {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+
+      <div class="step2" id="step2">
+        <h1>
+            {{ section.settings.title2 }}
+        </h1>
+
+        <div class="routine-concern-buttons">
+          {% for block in section.blocks %}
+            {% if block.type == 'routine_finder-concern' %}
+              <a data-value="{{ block.settings.filter_value }}" href="javascript:void(0);" class="routine-concern-button" data-index="{{ forloop.index0 }}">
+
+                    {% if block.settings.card_image %}
+                        {{ block.settings.card_image | image_url: width: 600 | image_tag }}
+                        <span>{{ block.settings.title }}</span>
+                    {% else %}
+                      {{ block.settings.title }}    
+                    {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+
+      <div class="finalstep" id="finalstep">
+        <h1>
+            {{ section.settings.final_title }}
+        </h1>
+  
+        <div class="routine-concern-buttons">
+              <a href="javascript:void(0);" class="routine-concern-button">
+                <div class="result-div">
+                  <span class="result-title">HAIR TYPE</span>
+                  <span id="hair_type"></span>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="routine-concern-button">
+                <div class="result-div">
+                  <span class="result-title">HAIR CONCERN</span> 
+                  <span id="hair_concern"></span>
+                </div>
+          </a>
+        </div>
+        <div class="result-text"> On basis of your selection, Routine is: <span id="routine-value"><strong>Routine Name</strong></span> </div>
+
+        <div class="final-button-group">
+          <button class="submit-btn button" id="routine-button" data-url="">{{  section.settings.button_label}}</button>
+          <a href="{{ shop.root_url }}routine-finder" class="start-link">{{ section.settings.statr_over_link }}</a>
+        </div>
+      </div>
+
+
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+    const firstDiv = document.getElementById('step1');
+    const secondDiv = document.getElementById('step2');
+    const finalDiv = document.getElementById('finalstep');
+    
+    // Routine mapping
+    const routineMap = {
+      "Dryness": "Moisture Matters",
+      "Frizz": "Classics",
+      "Scalp Health": "Soothe Calm",
+      "Damage Repair": "Revival",
+      "Irritation": "Soothe Calm",
+      "Breakage": "Revival",
+      "Growth": "Healthy Tresses",
+      "Thinning": "Length & Strength",
+      "Oiliness": "Revival"
+    };
+    
+    // Get routine based on hair type + concern
+    function getRoutine(hairType, concern) {
+
+      // Special rule for Curl Definition
+      if (concern === "Curl Definition") {
+        if (hairType === "Curly" || hairType === "Natural") {
+          return "Confident Curls";
+        }
+
+        return "Classics";
+      }
+
+      // Normal mapping
+      return routineMap[concern] || "Classics";
+    }
+    
+    document.querySelectorAll('#step1 .routine-concern-button').forEach(function (link) {
+  
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const value = this.dataset.value;
+        sessionStorage.setItem('selectedOption1', value);
+        firstDiv.style.display = 'none';
+        secondDiv.style.display = 'block';
+      });
+  
+    });
+
+    document.querySelectorAll('#step2 .routine-concern-button').forEach(function (link) {
+  
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const value = this.dataset.value;
+
+        const hairType = sessionStorage.getItem('selectedOption1');
+        const concern = value;
+
+        // Get recommended routine
+        const routine = getRoutine(hairType, concern);
+        
+        secondDiv.style.display = 'none';
+        document.getElementById('hair_type').textContent = hairType;
+        document.getElementById('hair_concern').textContent = value;
+        document.getElementById('routine-value').innerHTML = `<strong>${routine}</strong>`;
+        
+        const routineUrl =
+          "{{ routes.root_url }}collections/all?filter.p.m.custom.routine=" +
+          encodeURIComponent(routine);
+
+        document.getElementById('routine-button').setAttribute('data-url', routineUrl);
+        
+        finalDiv.style.display = 'block';
+      });
+    });
+
+    document.getElementById('routine-button').addEventListener('click', function () {
+      window.location.href = this.dataset.url;
+    });
+
+  });
+  </script>
+
+{% schema %}
+{
+  "name": "Routine Finder Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What is Your Hair Type?"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Concern Title",
+      "default": "What is Your Hair Concern?"
+    },
+    {
+      "type": "text",
+      "id": "final_title",
+      "label": "Final Title",
+      "default": "Just Making Sure We're on the Right Track"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit Button Label",
+      "default": "Looks Good"
+    },
+    {
+      "type": "text",
+      "id": "statr_over_link",
+      "label": "Start Over Link",
+      "default": "Start Over"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "routine_finder",
+      "name": "Routine Finder",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "Filter Value"
+        }
+      ]
+    },
+    {
+      "type": "routine_finder-concern",
+      "name": "Routine Finder Concern",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "Filter Value"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 30,
+  "presets": [
+    {
+      "name": "Concern Page",
+      "blocks": [
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Coily",
+            "filter_value":"Coily"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Curly",
+            "filter_value":"Curly"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Wavy",
+            "filter_value":"Wavy"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Straight",
+            "filter_value":"Straight"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Relaxed",
+            "filter_value":"Relaxed"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Natural",
+            "filter_value":"Natural"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Locs",
+            "filter_value":"Locs"
+          }
+        },
+        {
+            "type": "routine_finder",
+            "settings": {
+                "title": "Transitioning",
+                "filter_value":"Transitioning"
+            }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Breakage",
+            "filter_value":"Breakage"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Curl Definition",
+            "filter_value":"Curl Definition"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Damage Repair",
+            "filter_value":"Damage Repair"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Dryness",
+            "filter_value":"Dryness"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Frizz",
+            "filter_value":"Frizz"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Growth",
+            "filter_value":"Growth"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Irritation",
+            "filter_value":"Irritation"
+          }
+        },
+        {
+            "type": "routine_finder-concern",
+            "settings": {
+                "title": "Oiliness",
+                "filter_value":"Oiliness"
+            }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+              "title": "Scalp Health",
+              "filter_value":"Scalp Health"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+              "title": "Thinning",
+              "filter_value":"Thinning"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

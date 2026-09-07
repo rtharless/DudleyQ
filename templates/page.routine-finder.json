@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "main": {
+      "type": "routine-finder-page",
+      "blocks": {
+          "block-1": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Coily",
+              "filter_value":"Coily"
+            }
+          },
+          "block-2": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Curly",
+              "filter_value":"Curly"
+            }
+          },
+          "block-3": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Wavy",
+              "filter_value":"Wavy"
+            }
+          },
+          "block-4": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Straight",
+              "filter_value":"Straight"
+            }
+          },
+          "block-5": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Relaxed",
+              "filter_value":"Relaxed"
+            }
+          },
+          "block-6": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Natural",
+              "filter_value":"Natural"
+            }
+          },
+          "block-7": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Locs",
+              "filter_value":"Locs"
+            }
+          },
+          "block-8": {
+            "type": "routine_finder",
+            "settings": {
+              "title": "Transitioning",
+              "filter_value":"Transitioning"
+            }
+          },
+          "block-9": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Breakage",
+              "filter_value": "Breakage"
+            }
+          },
+          "block-10": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Curl Definition",
+              "filter_value": "Curl Definition"
+            }
+          },
+          "block-11": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Damage Repair",
+              "filter_value": "Damage Repair"
+            }
+          },
+          "block-12": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Dryness",
+              "filter_value": "Dryness"
+            }
+          },
+          "block-13": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Frizz",
+              "filter_value": "Frizz"
+            }
+          },
+          "block-14": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Growth",
+              "filter_value": "Growth"
+            }
+          },
+          "block-15": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Irritation",
+              "filter_value": "Irritation"
+            }
+          },
+          "block-16": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Oiliness",
+              "filter_value": "Oiliness"
+            }
+          },
+          "block-17": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Scalp Health",
+              "filter_value": "Scalp Health"
+            }
+          },
+          "block-18": {
+            "type": "routine_finder-concern",
+            "settings": {
+              "title": "Thinning",
+              "filter_value": "Thinning"
+            }
+          }
+        },
+        "block_order": [
+          "block-1",
+          "block-2",
+          "block-3",
+          "block-4",
+          "block-5",
+          "block-6",
+          "block-7",
+          "block-8",
+          "block-9",
+          "block-10",
+          "block-11",
+          "block-12",
+          "block-13",
+          "block-14",
+          "block-15",
+          "block-16",
+          "block-17",
+          "block-18"
+        ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
