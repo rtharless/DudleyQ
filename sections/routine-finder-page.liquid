@@ -127,6 +127,17 @@
         sessionStorage.setItem('selectedOption1', value);
         firstDiv.style.display = 'none';
         secondDiv.style.display = 'block';
+        
+        setTimeout(function () {
+          const routinePage = document.querySelector('.announcement-bar__slider');
+        
+          if (routinePage) {
+            routinePage.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
       });
   
     });
@@ -155,6 +166,16 @@
         document.getElementById('routine-button').setAttribute('data-url', routineUrl);
         
         finalDiv.style.display = 'block';
+        setTimeout(function () {
+          const routinePage = document.querySelector('.announcement-bar__slider');
+        
+          if (routinePage) {
+            routinePage.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
       });
     });
 
