@@ -1,0 +1,293 @@
+{{ 'concern-page.css' | asset_url | stylesheet_tag }}
+
+<div class="routine-concern-page">
+
+    <div class="routine-concern-page__content">
+      <div class="step1" id="step1">
+        <h1>
+            {{ section.settings.title }}
+        </h1>
+
+        <div class="routine-concern-buttons">
+          {% for block in section.blocks %}
+            {% if block.type == 'skin_type' %}
+              <a data-value="{{ block.settings.filter_value }}" href="javascript:void(0);"
+                  class="routine-concern-button"
+                  data-index="{{ forloop.index0 }}">
+
+                    {% if block.settings.card_image %}
+                        {{ block.settings.card_image | image_url: width: 600 | image_tag }}
+                        <span>{{ block.settings.title }}</span>
+                    {% else %}
+                      {{ block.settings.title }}    
+                    {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+
+      <div class="step2" id="step2">
+        <h1>
+            {{ section.settings.title2 }}
+        </h1>
+
+        <div class="routine-concern-buttons">
+          {% for block in section.blocks %}
+            {% if block.type == 'concern_type' %}
+              <a data-value="{{ block.settings.filter_value }}" href="javascript:void(0);" class="routine-concern-button" data-index="{{ forloop.index0 }}">
+
+                    {% if block.settings.card_image %}
+                        {{ block.settings.card_image | image_url: width: 600 | image_tag }}
+                        <span>{{ block.settings.title }}</span>
+                    {% else %}
+                      {{ block.settings.title }}    
+                    {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+
+      <div class="finalstep" id="finalstep">
+        <h1>
+            {{ section.settings.final_title }}
+        </h1>
+  
+        <div class="routine-concern-buttons">
+              <a href="javascript:void(0);" class="routine-concern-button">
+                <div class="result-div">
+                  <span class="result-title">SKIN TYPE</span>
+                  <span id="skin_type"></span>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="routine-concern-button">
+                <div class="result-div">
+                  <span class="result-title">MAIN CONCERN</span> 
+                  <span id="skin_concern"></span>
+                </div>
+          </a>
+        </div>
+        <div class="final-button-group">
+          <button class="submit-btn button" id="concern-button" data-url="">{{  section.settings.button_label}}</button>
+          <a href="{{ shop.root_url }}concern-finder" class="start-link">{{ section.settings.statr_over_link }}</a>
+        </div>
+      </div>
+
+
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+    const firstDiv = document.getElementById('step1');
+    const secondDiv = document.getElementById('step2');
+    const finalDiv = document.getElementById('finalstep');
+    
+    document.querySelectorAll('#step1 .routine-concern-button').forEach(function (link) {
+  
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const value = this.dataset.value;
+        sessionStorage.setItem('selectedConcernOption1', value);
+        firstDiv.style.display = 'none';
+        secondDiv.style.display = 'block';
+        
+        setTimeout(function () {
+          const routinePage = document.querySelector('.announcement-bar__slider');
+        
+          if (routinePage) {
+            routinePage.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      });
+  
+    });
+
+    document.querySelectorAll('#step2 .routine-concern-button').forEach(function (link) {
+  
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const concernType = this.dataset.value;
+
+        const skinType = sessionStorage.getItem('selectedConcernOption1');
+        
+        secondDiv.style.display = 'none';
+        document.getElementById('skin_type').textContent = skinType;
+        document.getElementById('skin_concern').textContent = concernType;
+        
+        const routineUrl = "{{ routes.root_url }}collections/all?filter.p.m.custom.skintype=" +
+          encodeURIComponent(skinType) + "&filter.p.m.custom.concern="+encodeURIComponent(concernType);
+
+        document.getElementById('concern-button').setAttribute('data-url', routineUrl);
+        
+        finalDiv.style.display = 'block';
+        setTimeout(function () {
+          const routinePage = document.querySelector('.announcement-bar__slider');
+        
+          if (routinePage) {
+            routinePage.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      });
+    });
+
+    document.getElementById('concern-button').addEventListener('click', function () {
+      window.location.href = this.dataset.url;
+    });
+
+  });
+  </script>
+
+{% schema %}
+{
+  "name": "Concern Finder Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What is Your Skin Type?"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Concern Title",
+      "default": "What is Your Skin Concern?"
+    },
+    {
+      "type": "text",
+      "id": "final_title",
+      "label": "Final Title",
+      "default": "Just Making Sure We're on the Right Track"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit Button Label",
+      "default": "Looks Good"
+    },
+    {
+      "type": "text",
+      "id": "statr_over_link",
+      "label": "Start Over Link",
+      "default": "Start Over"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "skin_type",
+      "name": "Skin Type",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "Filter Value"
+        }
+      ]
+    },
+    {
+      "type": "concern_type",
+      "name": "concern Type",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "filter_value",
+          "label": "Filter Value"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 30,
+  "presets": [
+    {
+      "name": "Concern Page",
+      "blocks": [
+        {
+          "type": "skin_type",
+          "settings": {
+            "title": "Dry",
+            "filter_value":"dry"
+          }
+        },
+        {
+          "type": "skin_type",
+          "settings": {
+            "title": "Normal",
+            "filter_value":"Normal"
+          }
+        },
+        {
+          "type": "skin_type",
+          "settings": {
+            "title": "Oily",
+            "filter_value":"Oily"
+          }
+        },
+        {
+          "type": "skin_type",
+          "settings": {
+            "title": "Combination",
+            "filter_value":"Combination"
+          }
+        },
+        {
+          "type": "skin_type",
+          "settings": {
+            "title": "Sensitive",
+            "filter_value":"Sensitive"
+          }
+        },
+        {
+          "type": "concern_type",
+          "settings": {
+            "title": "Dryness",
+            "filter_value":"Dryness"
+          }
+        },
+        {
+          "type": "concern_type",
+          "settings": {
+            "title": "Irritation",
+            "filter_value":"Irritation"
+          }
+        },
+        {
+          "type": "concern_type",
+          "settings": {
+            "title": "Acne",
+            "filter_value":"Acne"
+          }
+        },
+        {
+          "type": "concern_type",
+          "settings": {
+            "title": "Oiliness",
+            "filter_value":"Oiliness"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

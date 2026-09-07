@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "main": {
+      "type": "concern-finder-page",
+      "blocks": {
+          "block-1": {
+            "type": "skin_type",
+            "settings": {
+              "title": "Dry",
+              "filter_value":"Dry"
+            }
+          },
+          "block-2": {
+            "type": "skin_type",
+            "settings": {
+              "title": "Normal",
+              "filter_value":"Normal"
+            }
+          },
+          "block-3": {
+            "type": "skin_type",
+            "settings": {
+              "title": "Oily",
+              "filter_value":"Oily"
+            }
+          },
+          "block-4": {
+            "type": "skin_type",
+            "settings": {
+              "title": "Combination",
+              "filter_value":"Combination"
+            }
+          },
+          "block-5": {
+            "type": "skin_type",
+            "settings": {
+              "title": "Sensitive",
+              "filter_value":"Sensitive"
+            }
+          },
+          "block-6": {
+            "type": "concern_type",
+            "settings": {
+              "title": "Dryness",
+              "filter_value": "Dryness"
+            }
+          },
+          "block-7": {
+            "type": "concern_type",
+            "settings": {
+              "title": "Irritation",
+              "filter_value": "Irritation"
+            }
+          },
+          "block-8": {
+            "type": "concern_type",
+            "settings": {
+              "title": "Acne",
+              "filter_value": "Acne"
+            }
+          },
+          "block-9": {
+            "type": "concern_type",
+            "settings": {
+              "title": "Oiliness",
+              "filter_value": "Oiliness"
+            }
+          }
+        },
+        "block_order": [
+          "block-1",
+          "block-2",
+          "block-3",
+          "block-4",
+          "block-5",
+          "block-6",
+          "block-7",
+          "block-8",
+          "block-9"
+        ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
