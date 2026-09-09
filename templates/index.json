@@ -1344,7 +1344,7 @@
             "placement": "below_image",
             "horizontal_alignment": "center",
             "vertical_alignment": "flex-start",
-            "collection_card_gap": 20,
+            "collection_card_gap": 8,
             "background_color": "",
             "border": "none",
             "border_width": 1,
@@ -1429,8 +1429,8 @@
         "section_width": "page-width",
         "gap": 12,
         "background_color": "",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 44,
+        "padding-block-end": 0
       }
     }
   },
@@ -1443,8 +1443,8 @@
     "custom_hero_section",
     "home_trust_bar",
     "start_here_section",
+    "collection_list_Nhrxzx",
     "color_story_section",
-    "our_story_section",
-    "collection_list_Nhrxzx"
+    "our_story_section"
   ]
 }

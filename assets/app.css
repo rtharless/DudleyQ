@@ -1848,6 +1848,39 @@ cart-drawer-component .referred-by-wrapper{
 .cart-items__empty-button{
     background-color: var(--color-green) !important;
 } 
+.home-collection-list{
+    padding: 0 44px;
+}
+.home-collection-list .home-collections{
+    display: flex;
+}
+[data-testid="collection-list"] h2 {
+    font-weight: var(--weight-regular) !important;    
+}
+[data-testid="collection-list"] rte-formatter.text-block p {
+    font-size: 11px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    font-weight: var(--weight-semibold);
+}
+[data-testid="collection-list"] .collection-card__inner .collection-card__content p{
+    font-family: var(--font-family-eb-garamond) !important;
+    font-weight: var(--weight-regular) !important;
+    font-size: 19px !important;
+    line-height: 1.2 !important;
+}
+[data-testid="collection-list"] .collection-card:hover .collection-card__inner .collection-card__content p{
+    color: var(--color-gold) !important;
+}
+[data-testid="collection-list"] .collection-card__inner .collection-card__content .desc{
+    font-size: 10.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--color-warmgray);
+    display: block;
+}
+
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;

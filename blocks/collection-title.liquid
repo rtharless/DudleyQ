@@ -7,6 +7,16 @@
 {% elsif closest.collection != blank %}
   {% assign collection_title = '<p>' | append: closest.collection.title | append: '</p>' %}
   {% render 'text', fallback_text: collection_title, block: block %}
+  {% if request.page_type == 'index' %}
+    <div class="desc">
+      {{  closest.collection.products_count }}
+      {% if closest.collection.products_count == 1 %}
+        Product
+      {% else %}
+          Products
+      {% endif %}
+    </div>
+  {% endif %}
 {% endif %}
 
 {% schema %}
