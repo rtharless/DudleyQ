@@ -2,12 +2,13 @@
 
 <div class="concern-page">
 
+  {% if section.settings.image %}
     <div class="concern-page__image">
-        {% if section.settings.image %}
+        
             {{ section.settings.image | image_url: width: 600 | image_tag }}
-        {% endif %}
+        
     </div>
-
+  {% endif %}
     <div class="concern-page__content">
 
         <p class="concern-page__eyebrow">
@@ -66,7 +67,7 @@
             
                     <a
                         id="concern-card-link"
-                        href="#"
+                        href="{{ shop.root_url }}concern-finder"
                         class="concern-card__button">
                         Take Quiz
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">

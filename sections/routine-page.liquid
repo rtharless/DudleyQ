@@ -1,13 +1,13 @@
 {{ 'routine-page.css' | asset_url | stylesheet_tag }}
 
 <div class="routine-page">
-
+  {% if section.settings.image %}
     <div class="routine-page__image">
-        {% if section.settings.image %}
+        
             {{ section.settings.image | image_url: width: 600 | image_tag }}
-        {% endif %}
+        
     </div>
-
+  {% endif %}
     <div class="routine-page__content">
 
         <p class="routine-page__eyebrow">
@@ -66,7 +66,7 @@
             
                     <a
                         id="routine-card-link"
-                        href="#"
+                        href="{{ shop.root_url }}routine-finder"
                         class="routine-card__button">
                         Take Quiz
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
