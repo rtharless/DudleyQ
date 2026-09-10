@@ -1854,7 +1854,7 @@ cart-drawer-component .referred-by-wrapper{
 .home-collection-list .home-collections{
     display: flex;
 }
-[data-testid="collection-list"] h2 {
+[data-testid="collection-list"] h2, [data-testid="product-list"] h2 {
     font-weight: var(--weight-regular) !important;    
 }
 [data-testid="collection-list"] rte-formatter.text-block p {

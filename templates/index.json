@@ -205,7 +205,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "landscape",
+                "image_ratio": "square",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -274,7 +274,6 @@
           ]
         }
       },
-      "disabled": true,
       "custom_css": [
         ".product-media-container.media-fit img {object-fit: contain !important;}"
       ],
@@ -295,8 +294,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 46,
+        "padding-block-end": 0
       }
     },
     "slideshow_EYEym6": {
@@ -1429,14 +1428,13 @@
         "section_width": "page-width",
         "gap": 12,
         "background_color": "",
-        "padding-block-start": 44,
+        "padding-block-start": 46,
         "padding-block-end": 0
       }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_fa6P9H",
     "slideshow_EYEym6",
     "section_EKK8pr",
     "hero_6JYXAx",
@@ -1444,6 +1442,7 @@
     "home_trust_bar",
     "start_here_section",
     "collection_list_Nhrxzx",
+    "product_list_fa6P9H",
     "color_story_section",
     "our_story_section"
   ]
