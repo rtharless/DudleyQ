@@ -818,7 +818,7 @@ legend{
     font-weight: var(--weight-semibold);
     margin-bottom: 16px;
 }
-.custom-hero-right h1{
+.custom-hero-right h1, .shopify-policy__title h1, [data-template="page"] .section-content-wrapper h1{
     font-weight: var(--weight-medium) !important;
     font-size: 50px;
     line-height: 1.03;
@@ -1880,7 +1880,23 @@ cart-drawer-component .referred-by-wrapper{
     color: var(--color-warmgray);
     display: block;
 }
-
+[data-template="page"] .section-content-wrapper{
+    display: grid !important;
+    max-width: 65ch;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 20px !important;
+}
+[data-template="page"] .section-content-wrapper h1{
+    text-align: center !important;
+}
+.shopify-policy__body, [data-template="page"] .section-content-wrapper .page-content{
+    color: #2c2a28;
+}
+[data-template="page"] .section-content-wrapper .page-content a{
+    color: var(--color-green) !important;
+}
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;

@@ -2,7 +2,7 @@
     <div class="custom-home-hero__content">
         <div class="custom-hero-image">
             {% if section.settings.image %}
-                {{ section.settings.image | image_url: width: 600 | image_tag }}
+                {{ section.settings.image | image_url: width: 600 | image_tag: fetchpriority: 'high' }}
             {% endif %}
         </div>
         <div class="custom-hero-right">

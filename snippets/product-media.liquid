@@ -31,7 +31,7 @@
 >
   {% liquid
     assign high_res_url = media.preview_image | image_url: width: 3840
-    assign fetch_priority = 'auto'
+    assign fetch_priority = 'high'
     if is_main_product_media
       assign fetch_priority = 'high'
     endif
