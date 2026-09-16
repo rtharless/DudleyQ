@@ -2,11 +2,13 @@
 
   <div class="footer-column">
     {% if section.settings.footer_logo != blank %}
+      <a href="{{ routes.root_url }}">
       {{
         section.settings.footer_logo
         | image_url: width: 103
         | image_tag: alt: 'Footer Logo'
       }}
+      </a>
     {% endif %}
 
     <div class="footer-column-logo-content">

@@ -1897,6 +1897,9 @@ cart-drawer-component .referred-by-wrapper{
 [data-template="page"] .section-content-wrapper .page-content a{
     color: var(--color-green) !important;
 }
+[data-template="404"] .button{
+    background-color: var(--color-green) !important;
+}
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;
@@ -1976,10 +1979,26 @@ cart-drawer-component .referred-by-wrapper{
     .hair-type-img img{
         object-fit: fill !important;
     }
+    .header-card .left{
+        grid-template-columns: 1fr 134px !important;
+        gap: 0px !important;
+    }
+    .header-card .left .col-1{
+        width: 111px !important;
+    }
 }
 @media (min-width: 375px) and (max-width: 415px) {
     .quick-view-product-info .quantity-selector-wrapper{
         width: 62% !important;
+    }
+    .color-story-collection-grid .product-count{
+        font-size: 7.5px !important;
+    }
+    .newsletter-block .email-signup__button{
+        padding: 0px !important;
+    }
+    .collection-heading{
+        gap: 0px !important;
     }
 }
 @media (min-width: 416px) and (max-width: 429px) {

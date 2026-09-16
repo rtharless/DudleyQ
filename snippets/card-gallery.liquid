@@ -83,7 +83,7 @@
   {{ block.shopify_attributes }}
 >
 
-  {% if request.page_type == 'collection' %}
+  {% if request.page_type == 'collection' or request.page_type == 'index' %}
   <div class="quick-view-btn">
     <button type="button"
       class="quick-view-trigger"
