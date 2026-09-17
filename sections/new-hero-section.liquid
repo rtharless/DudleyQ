@@ -6,6 +6,11 @@
             {% endif %}
         </div>
         <div class="custom-hero-right">
+          <div class="custom-story-buttons">    
+                <a class="button our-story" href="{{ section.settings.story_link }}">
+                {{ section.settings.story_text }}
+                </a>
+          </div>
           <span class="eyebrow-text">{{ section.settings.eyebrow-heading }}</span>
             <h1>{{ section.settings.title }}</h1>
             {{ section.settings.description }}
@@ -69,6 +74,17 @@
         "type": "url",
         "id": "button_text_link",
         "label": "Shop by Concern Link"
+      },
+      {
+        "type": "text",
+        "id": "story_text",
+        "label": "Button Text",
+        "default": "Read Our Story"
+      },
+      {
+        "type": "url",
+        "id": "story_link",
+        "label": "Read Our Story Link"
       },
       {
         "type": "text",

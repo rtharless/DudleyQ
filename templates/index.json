@@ -1016,7 +1016,9 @@
         "button_text": "Shop by Concern",
         "button_text_link": "/collections/all",
         "button_all": "Shop All",
-        "button_all_link": "shopify://collections/all"
+        "button_all_link": "shopify://collections/all",
+        "story_all": "Read Our Story",
+        "story_link": "shopify://pages/read-our-story"
       }
     },
     "home_trust_bar": {
@@ -1252,7 +1254,7 @@
         "description1": "<p>Dudley's was built on a simple idea: that professional-grade care should be made for Black hair from the start, not adapted to it afterwards.</p>",
         "description2": "<p>More than 50 years on, every purchase still supports our company and Black entrepreneurs worldwide.</p>",
         "button_label": "Read Our Story",
-        "button_link": "",
+        "button_link": "shopify://pages/read-our-story",
         "image": "shopify://shop_images/07-ursula-portrait.jpg",
         "owner-name": "Ursula Dudley Oglesby",
         "designation": "President & CEO",

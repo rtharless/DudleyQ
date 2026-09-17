@@ -662,10 +662,11 @@ summary:hover{
 .resp-tab-content .metafield-multi_line_text_field{
     padding-left: 0px !important;
 }
-.resp-tab-content .tab-plus-icon{
+.resp-tab-content .tab-minus-icon{
     display: none;
 }
 .resp-tab-content .tab-info{
+    display: none;
     margin: 0px 0px 18px;
 }
 .instock-tab{
@@ -834,12 +835,12 @@ legend{
     max-width: 40ch;
     text-wrap: pretty;
 }
-.custom-hero-buttons{
+.custom-hero-buttons, .custom-story-buttons{
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
 }
-.custom-hero-buttons .button{
+.custom-hero-buttons .button, .custom-story-buttons .button{
     background: var(--color-green);
     color: var(--color-offwhite);
     border-width: medium;
@@ -860,6 +861,9 @@ legend{
     background: none;
     color: var(--color-green);
     border: 1px solid #DED9CF;
+}
+.custom-story-buttons{
+    margin-bottom: 30px;
 }
 .start-here{
     padding: 64px 44px 0px;
@@ -1847,6 +1851,9 @@ cart-drawer-component .referred-by-wrapper{
 } */
 .cart-items__empty-button{
     background-color: var(--color-green) !important;
+    width: 100% !important;
+    height: 3.25rem !important;
+    text-transform: uppercase !important;
 } 
 .home-collection-list{
     padding: 0 44px;
@@ -1900,6 +1907,23 @@ cart-drawer-component .referred-by-wrapper{
 [data-template="404"] .button{
     background-color: var(--color-green) !important;
 }
+.menu-list__list-item:nth-child(5):where(:not([slot='overflow'])) > .menu-list__submenu {
+    left: 0 !important;
+}
+.menu-list__list-item:nth-child(5):where(:not([slot='overflow'])) > .menu-list__submenu > * {
+    margin-left: 50%;
+    width: 100% !important;
+}
+.menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu, .overflow-menu::part(overflow){
+    top: calc(100% - 10px + var(--border-bottom-width) - (var(--full-open-header-height) - var(--submenu-height))) !important;
+    background: var(--color-background, #fff);
+    z-index: 1;
+}
+.header__row--bottom .spacing-style:has(
+    .menu-list__list-item:nth-child(5):where(:not([slot='overflow'])) > .menu-list__submenu
+)::before {
+    border-bottom: none !important;
+}
 @media (max-width: 749px) {
     .quick-view-content {
         width: 95%;
@@ -1914,6 +1938,9 @@ cart-drawer-component .referred-by-wrapper{
     }
     .referred-by-wrapper{
         margin-top: 10px;
+    }
+    .custom-story-buttons{
+        margin-bottom: 20px !important;
     }
 }
 

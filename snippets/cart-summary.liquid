@@ -255,6 +255,15 @@
 </div>
 
 <div class="cart__ctas">
+  <a
+    href="{{ settings.empty_cart_button_link | default: routes.all_products_collection_url }}"
+    id="continue_shopping"
+    class="cart-items__empty-button button"
+  >
+    <span class="button-text">
+      {{ 'actions.continue_shopping' | t }}
+    </span>
+  </a>
   <button
     type="submit"
     id="checkout"
