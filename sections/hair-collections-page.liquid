@@ -17,7 +17,7 @@
 
         <div class="hair-coolections-buttons">
             {% for block in section.blocks %}
-                <a href="{{ block.settings.url }}"
+                <a href="{{routes.collections_url}}/{{ block.settings.url }}"
                     class="hair-coolections-button"
                     data-index="{{ forloop.index0 }}">
 
