@@ -1009,16 +1009,16 @@
     "custom_hero_section": {
       "type": "new-hero-section",
       "settings": {
-        "image": "shopify://shop_images/01-hero-square.jpg",
+        "image": "shopify://shop_images/01-hero-square-no_background.png",
         "eyebrow-heading": "Professional hair care since 1967",
         "title": "Made for your hair, from the start.",
         "description": "<p>Salon formulas for hair, skin and color, developed for Black beauty and never adapted to it.</p>",
         "button_text": "Shop by Concern",
-        "button_text_link": "/collections/all",
+        "button_text_link": "/pages/concern",
         "button_all": "Shop All",
         "button_all_link": "shopify://collections/all",
         "story_all": "Read Our Story",
-        "story_link": "shopify://pages/read-our-story"
+        "story_link": "shopify://pages/concern-finder"
       }
     },
     "home_trust_bar": {

@@ -835,7 +835,7 @@ legend{
     max-width: 40ch;
     text-wrap: pretty;
 }
-.custom-hero-buttons, .custom-story-buttons{
+.custom-hero-buttons{
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -857,13 +857,16 @@ legend{
     cursor: pointer;
     white-space: nowrap;
 }
+.custom-story-buttons .button{
+    width: 100%;
+}
 .custom-hero-buttons .shop-all{
     background: none;
     color: var(--color-green);
     border: 1px solid #DED9CF;
 }
 .custom-story-buttons{
-    margin-bottom: 30px;
+    margin-top: 12px;
 }
 .start-here{
     padding: 64px 44px 0px;
@@ -1907,24 +1910,63 @@ cart-drawer-component .referred-by-wrapper{
 [data-template="404"] .button{
     background-color: var(--color-green) !important;
 }
-.menu-list__list-item:nth-child(5):where(:not([slot='overflow'])) > .menu-list__submenu {
-    left: 0 !important;
-}
-.menu-list__list-item:nth-child(5):where(:not([slot='overflow'])) > .menu-list__submenu > * {
-    margin-left: 50%;
-    width: 100% !important;
-}
+
 .menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu, .overflow-menu::part(overflow){
     top: calc(100% - 10px + var(--border-bottom-width) - (var(--full-open-header-height) - var(--submenu-height))) !important;
     background: var(--color-background, #fff);
     z-index: 1;
 }
-.header__row--bottom .spacing-style:has(
-    .menu-list__list-item:nth-child(5):where(:not([slot='overflow'])) > .menu-list__submenu
-)::before {
+.header__row--bottom .spacing-style:has(.menu-list__list-item:hover) {
     border-bottom: none !important;
 }
+.menu-list__list-item:nth-child(5), .menu-list__list-item:nth-child(4), .menu-list__list-item:nth-child(3) {
+    position: relative;
+}
+.menu-list__list-item:nth-child(5) > .menu-list__submenu, .menu-list__list-item:nth-child(4) > .menu-list__submenu, .menu-list__list-item:nth-child(3) > .menu-list__submenu {
+    left: -45px !important;
+    width: 1200px !important;
+    max-width: 90vw !important;
+    margin-top: 15px;
+}
+.menu-list__list-item:nth-child(5) > .menu-list__submenu > *, .menu-list__list-item:nth-child(4) > .menu-list__submenu > *, .menu-list__list-item:nth-child(3) > .menu-list__submenu > * {
+    width: 100%;
+}
+
+.custom-hero-buttons{
+    gap: 0 !important;
+   justify-content: space-between;
+}
+.custom-hero-buttons .concern{
+    width: 60%;
+    word-break: normal;
+    white-space: normal !important;
+}
+.custom-hero-buttons .our-story{
+    width: 60%;
+    word-break: normal;
+    white-space: normal !important;
+    margin-top: 10px;
+}
+.custom-hero-buttons .shop-all{
+    width: 38%;
+    word-break: normal;
+    white-space: normal !important;
+}
 @media (max-width: 749px) {
+    .custom-hero-buttons{
+        gap: 0 !important;
+        justify-content: space-between;
+    }
+    .custom-hero-buttons .concern{
+        width: 60%;
+        word-break: normal;
+        white-space: normal !important;
+    }
+    .custom-hero-buttons .shop-all{
+        width: 38%;
+        word-break: normal;
+        white-space: normal !important;
+    }
     .quick-view-content {
         width: 95%;
         padding: 25px;

@@ -6,16 +6,11 @@
             {% endif %}
         </div>
         <div class="custom-hero-right">
-          <div class="custom-story-buttons">    
-                <a class="button our-story" href="{{ section.settings.story_link }}">
-                {{ section.settings.story_text }}
-                </a>
-          </div>
           <span class="eyebrow-text">{{ section.settings.eyebrow-heading }}</span>
             <h1>{{ section.settings.title }}</h1>
             {{ section.settings.description }}
           <div class="custom-hero-buttons">    
-                <a class="button concern scroll-link" href="#start-here">
+                <a class="button concern" href="{{ section.settings.button_text_link }}">
                 {{ section.settings.button_text }}
                 </a>
             {% if section.settings.button_all_link != blank %}
@@ -23,7 +18,15 @@
                 {{ section.settings.button_all }}
                 </a>
             {% endif %}
+              <a class="button our-story" href="{{ section.settings.story_link }}">
+                {{ section.settings.story_text }}
+              </a>
           </div>
+          {% comment %} <div class="custom-story-buttons">    
+                <a class="button our-story" href="{{ section.settings.story_link }}">
+                {{ section.settings.story_text }}
+                </a>
+          </div> {% endcomment %}
         </div>
     </div>
 </section>
@@ -79,7 +82,7 @@
         "type": "text",
         "id": "story_text",
         "label": "Button Text",
-        "default": "Read Our Story"
+        "default": "Find Your Perfect Match"
       },
       {
         "type": "url",
