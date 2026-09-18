@@ -1,0 +1,156 @@
+.uppercase{
+    text-transform:uppercase;
+}
+.hair-coolections-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 50vh;
+    background: #ffffff;
+}
+.hair-coolections-page:has(> :only-child) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+.hair-coolections__heading{
+    font-size: 24px;
+    margin-bottom: 1rem;
+    margin-top: 40px;
+    font-weight: var(--weight-regular);
+}
+
+.hair-coolections-page__image {
+    height: 100%;
+}
+
+.hair-coolections-page__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hair-coolections-page__content {
+    padding: 80px 80px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hair-coolections-page__content p{
+    margin-bottom: 0px;
+}
+
+.hair-coolections-page__content h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.hair-coolections-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.hair-coolections-button img{
+    width: 50%;
+    height: 85%;
+}
+.hair-coolections-button span{
+    width: 50%;
+}
+
+.hair-coolections-button {
+    aspect-ratio: 1 / 1;
+    height: 90px;
+    width: 100%;
+    border: 1px solid #ECE7DC;
+    border-radius: 2px;
+    background: #fff;
+    color: #4A4642;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.hair-coolections-button:hover,
+.hair-coolections-button.active {
+    color: var(--color-gold);
+}
+.hair-coolections-page__content{
+    width: 60%;
+}
+
+@media (max-width: 1024px) {
+
+    .hair-coolections-page {
+        grid-template-columns: 1fr;
+    }
+
+    .hair-coolections-page__image {
+        height: 500px;
+    }
+
+    .hair-coolections-page__content {
+        padding: 60px 40px;
+    }
+
+    .hair-coolections-page__content h1 {
+        font-size: 40px;
+    }
+    .hair-coolections-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hair-coolections-page__content{
+        width: 80%;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .hair-coolections-page__image {
+        height: 350px;
+        display: none;
+    }
+
+    .hair-coolections-page__content {
+        padding: 35px 20px;
+    }
+
+    .hair-coolections-page__content h1 {
+        font-size: 32px;
+    }
+
+    .hair-coolections-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .hair-coolections-button {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    #hair-coolections-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #hair-coolections-card img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
+    .hair-coolections-page__content{
+        width: 100%;
+    }
+}
