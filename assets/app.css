@@ -1957,7 +1957,9 @@ cart-drawer-component .referred-by-wrapper{
     word-break: normal;
     white-space: normal !important;
 }
-
+.hair-coolections-page:has(.hair-coolections-page__image) .hair-coolections-page__content{
+    width: 100% !important;
+}
 @media (max-width: 749px) {
     .custom-hero-buttons{
         gap: 0 !important;
