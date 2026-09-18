@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -7,42 +16,42 @@
           "type": "hair-collections",
           "settings": {
             "title": "Moisture Matters",
-            "url": "shopify://collections/moisture-matters"
+            "url": "moisture-matters"
           }
         },
         "block-2": {
           "type": "hair-collections",
           "settings": {
             "title": "Confident Curls",
-            "url": "shopify://collections/confident-coils"
+            "url": "confident-coils"
           }
         },
         "block-3": {
           "type": "hair-collections",
           "settings": {
             "title": "Soothe & Calm",
-            "url": "shopify://collections/soothe-calm"
+            "url": "soothe-calm"
           }
         },
         "block-4": {
           "type": "hair-collections",
           "settings": {
             "title": "Repair & Restore",
-            "url": "shopify://collections/repair-restore"
+            "url": "repair-restore"
           }
         },
         "block-5": {
           "type": "hair-collections",
           "settings": {
             "title": "Healthy Hair",
-            "url": "shopify://collections/healthy-matters"
+            "url": "healthy-hair"
           }
         },
         "block-6": {
           "type": "hair-collections",
           "settings": {
             "title": "Camille's Choice",
-            "url": "shopify://collections/camilles-choice"
+            "url": "camilles-choice"
           }
         }
       },
@@ -54,7 +63,9 @@
         "block-5",
         "block-6"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "Hair Collections"
+      }
     },
     "home_trust_bar": {
       "type": "home-trust-bar",
