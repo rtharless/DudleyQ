@@ -807,7 +807,7 @@
       "type": "new-hero-section",
       "custom_css": [
         "h2 {font-size: 32px;}",
-        ".custom-hero-buttons .our-story {background-color: var(--color-gold, #b38646); border-color: var(--color-gold, #b38646); color: #1b4438;}",
+        ".custom-hero-buttons .our-story {background-color: var(--color-gold, #b38646); border-color: var(--color-gold, #b38646); color: #ffffff;}",
         ".custom-hero-buttons .our-story:hover {background-color: #9c7239; border-color: #9c7239;}"
       ],
       "settings": {
