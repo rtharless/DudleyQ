@@ -1,0 +1,77 @@
+{
+  "sections": {
+    "main": {
+      "type": "hair-collections-page",
+      "blocks": {
+        "block-1": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Moisture Matters",
+            "url": "shopify://collections/moisture-matters"
+          }
+        },
+        "block-2": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Confident Curls",
+            "url": "shopify://collections/confident-coils"
+          }
+        },
+        "block-3": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Soothe & Calm",
+            "url": "shopify://collections/soothe-calm"
+          }
+        },
+        "block-4": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Repair & Restore",
+            "url": "shopify://collections/repair-restore"
+          }
+        },
+        "block-5": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Healthy Hair",
+            "url": "shopify://collections/healthy-matters"
+          }
+        },
+        "block-6": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Camille's Choice",
+            "url": "shopify://collections/camilles-choice"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6"
+      ],
+      "settings": {}
+    },
+    "home_trust_bar": {
+      "type": "home-trust-bar",
+      "settings": {
+        "image1": "shopify://shop_images/Screenshot_from_2026-08-14_10-53-30.png",
+        "trust-title1": "Salon formulated",
+        "image2": "shopify://shop_images/Screenshot_from_2026-08-10_12-42-57.png",
+        "trust-title2": "Cruelty-free",
+        "image3": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-12.png",
+        "trust-title3": "Sulfate-free Options",
+        "image4": "shopify://shop_images/Screenshot_from_2026-08-10_12-43-24.png",
+        "trust-title4": "BLACK OWNED"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_trust_bar"
+  ]
+}
