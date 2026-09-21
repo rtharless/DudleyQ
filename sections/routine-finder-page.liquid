@@ -90,35 +90,8 @@
     const secondDiv = document.getElementById('step2');
     const finalDiv = document.getElementById('finalstep');
     
-    // Routine mapping
-    const routineMap = {
-      "Dryness": "Moisture Matters",
-      "Frizz": "Classics",
-      "Scalp Health": "Soothe & Calm",
-      "Damage Repair": "Revival",
-      "Irritation": "Soothe & Calm",
-      "Breakage": "Revival",
-      "Growth": "Healthy Tresses",
-      "Thinning": "Length & Strength",
-      "Oiliness": "Revival"
-    };
-    
-    // Get routine based on hair type + concern
-    function getRoutine(hairType, concern) {
+    {% render 'routine-map' %}
 
-      // Special rule for Curl Definition
-      if (concern === "Curl Definition") {
-        if (hairType === "Curly" || hairType === "Natural") {
-          return "Confident Curls";
-        }
-
-        return "Classics";
-      }
-
-      // Normal mapping
-      return routineMap[concern] || "Classics";
-    }
-    
     document.querySelectorAll('#step1 .routine-concern-button').forEach(function (link) {
   
       link.addEventListener('click', function (event) {

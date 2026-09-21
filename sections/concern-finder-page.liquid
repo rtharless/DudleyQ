@@ -10,7 +10,7 @@
 
         <div class="routine-concern-buttons">
           {% for block in section.blocks %}
-            {% if block.type == 'skin_type' %}
+            {% if block.type == 'routine_finder' %}
               <a data-value="{{ block.settings.filter_value }}" href="javascript:void(0);"
                   class="routine-concern-button"
                   data-index="{{ forloop.index0 }}">
@@ -35,7 +35,7 @@
 
         <div class="routine-concern-buttons">
           {% for block in section.blocks %}
-            {% if block.type == 'concern_type' %}
+            {% if block.type == 'routine_finder-concern' %}
               <a data-value="{{ block.settings.filter_value }}" href="javascript:void(0);" class="routine-concern-button" data-index="{{ forloop.index0 }}">
 
                     {% if block.settings.card_image %}
@@ -60,16 +60,18 @@
               <a href="javascript:void(0);" class="routine-concern-button">
                 <div class="result-div">
                   <span class="result-title">HAIR TYPE</span>
-                  <span id="skin_type"></span>
+                  <span id="hair_type"></span>
                 </div>
               </a>
               <a href="javascript:void(0);" class="routine-concern-button">
                 <div class="result-div">
                   <span class="result-title">HAIR CONCERN</span> 
-                  <span id="skin_concern"></span>
+                  <span id="hair_concern"></span>
                 </div>
           </a>
         </div>
+        <div class="result-text"> On basis of your selection, Routine is: <span id="routine-value"><strong>Routine Name</strong></span> </div>
+
         <div class="final-button-group">
           <button class="submit-btn button" id="concern-button" data-url="">{{  section.settings.button_label}}</button>
           <a href="{{ shop.root_url }}concern-finder" class="start-link">{{ section.settings.statr_over_link }}</a>
@@ -88,6 +90,8 @@
     const secondDiv = document.getElementById('step2');
     const finalDiv = document.getElementById('finalstep');
     
+    {% render 'routine-map' %}
+
     document.querySelectorAll('#step1 .routine-concern-button').forEach(function (link) {
   
       link.addEventListener('click', function (event) {
@@ -115,16 +119,22 @@
   
       link.addEventListener('click', function (event) {
         event.preventDefault();
-        const concernType = this.dataset.value;
+        const value = this.dataset.value;
 
-        const skinType = sessionStorage.getItem('selectedConcernOption1');
+        const hairType = sessionStorage.getItem('selectedConcernOption1');
+        const concern = value;
+
+        // Get recommended routine
+        const routine = getRoutine(hairType, concern);
         
         secondDiv.style.display = 'none';
-        document.getElementById('skin_type').textContent = skinType;
-        document.getElementById('skin_concern').textContent = concernType;
+        document.getElementById('hair_type').textContent = hairType;
+        document.getElementById('hair_concern').textContent = value;
+        document.getElementById('routine-value').innerHTML = `<strong>${routine}</strong>`;
         
-        const routineUrl = "{{ routes.root_url }}collections/all?filter.p.m.custom.skintype=" +
-          encodeURIComponent(skinType) + "&filter.p.m.custom.concern="+encodeURIComponent(concernType);
+        const routineUrl =
+          "{{ routes.root_url }}collections/all?filter.p.m.custom.routine=" +
+          encodeURIComponent(routine);
 
         document.getElementById('concern-button').setAttribute('data-url', routineUrl);
         
@@ -186,8 +196,8 @@
   ],
   "blocks": [
     {
-      "type": "skin_type",
-      "name": "Skin Type",
+      "type": "routine_finder",
+      "name": "Hair Type",
       "settings": [
         {
           "type": "text",
@@ -202,8 +212,8 @@
       ]
     },
     {
-      "type": "concern_type",
-      "name": "concern Type",
+      "type": "routine_finder-concern",
+      "name": "Hair Concern",
       "settings": [
         {
           "type": "text",
@@ -224,66 +234,129 @@
       "name": "Concern Page",
       "blocks": [
         {
-          "type": "skin_type",
+          "type": "routine_finder",
           "settings": {
-            "title": "Dry",
-            "filter_value":"dry"
+            "title": "Coily",
+            "filter_value":"Coily"
           }
         },
         {
-          "type": "skin_type",
+          "type": "routine_finder",
           "settings": {
-            "title": "Normal",
-            "filter_value":"Normal"
+            "title": "Curly",
+            "filter_value":"Curly"
           }
         },
         {
-          "type": "skin_type",
+          "type": "routine_finder",
           "settings": {
-            "title": "Oily",
-            "filter_value":"Oily"
+            "title": "Wavy",
+            "filter_value":"Wavy"
           }
         },
         {
-          "type": "skin_type",
+          "type": "routine_finder",
           "settings": {
-            "title": "Combination",
-            "filter_value":"Combination"
+            "title": "Straight",
+            "filter_value":"Straight"
           }
         },
         {
-          "type": "skin_type",
+          "type": "routine_finder",
           "settings": {
-            "title": "Sensitive",
-            "filter_value":"Sensitive"
+            "title": "Relaxed",
+            "filter_value":"Relaxed"
           }
         },
         {
-          "type": "concern_type",
+          "type": "routine_finder",
+          "settings": {
+            "title": "Natural",
+            "filter_value":"Natural"
+          }
+        },
+        {
+          "type": "routine_finder",
+          "settings": {
+            "title": "Locs",
+            "filter_value":"Locs"
+          }
+        },
+        {
+            "type": "routine_finder",
+            "settings": {
+                "title": "Transitioning",
+                "filter_value":"Transitioning"
+            }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Breakage",
+            "filter_value":"Breakage"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Curl Definition",
+            "filter_value":"Curl Definition"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Damage Repair",
+            "filter_value":"Damage Repair"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
           "settings": {
             "title": "Dryness",
             "filter_value":"Dryness"
           }
         },
         {
-          "type": "concern_type",
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Frizz",
+            "filter_value":"Frizz"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
+          "settings": {
+            "title": "Growth",
+            "filter_value":"Growth"
+          }
+        },
+        {
+          "type": "routine_finder-concern",
           "settings": {
             "title": "Irritation",
             "filter_value":"Irritation"
           }
         },
         {
-          "type": "concern_type",
+            "type": "routine_finder-concern",
+            "settings": {
+                "title": "Oiliness",
+                "filter_value":"Oiliness"
+            }
+        },
+        {
+          "type": "routine_finder-concern",
           "settings": {
-            "title": "Acne",
-            "filter_value":"Acne"
+              "title": "Scalp Health",
+              "filter_value":"Scalp Health"
           }
         },
         {
-          "type": "concern_type",
+          "type": "routine_finder-concern",
           "settings": {
-            "title": "Oiliness",
-            "filter_value":"Oiliness"
+              "title": "Thinning",
+              "filter_value":"Thinning"
           }
         }
       ]

@@ -1,0 +1,34 @@
+{% comment %}
+  Concern -> Routine resolution map: single source of truth for the finder
+  quizzes. Rendered inside a <script> tag by routine-finder-page.liquid and
+  concern-finder-page.liquid so both tools always produce identical results.
+  Liquid-side mirror for server-rendered links: snippets/concern-to-routine.liquid.
+{% endcomment %}
+    // Routine mapping
+    const routineMap = {
+      "Dryness": "Moisture Matters",
+      "Frizz": "Classics",
+      "Scalp Health": "Soothe & Calm",
+      "Damage Repair": "Revival",
+      "Irritation": "Soothe & Calm",
+      "Breakage": "Revival",
+      "Growth": "Healthy Tresses",
+      "Thinning": "Length & Strength",
+      "Oiliness": "Revival"
+    };
+
+    // Get routine based on hair type + concern
+    function getRoutine(hairType, concern) {
+
+      // Special rule for Curl Definition
+      if (concern === "Curl Definition") {
+        if (hairType === "Curly" || hairType === "Natural") {
+          return "Confident Curls";
+        }
+
+        return "Classics";
+      }
+
+      // Normal mapping
+      return routineMap[concern] || "Classics";
+    }
