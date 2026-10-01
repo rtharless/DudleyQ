@@ -74,7 +74,7 @@
 
         <div class="final-button-group">
           <button class="submit-btn button" id="routine-button" data-url="">{{  section.settings.button_label}}</button>
-          <a href="{{ shop.root_url }}routine-finder" class="start-link">{{ section.settings.statr_over_link }}</a>
+          <a href="{{ pages['routine-finder'].url | default: '/pages/routine-finder' }}" class="start-link">{{ section.settings.statr_over_link }}</a>
         </div>
       </div>
 
