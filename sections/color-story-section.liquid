@@ -45,7 +45,7 @@
         <div class="routine-cards">
             {% for block in section.blocks %}
                 {% if block.type == 'routine' %}
-                    <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}"><span class="title">{{ block.settings.title }}</span></a>
+                    <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={% capture rfv %}{% render 'routine-filter-value', routine: block.settings.filter_value %}{% endcapture %}{{ rfv | strip | url_encode | replace: '+', '%20' }}"><span class="title">{{ block.settings.title }}</span></a>
                 {% endif %}
             {% endfor %} 
         </div>

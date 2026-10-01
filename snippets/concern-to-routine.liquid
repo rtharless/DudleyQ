@@ -1,0 +1,20 @@
+{% comment %}
+  Concern -> Routine lookup: Liquid-side mirror of the routineMap in
+  snippets/routine-map.liquid. Renders the routine name for a given `concern`
+  so server-rendered links (e.g. concern-page.liquid) resolve to the same
+  routine the finders produce with no hair-type context (Classics fallback).
+  Usage: {% render 'concern-to-routine', concern: 'Dryness' %}
+  Keep in sync with routine-map.liquid.
+{% endcomment %}
+{%- case concern -%}
+  {%- when 'Dryness' -%}Moisture Matters
+  {%- when 'Frizz' -%}Classics
+  {%- when 'Scalp Health' -%}Soothe & Calm
+  {%- when 'Damage Repair' -%}Revival
+  {%- when 'Irritation' -%}Soothe & Calm
+  {%- when 'Breakage' -%}Revival
+  {%- when 'Growth' -%}Healthy Tresses
+  {%- when 'Thinning' -%}Length & Strength
+  {%- when 'Oiliness' -%}Revival
+  {%- else -%}Classics
+{%- endcase -%}

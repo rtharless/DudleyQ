@@ -1,0 +1,11 @@
+{% comment %}
+  Routine display name -> value stored in the custom.routine metafield.
+  Six routines store their display name. Soothe & Calm stores the raw value
+  `soothe-and-calm`, and Search & Discovery has no "Soothe & Calm" group for
+  it, so filtering on the display name returns nothing. Filter links must use
+  this snippet. JS mirror: routineFilterValue() in snippets/routine-map.liquid.
+  If an S&D group "Soothe & Calm" is added later, re-test before removing this.
+  Usage: {% render 'routine-filter-value', routine: 'Soothe & Calm' %}
+{% endcomment %}
+{%- assign rfv_routine = routine | strip -%}
+{%- if rfv_routine == 'Soothe & Calm' -%}soothe-and-calm{%- else -%}{{ rfv_routine }}{%- endif -%}

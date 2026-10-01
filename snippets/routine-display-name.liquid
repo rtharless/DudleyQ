@@ -1,0 +1,6 @@
+{% comment %}
+  Stored custom.routine value -> customer-facing name (soothe-and-calm -> Soothe & Calm).
+  Usage: {% render 'routine-display-name', value: product.metafields.custom.routine %}
+{% endcomment %}
+{%- assign rdn_value = value | strip -%}
+{%- if rdn_value == 'soothe-and-calm' -%}Soothe & Calm{%- else -%}{{ rdn_value }}{%- endif -%}
