@@ -17,7 +17,7 @@
           "settings": {
             "title": "Classics",
             "filter_value": "Classics",
-            "card_image": "shopify://shop_images/classics.png"
+            "card_image": "shopify://shop_images/classics_efa9eabc-ec13-45d1-b59b-831d9ad190d4.png"
           }
         },
         "block-2": {
@@ -25,7 +25,7 @@
           "settings": {
             "title": "Confident Curls",
             "filter_value": "Confident Curls",
-            "card_image": "shopify://shop_images/confident-curls.png"
+            "card_image": "shopify://shop_images/confident-curls_6ec6b2a4-d12b-4f0a-93b1-e83903636aed.png"
           }
         },
         "block-3": {
@@ -33,7 +33,7 @@
           "settings": {
             "title": "Healthy Tresses",
             "filter_value": "Healthy Tresses",
-            "card_image": "shopify://shop_images/healthy-tresses.png"
+            "card_image": "shopify://shop_images/healthy-tresses_754d9b54-bf47-4dfd-a507-cceb4b973d62.png"
           }
         },
         "block-4": {
@@ -41,7 +41,7 @@
           "settings": {
             "title": "Length & Strength",
             "filter_value": "Length & Strength",
-            "card_image": "shopify://shop_images/length-and-strength.png"
+            "card_image": "shopify://shop_images/length-and-strength_bc24fc31-2917-4951-b939-4476d640aef5.png"
           }
         },
         "block-5": {
@@ -49,7 +49,7 @@
           "settings": {
             "title": "Moisture Matters",
             "filter_value": "Moisture Matters",
-            "card_image": "shopify://shop_images/moisture-matters.png"
+            "card_image": "shopify://shop_images/moisture-matters_a3632811-b8b9-429d-a32b-51d09c2d39cd.png"
           }
         },
         "block-6": {
@@ -57,7 +57,7 @@
           "settings": {
             "title": "Revival",
             "filter_value": "Revival",
-            "card_image": "shopify://shop_images/revival.png"
+            "card_image": "shopify://shop_images/revival_81d5bb4b-378f-4000-a1fe-9dd6b8e44243.png"
           }
         },
         "block-7": {
@@ -65,7 +65,7 @@
           "settings": {
             "title": "Soothe & Calm",
             "filter_value": "Soothe & Calm",
-            "card_image": "shopify://shop_images/soothe-calm.png"
+            "card_image": "shopify://shop_images/soothe-calm_5922c51b-15ce-42cb-9d64-7b087dd60898.png"
           }
         }
       },
