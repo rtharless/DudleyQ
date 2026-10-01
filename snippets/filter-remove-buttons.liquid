@@ -69,10 +69,18 @@
             {% render 'swatch', swatch: value.swatch, mode: 'pill' %}
           {% endif %}
 
+          {% liquid
+            assign chip_label = value.label
+            if filter.param_name == 'filter.p.m.custom.routine'
+              capture chip_label
+                render 'routine-display-name', value: value.label
+              endcapture
+            endif
+          %}
           {% if filter.type == 'boolean' or show_filter_label %}
-            {{ filter.label | escape }}: {{ value.label | escape }}
+            {{ filter.label | escape }}: {{ chip_label | strip | escape }}
           {% else %}
-            {{ value.label | escape }}
+            {{ chip_label | strip | escape }}
           {% endif %}
 
           <span class="svg-wrapper svg-wrapper--smaller">

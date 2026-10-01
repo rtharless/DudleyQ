@@ -92,7 +92,11 @@
             >
               {%- liquid
                 if filter_style == 'horizontal' and active_value_count == 1
-                  echo filter.active_values[0].label
+                  if filter.param_name == 'filter.p.m.custom.routine'
+                    render 'routine-display-name', value: filter.active_values[0].label
+                  else
+                    echo filter.active_values[0].label
+                  endif
                 elsif active_value_count > 0
                   echo active_value_count
                 endif
@@ -202,6 +206,13 @@
               {% liquid
                 assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index | replace: '.', '-' | append: '-' | append: filter_style | append: '-' | append: in_drawer
                 assign is_disabled = false
+                assign display_label = value.label
+                if filter.param_name == 'filter.p.m.custom.routine'
+                  capture display_label
+                    render 'routine-display-name', value: value.label
+                  endcapture
+                  assign display_label = display_label | strip
+                endif
                 if value.count == 0 and value.active == false
                   assign is_disabled = true
                 endif
@@ -369,7 +380,7 @@
                     {% render 'checkbox',
                       name: value.param_name,
                       value: value.value,
-                      label: value.label,
+                      label: display_label,
                       checked: value.active,
                       id: input_id,
                       disabled: is_disabled,
