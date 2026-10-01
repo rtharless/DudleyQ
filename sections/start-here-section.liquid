@@ -6,7 +6,7 @@
     </div>
     <div class="hair-type-grid">
         {% for block in section.blocks limit:4 %}
-                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}">
+                <a href="{% capture sh_routine %}{% render 'concern-to-routine', concern: block.settings.filter_value %}{% endcapture %}{% capture rfv %}{% render 'routine-filter-value', routine: sh_routine %}{% endcapture %}{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ rfv | strip | url_encode | replace: '+', '%20' }}">
                     {% if block.settings.image %}
                         <div class="hair-type-img">  
                         {{ block.settings.image | image_url: width: 600 | image_tag }}
@@ -23,7 +23,7 @@
     <div class="treating-cards">
         <span>{{ section.settings.treating }}</span>
         {% for block in section.blocks offset: 4 %}
-                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.concern={{ block.settings.filter_value | url_encode | replace: '+', '%20' }}">{{ block.settings.title }}</a>
+                <a href="{% capture sh_routine %}{% render 'concern-to-routine', concern: block.settings.filter_value %}{% endcapture %}{% capture rfv %}{% render 'routine-filter-value', routine: sh_routine %}{% endcapture %}{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ rfv | strip | url_encode | replace: '+', '%20' }}">{{ block.settings.title }}</a>
         {% endfor %}    
     </div>
 </section>

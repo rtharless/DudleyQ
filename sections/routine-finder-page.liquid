@@ -134,7 +134,7 @@
         
         const routineUrl =
           "{{ routes.root_url }}collections/all?filter.p.m.custom.routine=" +
-          encodeURIComponent(routine);
+          encodeURIComponent(routineFilterValue(routine));
 
         document.getElementById('routine-button').setAttribute('data-url', routineUrl);
         

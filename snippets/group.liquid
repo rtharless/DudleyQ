@@ -54,7 +54,7 @@
   {% if block_id contains '_product-details' %}
     {% if product.metafields.custom.routine %}
       <div class="product-eyebrow">
-        <span>{{ product.metafields.custom.routine }} Collection</span>
+        <span>{% render 'routine-display-name', value: product.metafields.custom.routine %} Collection</span>
       </div>
     {% endif %}
   {% endif %}

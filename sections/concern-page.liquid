@@ -22,7 +22,7 @@
         <div class="concern-buttons">
             {% for block in section.blocks %}
                 {% capture resolved_routine %}{% render 'concern-to-routine', concern: block.settings.filter_value %}{% endcapture %}
-                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={{ resolved_routine | strip | url_encode | replace: '+', '%20' }}"
+                <a href="{{ routes.all_products_collection_url }}?filter.p.m.custom.routine={% capture rfv %}{% render 'routine-filter-value', routine: resolved_routine %}{% endcapture %}{{ rfv | strip | url_encode | replace: '+', '%20' }}"
                     class="concern-button"
                     data-index="{{ forloop.index0 }}">
 

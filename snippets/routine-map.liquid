@@ -32,3 +32,8 @@
       // Normal mapping
       return routineMap[concern] || "Classics";
     }
+
+    // Value actually stored on products for a routine (see snippets/routine-filter-value.liquid)
+    function routineFilterValue(routine) {
+      return routine === "Soothe & Calm" ? "soothe-and-calm" : routine;
+    }
