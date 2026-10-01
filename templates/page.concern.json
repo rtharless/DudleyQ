@@ -17,7 +17,7 @@
           "settings": {
             "title": "Breakage",
             "filter_value": "Breakage",
-            "card_image": "shopify://shop_images/breakage.png"
+            "card_image": "shopify://shop_images/breakage_7774a0fe-19a2-42b6-bdf7-6249f33356c8.png"
           }
         },
         "block-2": {
@@ -25,7 +25,7 @@
           "settings": {
             "title": "Curl Definition",
             "filter_value": "Curl Definition",
-            "card_image": "shopify://shop_images/curl-definition.png"
+            "card_image": "shopify://shop_images/curl-definition_f868824e-0ad3-4d7c-9bc4-d9cc992d89bd.png"
           }
         },
         "block-3": {
@@ -33,7 +33,7 @@
           "settings": {
             "title": "Damage Repair",
             "filter_value": "Damage Repair",
-            "card_image": "shopify://shop_images/damage-repair.png"
+            "card_image": "shopify://shop_images/damage-repair_2bc57132-a52e-4cad-9d90-6c2678194114.png"
           }
         },
         "block-4": {
@@ -41,7 +41,7 @@
           "settings": {
             "title": "Dryness",
             "filter_value": "Dryness",
-            "card_image": "shopify://shop_images/dryness.png"
+            "card_image": "shopify://shop_images/dryness_2762637f-7ea2-43e3-8969-d81d80af520b.png"
           }
         },
         "block-5": {
@@ -49,7 +49,7 @@
           "settings": {
             "title": "Frizz",
             "filter_value": "Frizz",
-            "card_image": "shopify://shop_images/frizz.png"
+            "card_image": "shopify://shop_images/frizz_20907271-7487-4243-95ea-763dc11f7684.png"
           }
         },
         "block-6": {
@@ -57,7 +57,7 @@
           "settings": {
             "title": "Growth",
             "filter_value": "Growth",
-            "card_image": "shopify://shop_images/growth.png"
+            "card_image": "shopify://shop_images/growth_f258d2be-cf01-4eb1-8437-42b7a65925ca.png"
           }
         },
         "block-7": {
@@ -65,7 +65,7 @@
           "settings": {
             "title": "Irritation",
             "filter_value": "Irritation",
-            "card_image": "shopify://shop_images/irritation.png"
+            "card_image": "shopify://shop_images/irritation_3f94cdb5-acdc-4e79-a99b-fa4518978219.png"
           }
         },
         "block-8": {
@@ -73,7 +73,7 @@
           "settings": {
             "title": "Oiliness",
             "filter_value": "Oiliness",
-            "card_image": "shopify://shop_images/oiliness.png"
+            "card_image": "shopify://shop_images/oiliness_c95cddba-6142-49e0-8993-f9a7335ed1a1.png"
           }
         },
         "block-9": {
@@ -81,7 +81,7 @@
           "settings": {
             "title": "Scalp Health",
             "filter_value": "Scalp Health",
-            "card_image": "shopify://shop_images/scalp-health.png"
+            "card_image": "shopify://shop_images/scalp-health_c2c17594-3cb2-418f-8b2f-9d57cf1407f2.png"
           }
         },
         "block-10": {
@@ -89,7 +89,7 @@
           "settings": {
             "title": "Thinning",
             "filter_value": "Thinning",
-            "card_image": "shopify://shop_images/thinning.png"
+            "card_image": "shopify://shop_images/thinning_bda83546-d1a2-4217-b958-523ab261441d.png"
           }
         }
       },
