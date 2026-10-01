@@ -1,6 +1,23 @@
 {% comment %}
-  Stored custom.routine value -> customer-facing name (soothe-and-calm -> Soothe & Calm).
+  Stored custom.routine value -> customer-facing routine name.
+  Products store slugs (confident-curls, length-and-strength, soothe-and-calm...),
+  so anything shown to customers must go through this snippet.
+  Display names pass through unchanged. Unknown slugs are title-cased with
+  "-and-" -> " & " as a fallback.
   Usage: {% render 'routine-display-name', value: product.metafields.custom.routine %}
 {% endcomment %}
 {%- assign rdn_value = value | strip -%}
-{%- if rdn_value == 'soothe-and-calm' -%}Soothe & Calm{%- else -%}{{ rdn_value }}{%- endif -%}
+{%- case rdn_value -%}
+  {%- when 'classics' -%}Classics
+  {%- when 'confident-curls' -%}Confident Curls
+  {%- when 'healthy-tresses' -%}Healthy Tresses
+  {%- when 'length-and-strength' -%}Length & Strength
+  {%- when 'moisture-matters' -%}Moisture Matters
+  {%- when 'revival' -%}Revival
+  {%- when 'soothe-and-calm' -%}Soothe & Calm
+  {%- else -%}
+    {%- if rdn_value contains '-' -%}
+      {%- assign rdn_words = rdn_value | replace: '-and-', ' & ' | replace: '-', ' ' | split: ' ' -%}
+      {%- for w in rdn_words -%}{{ w | capitalize }}{% unless forloop.last %} {% endunless %}{%- endfor -%}
+    {%- else -%}{{ rdn_value }}{%- endif -%}
+{%- endcase -%}
