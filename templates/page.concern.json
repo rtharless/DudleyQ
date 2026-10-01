@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -7,70 +16,80 @@
           "type": "concern",
           "settings": {
             "title": "Breakage",
-            "filter_value": "Breakage"
+            "filter_value": "Breakage",
+            "card_image": "shopify://shop_images/breakage.png"
           }
         },
         "block-2": {
           "type": "concern",
           "settings": {
             "title": "Curl Definition",
-            "filter_value": "Curl Definition"
+            "filter_value": "Curl Definition",
+            "card_image": "shopify://shop_images/curl-definition.png"
           }
         },
         "block-3": {
           "type": "concern",
           "settings": {
             "title": "Damage Repair",
-            "filter_value": "Damage Repair"
+            "filter_value": "Damage Repair",
+            "card_image": "shopify://shop_images/damage-repair.png"
           }
         },
         "block-4": {
           "type": "concern",
           "settings": {
             "title": "Dryness",
-            "filter_value": "Dryness"
+            "filter_value": "Dryness",
+            "card_image": "shopify://shop_images/dryness.png"
           }
         },
         "block-5": {
           "type": "concern",
           "settings": {
             "title": "Frizz",
-            "filter_value": "Frizz"
+            "filter_value": "Frizz",
+            "card_image": "shopify://shop_images/frizz.png"
           }
         },
         "block-6": {
           "type": "concern",
           "settings": {
             "title": "Growth",
-            "filter_value": "Growth"
+            "filter_value": "Growth",
+            "card_image": "shopify://shop_images/growth.png"
           }
         },
         "block-7": {
           "type": "concern",
           "settings": {
             "title": "Irritation",
-            "filter_value": "Irritation"
+            "filter_value": "Irritation",
+            "card_image": "shopify://shop_images/irritation.png"
           }
         },
         "block-8": {
           "type": "concern",
           "settings": {
             "title": "Oiliness",
-            "filter_value": "Oiliness"
+            "filter_value": "Oiliness",
+            "card_image": "shopify://shop_images/oiliness.png"
           }
         },
         "block-9": {
           "type": "concern",
           "settings": {
             "title": "Scalp Health",
-            "filter_value": "Scalp Health"
+            "filter_value": "Scalp Health",
+            "card_image": "shopify://shop_images/scalp-health.png"
           }
         },
         "block-10": {
           "type": "concern",
           "settings": {
             "title": "Thinning",
-            "filter_value": "Thinning"
+            "filter_value": "Thinning",
+            "card_image": "shopify://shop_images/thinning.png"
           }
         }
       },
@@ -86,7 +105,14 @@
         "block-9",
         "block-10"
       ],
-      "settings": {}
+      "settings": {
+        "eyebrow": "CONCERN PAGE",
+        "heading": "Find Your Perfect Match",
+        "description": "Not sure where to start? Answer a few questions and we'll match you to the right products.",
+        "concern_heading": "Shop by Concern",
+        "concern_card_title": "Not sure where to start?",
+        "concern_card_desc": "Take our hair quiz and we'll match you to the right routine for your concerns."
+      }
     },
     "home_trust_bar": {
       "type": "home-trust-bar",
