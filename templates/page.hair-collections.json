@@ -16,42 +16,48 @@
           "type": "hair-collections",
           "settings": {
             "title": "Moisture Matters",
-            "url": "moisture-matters"
+            "url": "moisture-matters",
+            "card_image": "shopify://shop_images/moisture-matters_c7b87d0b-3bbe-4c40-95aa-cd4a932440e0.png"
           }
         },
         "block-2": {
           "type": "hair-collections",
           "settings": {
             "title": "Confident Curls",
-            "url": "confident-coils"
+            "url": "confident-coils",
+            "card_image": "shopify://shop_images/confident-curls_eee9447b-2f87-4d60-9c77-5b0de084e82e.png"
           }
         },
         "block-3": {
           "type": "hair-collections",
           "settings": {
             "title": "Soothe & Calm",
-            "url": "soothe-calm"
+            "url": "soothe-calm",
+            "card_image": "shopify://shop_images/soothe-calm_f85aa2eb-7ac0-4b00-ad4e-819d143fe880.png"
           }
         },
         "block-4": {
           "type": "hair-collections",
           "settings": {
             "title": "Repair & Restore",
-            "url": "repair-restore"
+            "url": "repair-restore",
+            "card_image": "shopify://shop_images/repair-restore.png"
           }
         },
         "block-5": {
           "type": "hair-collections",
           "settings": {
             "title": "Healthy Hair",
-            "url": "healthy-hair"
+            "url": "healthy-hair",
+            "card_image": "shopify://shop_images/healthy-hair.png"
           }
         },
         "block-6": {
           "type": "hair-collections",
           "settings": {
             "title": "Camille's Choice",
-            "url": "camilles-choice"
+            "url": "camilles-choice",
+            "card_image": "shopify://shop_images/camilles-choice_f0ba6a0e-d0f6-475f-b804-893ed50a93fd.png"
           }
         }
       },
