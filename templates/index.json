@@ -1412,9 +1412,9 @@
         "block-7"
       ],
       "settings": {
-        "image": "shopify://shop_images/02-color-story.jpg",
+        "image": "shopify://shop_images/new_model.png",
         "eyebrow-heading": "Cosmetics",
-        "title": "The color story",
+        "title": "The makeup story",
         "description": "<p>75 beauty essentials for lips, eyes, cheeks, and complexion, thoughtfully created to complement and celebrate the richness of deeper skin tones—not simply adapted from another palette.</p>",
         "button_label": "Shop Cosmetics",
         "button_link": "/collections/all",
