@@ -814,7 +814,7 @@
         "image": "shopify://shop_images/Elena_HeroCrop_v2.png",
         "eyebrow-heading": "Professional hair care since 1967",
         "title": "Made for your hair, from the start.",
-        "description": "<p>Salon formulas for hair, skin and color, developed for Black beauty and never adapted to it.</p>",
+        "description": "<p>Rooted in Black beauty. Salon formulas for hair & skin created with purpose, trusted for generations.</p>",
         "button_text": "Shop by Concern",
         "button_text_link": "/pages/concern",
         "story_text": "Find Your Perfect Match",
@@ -843,7 +843,7 @@
           "type": "hair-type",
           "settings": {
             "image": "shopify://shop_images/03-concern-dryness.jpg",
-            "title": "Dryness",
+            "title": "Moisture Retention",
             "filter_value": "Dryness",
             "description": "<p>Thirsty, brittle hair that drinks up moisture and still feels rough.</p>"
           }
