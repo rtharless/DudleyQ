@@ -39,7 +39,7 @@
         "block-4": {
           "type": "hair-collections",
           "settings": {
-            "title": "Repair & Restore",
+            "title": "Revival",
             "url": "repair-restore",
             "card_image": "shopify://shop_images/repair-restore.png"
           }
@@ -47,17 +47,24 @@
         "block-5": {
           "type": "hair-collections",
           "settings": {
-            "title": "Healthy Hair",
+            "title": "Healthy Tresses",
             "url": "healthy-hair",
             "card_image": "shopify://shop_images/healthy-hair.png"
           }
         },
-        "block-6": {
+        "hc_length_strength": {
           "type": "hair-collections",
           "settings": {
-            "title": "Camille's Choice",
-            "url": "camilles-choice",
-            "card_image": "shopify://shop_images/camilles-choice_f0ba6a0e-d0f6-475f-b804-893ed50a93fd.png"
+            "title": "Length & Strength",
+            "url": "length-strength",
+            "card_image": "shopify://shop_images/length-and-strength_bc24fc31-2917-4951-b939-4476d640aef5.png"
+          }
+        },
+        "hc_total_control": {
+          "type": "hair-collections",
+          "settings": {
+            "title": "Total Control",
+            "url": "total-control"
           }
         }
       },
@@ -67,7 +74,8 @@
         "block-3",
         "block-4",
         "block-5",
-        "block-6"
+        "hc_length_strength",
+        "hc_total_control"
       ],
       "settings": {
         "heading": "Hair Collections"

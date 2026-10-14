@@ -1,4 +1,5 @@
 <section class="color-story section">
+    {%- unless section.settings.hide_story -%}
     <div class="color-story-detail">
         <div class="color-story-image">
             {% if section.settings.image %}
@@ -37,6 +38,8 @@
             <a class="shop-cosmetic" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
         </div>
     </div>
+    {%- endunless -%}
+    {%- unless section.settings.hide_routines -%}
     <div class="full-routine">
         <div class="heading">
             <h2>{{ section.settings.full-routine }}</h2>
@@ -50,12 +53,15 @@
             {% endfor %} 
         </div>
     </div>
+    {%- endunless -%}
 </section>
   
   {% schema %}
   {
     "name": "Color Story Section",
     "settings": [
+      {"type": "checkbox", "id": "hide_story", "label": "Hide the story (show routines only)", "default": false},
+      {"type": "checkbox", "id": "hide_routines", "label": "Hide the routine cards", "default": false},
       {
         "type": "image_picker",
         "id": "image",
