@@ -12,6 +12,14 @@
     "section": {
       "type": "section",
       "blocks": {
+        "heading_dynamic": {
+          "type": "custom-liquid",
+          "name": "Title (names concern or routine)",
+          "settings": {
+            "custom_liquid": "{%- liquid\n  assign heading = collection.title\n  if collection.handle == 'all'\n    for f in collection.filters\n      if f.active_values.size == 1\n        assign v = f.active_values.first.label\n        if f.param_name == 'filter.p.m.custom.concern'\n          case v\n            when 'Dryness', 'dryness'\n              assign v = 'Moisture Retention'\n            when 'Growth', 'growth'\n              assign v = 'Lack of Growth'\n          endcase\n          assign heading = v | append: ' Products'\n        elsif f.param_name == 'filter.p.m.custom.routine'\n          if v == 'soothe-and-calm'\n            assign v = 'Soothe & Calm'\n          endif\n          assign heading = v | append: ' Products'\n        endif\n      endif\n    endfor\n  endif\n-%}\n<h1 class=\"h2\" style=\"margin:0\">{{ heading | escape }}</h1>"
+          },
+          "blocks": {}
+        },
         "text_twGGkJ": {
           "type": "text",
           "name": "Description",
@@ -35,14 +43,6 @@
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "heading_dynamic": {
-          "type": "custom-liquid",
-          "name": "Title (names concern or routine)",
-          "settings": {
-            "custom_liquid": "{%- liquid\n  assign heading = collection.title\n  if collection.handle == 'all'\n    for f in collection.filters\n      if f.active_values.size == 1\n        assign v = f.active_values.first.label\n        if f.param_name == 'filter.p.m.custom.concern'\n          case v\n            when 'Dryness', 'dryness'\n              assign v = 'Moisture Retention'\n            when 'Growth', 'growth'\n              assign v = 'Lack of Growth'\n          endcase\n          assign heading = v | append: ' Products'\n        elsif f.param_name == 'filter.p.m.custom.routine'\n          if v == 'soothe-and-calm'\n            assign v = 'Soothe & Calm'\n          endif\n          assign heading = v | append: ' Products'\n        endif\n      endif\n    endfor\n  endif\n-%}\n<h1 class=\"h2\" style=\"margin:0\">{{ heading | escape }}</h1>"
           },
           "blocks": {}
         }
@@ -200,6 +200,7 @@
           ]
         }
       },
+      "disabled": true,
       "custom_css": [
         ".product-media-container.media-fit img {object-fit: contain;}"
       ],
@@ -223,7 +224,11 @@
     "dudleyq_tv": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- if collection.handle == 'events' -%}\n<div style=\"max-width:960px;margin:40px auto;padding:0 16px\">\n  <h2 style=\"text-align:center\">Latest from DudleyQ TV</h2>\n  <div style=\"position:relative;padding-top:56.25%\">\n    <iframe src=\"https://www.youtube.com/embed/videoseries?list=UUrSrw6-mStvMqB7PGq8aGPw\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" loading=\"lazy\" allowfullscreen title=\"DudleyQ TV\"></iframe>\n  </div>\n  <p style=\"text-align:center;margin-top:16px\"><a href=\"https://www.youtube.com/@dudleyqtv4423\" target=\"_blank\" rel=\"noopener\">Visit DudleyQ TV on YouTube</a></p>\n</div>\n{%- endif -%}"
+        "custom_liquid": "{%- if collection.handle == 'events' -%}\n<div style=\"max-width:960px;margin:40px auto;padding:0 16px\">\n  <h2 style=\"text-align:center\">Latest from DudleyQ TV</h2>\n  <div style=\"position:relative;padding-top:56.25%\">\n    <iframe src=\"https://www.youtube.com/embed/videoseries?list=UUrSrw6-mStvMqB7PGq8aGPw\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" loading=\"lazy\" allowfullscreen title=\"DudleyQ TV\"></iframe>\n  </div>\n  <p style=\"text-align:center;margin-top:16px\"><a href=\"https://www.youtube.com/@dudleyqtv4423\" target=\"_blank\" rel=\"noopener\">Visit DudleyQ TV on YouTube</a></p>\n</div>\n{%- endif -%}",
+        "background_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
