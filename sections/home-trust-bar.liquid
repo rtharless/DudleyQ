@@ -1,47 +1,38 @@
+{%- comment -%}
+  Trust bar. By default each badge uses the built-in brand line icon (snippets/trust-icon),
+  so the old screenshot images are ignored. Untick "Use brand icons" to fall back to the
+  image pickers.
+{%- endcomment -%}
+{%- assign icon_names = 'salon,cruelty-free,sulfate-free,black-owned' | split: ',' -%}
 <div class="section section--page-width">
     <div class="home-trust-bar">
-        <div class="badge-col">
-            {%  if section.settings.image1 %}
-                {{ section.settings.image1
-                    | image_url: width: 24
-                    | image_tag
-                }}
-            {% endif %}
-            <span>{{ section.settings.trust-title1}}</span>
-        </div>
-        <div class="badge-col">
-            {%  if section.settings.image2 %}
-                {{ section.settings.image2
-                    | image_url: width: 24
-                    | image_tag
-                }}
-            {% endif %}    
-            <span>{{ section.settings.trust-title2}}</span>
-        </div>
-        <div class="badge-col">
-            {%  if section.settings.image3 %}
-                {{ section.settings.image3
-                    | image_url: width: 24
-                    | image_tag
-                }}
-            {% endif %}
-            <span>{{ section.settings.trust-title3}}</span>
-        </div>
-        <div class="badge-col">
-            {%  if section.settings.image3 %}
-                {{ section.settings.image4
-                    | image_url: width: 24
-                    | image_tag
-                }}
-            {% endif %}
-            <span>{{ section.settings.trust-title4}}</span>
-        </div>
+        {%- for name in icon_names -%}
+            {%- assign i = forloop.index | append: '' -%}
+            {%- assign image_key = 'image' | append: i -%}
+            {%- assign title_key = 'trust-title' | append: i -%}
+            {%- assign badge_image = section.settings[image_key] -%}
+            <div class="badge-col">
+                {%- if section.settings.use_brand_icons -%}
+                    {%- render 'trust-icon', icon: name -%}
+                {%- elsif badge_image -%}
+                    {{ badge_image | image_url: width: 96 | image_tag: width: 24, height: 24, alt: '' }}
+                {%- endif -%}
+                <span>{{ section.settings[title_key] }}</span>
+            </div>
+        {%- endfor -%}
     </div>
 </div>
 {% schema %}
 {
     "name": "How Trust Bar",
     "settings": [
+        {
+            "type": "checkbox",
+            "id": "use_brand_icons",
+            "label": "Use brand icons",
+            "info": "Shows the built-in Dudley line icons. Untick to use the images below instead.",
+            "default": true
+        },
         {
             "type": "image_picker",
             "id": "image1",
@@ -85,7 +76,7 @@
             "id": "trust-title4",
             "label": "trust Title 4",
             "default": "BLACK OWNED"
-        },
+        }
     ]
 }
 {% endschema %}

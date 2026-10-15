@@ -2098,3 +2098,9 @@ cart-drawer-component .referred-by-wrapper{
         letter-spacing: 0.4px;
     }
 }
+.home-trust-bar .trust-icon, .product-footer-badges .trust-icon{
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}

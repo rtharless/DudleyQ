@@ -64,7 +64,8 @@
           "type": "hair-collections",
           "settings": {
             "title": "Total Control",
-            "url": "total-control"
+            "url": "total-control",
+            "icon_asset": "hc-total-control.svg"
           }
         }
       },

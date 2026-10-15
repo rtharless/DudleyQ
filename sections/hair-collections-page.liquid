@@ -24,6 +24,9 @@
                       {% if block.settings.card_image %}
                           {{ block.settings.card_image | image_url: width: 600 | image_tag }}
                           <span>{{ block.settings.title }}</span>
+                      {% elsif block.settings.icon_asset != blank %}
+                          <img src="{{ block.settings.icon_asset | asset_url }}" alt="" width="64" height="64" loading="lazy">
+                          <span>{{ block.settings.title }}</span>
                       {% else %}
                         {{ block.settings.title }}    
                       {% endif %}
@@ -69,6 +72,12 @@
           "type": "image_picker",
           "id": "card_image",
           "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "icon_asset",
+          "label": "Theme icon file",
+          "info": "Used only when Card Image is empty. A file name from the theme's assets, e.g. hc-total-control.svg"
         }
       ]
     }

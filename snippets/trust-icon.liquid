@@ -1,0 +1,14 @@
+{%- comment -%}
+  Brand line icons for the trust bar. Usage: render 'trust-icon', icon: 'salon'
+  Icons: salon, cruelty-free, sulfate-free, black-owned. Colour #26433A.
+{%- endcomment -%}
+{%- case icon -%}
+  {%- when 'salon' -%}
+    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" stroke="#26433A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>
+  {%- when 'cruelty-free' -%}
+    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" stroke="#26433A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M9 10.5C7.5 8 7 4.5 8.5 3s3 2 2.6 6.6M15 10.5c1.5-2.5 2-6 .5-7.5s-3 2-2.6 6.6"/><circle cx="12" cy="15" r="5.5"/><path d="M10 14.5h.01M14 14.5h.01M11 17.2c.6.4 1.4.4 2 0"/></svg>
+  {%- when 'sulfate-free' -%}
+    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" stroke="#26433A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 3c3 4 6 7.2 6 10.5a6 6 0 0 1-12 0C6 10.2 9 7 12 3Z"/><path d="M9.5 14l1.8 1.8L15 12"/></svg>
+  {%- when 'black-owned' -%}
+    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" stroke="#26433A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg>
+{%- endcase -%}
