@@ -12,32 +12,6 @@
     "section": {
       "type": "section",
       "blocks": {
-        "text_tqQTNE": {
-          "type": "text",
-          "name": "Title",
-          "settings": {
-            "text": "<h1>{{ closest.collection.title }}</h1>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "text_twGGkJ": {
           "type": "text",
           "name": "Description",
@@ -63,10 +37,18 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "heading_dynamic": {
+          "type": "custom-liquid",
+          "name": "Title (names concern or routine)",
+          "settings": {
+            "custom_liquid": "{%- liquid\n  assign heading = collection.title\n  if collection.handle == 'all'\n    for f in collection.filters\n      if f.active_values.size == 1\n        assign v = f.active_values.first.label\n        if f.param_name == 'filter.p.m.custom.concern'\n          case v\n            when 'Dryness', 'dryness'\n              assign v = 'Moisture Retention'\n            when 'Growth', 'growth'\n              assign v = 'Lack of Growth'\n          endcase\n          assign heading = v | append: ' Products'\n        elsif f.param_name == 'filter.p.m.custom.routine'\n          if v == 'soothe-and-calm'\n            assign v = 'Soothe & Calm'\n          endif\n          assign heading = v | append: ' Products'\n        endif\n      endif\n    endfor\n  endif\n-%}\n<h1 class=\"h2\" style=\"margin:0\">{{ heading | escape }}</h1>"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_tqQTNE",
+        "heading_dynamic",
         "text_twGGkJ"
       ],
       "name": "Collection heading",
@@ -237,10 +219,17 @@
         "padding-block-start": 0,
         "padding-block-end": 32
       }
+    },
+    "dudleyq_tv": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- if collection.handle == 'events' -%}\n<div style=\"max-width:960px;margin:40px auto;padding:0 16px\">\n  <h2 style=\"text-align:center\">Latest from DudleyQ TV</h2>\n  <div style=\"position:relative;padding-top:56.25%\">\n    <iframe src=\"https://www.youtube.com/embed/videoseries?list=UUrSrw6-mStvMqB7PGq8aGPw\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" loading=\"lazy\" allowfullscreen title=\"DudleyQ TV\"></iframe>\n  </div>\n  <p style=\"text-align:center;margin-top:16px\"><a href=\"https://www.youtube.com/@dudleyqtv4423\" target=\"_blank\" rel=\"noopener\">Visit DudleyQ TV on YouTube</a></p>\n</div>\n{%- endif -%}"
+      }
     }
   },
   "order": [
     "section",
-    "main"
+    "main",
+    "dudleyq_tv"
   ]
 }

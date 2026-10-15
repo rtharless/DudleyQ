@@ -39,7 +39,7 @@
         "block-4": {
           "type": "concern",
           "settings": {
-            "title": "Dryness",
+            "title": "Moisture Retention",
             "filter_value": "Dryness",
             "card_image": "shopify://shop_images/dryness_2762637f-7ea2-43e3-8969-d81d80af520b.png"
           }
@@ -55,7 +55,7 @@
         "block-6": {
           "type": "concern",
           "settings": {
-            "title": "Growth",
+            "title": "Lack of Growth",
             "filter_value": "Growth",
             "card_image": "shopify://shop_images/growth_f258d2be-cf01-4eb1-8437-42b7a65925ca.png"
           }
@@ -66,14 +66,6 @@
             "title": "Irritation",
             "filter_value": "Irritation",
             "card_image": "shopify://shop_images/irritation_3f94cdb5-acdc-4e79-a99b-fa4518978219.png"
-          }
-        },
-        "block-8": {
-          "type": "concern",
-          "settings": {
-            "title": "Oiliness",
-            "filter_value": "Oiliness",
-            "card_image": "shopify://shop_images/oiliness_c95cddba-6142-49e0-8993-f9a7335ed1a1.png"
           }
         },
         "block-9": {
@@ -101,13 +93,12 @@
         "block-5",
         "block-6",
         "block-7",
-        "block-8",
         "block-9",
         "block-10"
       ],
       "settings": {
         "eyebrow": "CONCERN PAGE",
-        "heading": "Find Your Perfect Match",
+        "heading": "Your Best Hair Starts Here",
         "description": "Not sure where to start? Answer a few questions and we'll match you to the right products.",
         "concern_heading": "Shop by Concern",
         "concern_card_title": "Not sure where to start?",
