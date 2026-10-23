@@ -17,7 +17,8 @@
           "settings": {
             "title": "Moisture Matters",
             "url": "moisture-matters",
-            "card_image": "shopify://shop_images/moisture-matters_c7b87d0b-3bbe-4c40-95aa-cd4a932440e0.png"
+            "card_image": "shopify://shop_images/moisture-matters_c7b87d0b-3bbe-4c40-95aa-cd4a932440e0.png",
+            "icon_asset": ""
           }
         },
         "block-2": {
@@ -25,7 +26,8 @@
           "settings": {
             "title": "Confident Curls",
             "url": "confident-coils",
-            "card_image": "shopify://shop_images/confident-curls_eee9447b-2f87-4d60-9c77-5b0de084e82e.png"
+            "card_image": "shopify://shop_images/confident-curls_eee9447b-2f87-4d60-9c77-5b0de084e82e.png",
+            "icon_asset": ""
           }
         },
         "block-3": {
@@ -33,7 +35,8 @@
           "settings": {
             "title": "Soothe & Calm",
             "url": "soothe-calm",
-            "card_image": "shopify://shop_images/soothe-calm_f85aa2eb-7ac0-4b00-ad4e-819d143fe880.png"
+            "card_image": "shopify://shop_images/soothe-calm_f85aa2eb-7ac0-4b00-ad4e-819d143fe880.png",
+            "icon_asset": ""
           }
         },
         "block-4": {
@@ -41,7 +44,8 @@
           "settings": {
             "title": "Revival",
             "url": "repair-restore",
-            "card_image": "shopify://shop_images/repair-restore.png"
+            "card_image": "shopify://shop_images/repair-restore.png",
+            "icon_asset": ""
           }
         },
         "block-5": {
@@ -49,7 +53,8 @@
           "settings": {
             "title": "Healthy Tresses",
             "url": "healthy-hair",
-            "card_image": "shopify://shop_images/healthy-hair.png"
+            "card_image": "shopify://shop_images/healthy-hair.png",
+            "icon_asset": ""
           }
         },
         "hc_length_strength": {
@@ -57,7 +62,8 @@
           "settings": {
             "title": "Length & Strength",
             "url": "length-strength",
-            "card_image": "shopify://shop_images/length-and-strength_bc24fc31-2917-4951-b939-4476d640aef5.png"
+            "card_image": "shopify://shop_images/length-and-strength_bc24fc31-2917-4951-b939-4476d640aef5.png",
+            "icon_asset": ""
           }
         },
         "hc_total_control": {
@@ -65,6 +71,7 @@
           "settings": {
             "title": "Total Control",
             "url": "total-control",
+            "card_image": "shopify://shop_images/total-control.png",
             "icon_asset": "hc-total-control.svg"
           }
         }
@@ -85,6 +92,7 @@
     "home_trust_bar": {
       "type": "home-trust-bar",
       "settings": {
+        "use_brand_icons": true,
         "image1": "shopify://shop_images/Screenshot_from_2026-08-14_10-53-30.png",
         "trust-title1": "Salon formulated",
         "image2": "shopify://shop_images/Screenshot_from_2026-08-10_12-42-57.png",
