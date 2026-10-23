@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {    
     const btn1 = document.querySelector('.benefit_outcome');
-    btn1.addEventListener('click', function () {
+    if (btn1) btn1.addEventListener('click', function () {
         const plusIcon = document.querySelector('.tab-benefits-plus-icon');
         const minusIcon = document.querySelector('.tab-benefits-minus-icon');
         const tabDetails = document.querySelector('.tab-benefits-detail');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     const btn2 = document.querySelector('.how_to_use');
-    btn2.addEventListener('click', function () {
+    if (btn2) btn2.addEventListener('click', function () {
         const plusIcon = document.querySelector('.tab-howtouse-plus-icon');
         const minusIcon = document.querySelector('.tab-howtouse-minus-icon');
         const tabDetails = document.querySelector('.tab-howtouse-detail');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     const btn3 = document.querySelector('.key_ingredients');
-    btn3.addEventListener('click', function () {
+    if (btn3) btn3.addEventListener('click', function () {
         const plusIcon = document.querySelector('.tab-keying-plus-icon');
         const minusIcon = document.querySelector('.tab-keying-minus-icon');
         const tabDetails = document.querySelector('.tab-keying-detail');
