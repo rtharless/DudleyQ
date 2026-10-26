@@ -31,15 +31,15 @@
     </div>
 </section>
 <script>
-  document.querySelector('.scroll-link').addEventListener('click', function (e) {
-    e.preventDefault();
-
-    document.querySelector('.start-here').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+  const scrollLink = document.querySelector('.scroll-link');
+  if (scrollLink) {
+    scrollLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector('.start-here');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-});
-</script>  
+  }
+</script>
   {% schema %}
   {
     "name": "Custom Home Hero",
