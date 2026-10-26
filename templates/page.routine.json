@@ -79,6 +79,7 @@
         "block-7"
       ],
       "settings": {
+        "image": "shopify://shop_images/3A3A2060.jpg",
         "eyebrow": "ROUTINE PAGE",
         "heading": "Your Best Hair Starts Here",
         "description": "Not sure where to start? Answer a few questions and we'll match you to the right products.",
@@ -90,6 +91,7 @@
     "home_trust_bar": {
       "type": "home-trust-bar",
       "settings": {
+        "use_brand_icons": true,
         "image1": "shopify://shop_images/Screenshot_from_2026-08-14_10-53-30.png",
         "trust-title1": "Salon formulated",
         "image2": "shopify://shop_images/Screenshot_from_2026-08-10_12-42-57.png",
