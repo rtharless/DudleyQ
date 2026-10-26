@@ -11,6 +11,10 @@
   {% endif %}
     <div class="hair-coolections-page__content">
 
+        <p class="hair-coolections-page__eyebrow">
+            {{ section.settings.eyebrow }}
+        </p>
+
         <h2>
           {{ section.settings.heading }}
         </h2>
@@ -45,6 +49,12 @@
       "type": "image_picker",
       "id": "image",
       "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "HAIR COLLECTIONS"
     },
     {
       "type": "text",
