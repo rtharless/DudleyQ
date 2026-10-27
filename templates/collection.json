@@ -52,6 +52,7 @@
         "heading_dynamic",
         "text_twGGkJ"
       ],
+      "disabled": true,
       "name": "Collection heading",
       "settings": {
         "content_direction": "column",
@@ -201,6 +202,7 @@
           ]
         }
       },
+      "disabled": true,
       "custom_css": [
         ".product-media-container.media-fit img {object-fit: contain;}"
       ],
