@@ -60,6 +60,7 @@ jobs:
           PY
 
       - name: Open auto-revert PR
+        id: open-pr
         if: steps.fix.outputs.needs_revert == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
@@ -72,12 +73,26 @@ jobs:
             after detecting "disabled": true on the main-collection section
             in templates/collection.json.
           body: |
-            This PR was opened automatically by the **Collection grid sentinel** workflow (`.github/workflows/collection-grid-sentinel.yml`).
+            This PR was opened automatically by the **Collection grid sentinel** workflow (`.github/workflows/collection-grid-sentinel.yml`) and is set to auto-merge once GitHub finishes creating it.
 
             It detected `"disabled": true` on the `main-collection` section in `templates/collection.json` on `main` and prepared the one-key removal that re-enables the product grid.
 
-            Merging this restores the product grid on `/collections/all` and every filtered or quiz-resolved variant.
+            Once merged (automatically, typically within seconds), Shopify picks up the sync and the grid comes back on the storefront.
 
-            Same clobber pattern as rounds 1–3 (stale Online Theme Editor tab saving back a disabled state). If this disable was intentional this time, close the PR and consider disabling or adjusting the workflow in `.github/workflows/collection-grid-sentinel.yml`.
+            Same clobber pattern as rounds 1–3 (stale Online Theme Editor tab saving back a disabled state). Rich is set as assignee so each occurrence is visible — you'll get an email on open and on merge. If this count starts getting noisy, switch to silent by removing `assignees: rtharless` from `.github/workflows/collection-grid-sentinel.yml`.
+
+            If a particular disable was ever actually intentional, cancel auto-merge on the PR (Pull request → "Disable auto-merge"), close it, and consider disabling or adjusting the workflow.
           labels: auto-revert
+          assignees: rtharless
           delete-branch: true
+
+      - name: Enable auto-merge on the revert PR
+        if: steps.open-pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge \
+            --auto \
+            --squash \
+            --repo "${{ github.repository }}" \
+            "${{ steps.open-pr.outputs.pull-request-number }}"
