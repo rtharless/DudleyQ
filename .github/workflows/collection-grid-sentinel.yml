@@ -1,0 +1,83 @@
+name: Collection grid sentinel
+
+# Watches templates/collection.json on `main` and, if the main-collection
+# section is accidentally re-disabled (same clobber pattern that has hit
+# three times via the Shopify Online Theme Editor), opens an auto-revert
+# PR with the one-key removal that re-enables the product grid.
+#
+# Context: Shopify's online editor commits straight to `main` via
+# shopify[bot], bypassing branch protection and any PR-time checks, so
+# the only reliable guard is a reaction *after* the clobber lands.
+# This workflow is that reaction. See the matching PR for background.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'templates/collection.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-revert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect and remove main-collection disable
+        id: fix
+        run: |
+          python3 - <<'PY'
+          import os, re, sys
+          path = 'templates/collection.json'
+          raw = open(path).read()
+          # The clobber adds exactly this line immediately before
+          # `      "custom_css":` on the main-collection section.
+          # The long-standing "disabled": true on the Description block
+          # (text_twGGkJ) uses different indentation and sits before
+          # `"settings":`, so this pattern won't touch it.
+          pattern = re.compile(r'      "disabled": true,\n(?=      "custom_css":)')
+          new, n = pattern.subn('', raw)
+          summary = os.environ.get('GITHUB_STEP_SUMMARY')
+          if n == 0:
+              if summary:
+                  with open(summary, 'a') as s:
+                      s.write('main-collection section is enabled; nothing to do.\n')
+              print('main-collection section is enabled; nothing to do.')
+              sys.exit(0)
+          with open(path, 'w') as f:
+              f.write(new)
+          if summary:
+              with open(summary, 'a') as s:
+                  s.write(f'Removed `"disabled": true` from main-collection section ({n} occurrence).\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('needs_revert=true\n')
+          print(f'Removed {n} disabled flag(s) from main-collection section.')
+          PY
+
+      - name: Open auto-revert PR
+        if: steps.fix.outputs.needs_revert == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/revert-collection-grid-disable
+          title: 'Auto-revert: re-enable main-collection section'
+          commit-message: |
+            Auto-revert: re-enable main-collection section
+
+            Opened automatically by .github/workflows/collection-grid-sentinel.yml
+            after detecting "disabled": true on the main-collection section
+            in templates/collection.json.
+          body: |
+            This PR was opened automatically by the **Collection grid sentinel** workflow (`.github/workflows/collection-grid-sentinel.yml`).
+
+            It detected `"disabled": true` on the `main-collection` section in `templates/collection.json` on `main` and prepared the one-key removal that re-enables the product grid.
+
+            Merging this restores the product grid on `/collections/all` and every filtered or quiz-resolved variant.
+
+            Same clobber pattern as rounds 1–3 (stale Online Theme Editor tab saving back a disabled state). If this disable was intentional this time, close the PR and consider disabling or adjusting the workflow in `.github/workflows/collection-grid-sentinel.yml`.
+          labels: auto-revert
+          delete-branch: true
