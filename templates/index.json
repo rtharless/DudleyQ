@@ -1405,6 +1405,7 @@
         },
         "featured-product": {
           "type": "_featured-product",
+          "disabled": true,
           "static": true,
           "settings": {},
           "blocks": {
