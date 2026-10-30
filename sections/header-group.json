@@ -17,14 +17,14 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Complimentary shipping over $75  ·  30-day satisfaction guarantee",
+            "text": "Fall Sale 15% off orders $55+ Use FALL26 &nbsp;Ends 10-30-26 at midnight EST",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "1.125rem",
             "weight": "",
             "letter_spacing": "normal",
             "case": "uppercase",
-            "text_color": "#F6F6F3"
+            "text_color": "#f6f6f3"
           },
           "blocks": {}
         }
@@ -36,7 +36,7 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "background_color": "#1B4438",
+        "background_color": "#1b4438",
         "divider_width": 1,
         "divider_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 12,
@@ -109,9 +109,9 @@
         "actions_font": "body",
         "actions_text_case": "none",
         "background_color_top": "{{ settings.color_palette.background }}",
-        "text_color_top": "#5C5147",
+        "text_color_top": "#5c5147",
         "background_color_bottom": "{{ settings.color_palette.background }}",
-        "text_color_bottom": "#1B4438",
+        "text_color_bottom": "#1b4438",
         "bubble_style": "default",
         "bubble_background_color": "",
         "bubble_text_color": "",
